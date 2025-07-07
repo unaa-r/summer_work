@@ -2,9 +2,3 @@ dip_maker.py - generates CPI signal dips from linear, erf, and super-erf chirped
 Needs: numpy, scipy, tqdm  
 to install numpy and scipy on cluster, use: pip install numpy, scipy --no-index  
 to install tqdm on cluster, use: pip install tqdm --user --no-index  
-
-test: changing this readme
-
-test: changing this readme again
-
-test: now just my branch
