@@ -172,21 +172,61 @@ def slab_transfer(n1: Callable, n2: Callable, L: float) -> Callable:
     
     return H
 
+def slab_frontheavy(n1: Callable, n2: Callable, L: float) -> Callable:
+
+    c = 0.2998 #um/fs
+
+    r1 = -1
+    r2 = 0
+    t1 = 0
+
+    def H(w):
+        return r1 + t1*r2*np.exp(2j*L*w*n2(w)/c)
+    
+    return H
+
+def slab_backheavy(n1: Callable, n2: Callable, L: float) -> Callable:
+
+    c = 0.2998 #um/fs
+
+    r1 = 0
+    r2 = 1
+    t1 = 1
+
+    def H(w):
+        return r1 + t1*r2*np.exp(2j*L*w*n2(w)/c)
+    
+    return H
+
+def slab_lossless(n1: Callable, n2: Callable, L: float) -> Callable:
+
+    c = 0.2998 #um/fs
+
+    r1 = -1/np.sqrt(2)
+    r2 = 1/np.sqrt(2)
+    t1 = 1
+
+    def H(w):
+        return r1 + t1*r2*np.exp(2j*L*w*n2(w)/c)
+    
+    return H
+
 
 # ---------------------- L Range Setup ------------------------
 
-Lvals = np.arange(0, 64001, 32000)  # fs^2 units or length in mm?
-hotLvals = np.arange(0, 64001, 32000)  # for heatmaps
-coldLvals = np.arange(0,64001,32000)  # for fit plots
+# Lvals = np.arange(0, 64001, 32000)  # fs^2 units or length in mm?
+# hotLvals = np.arange(0, 64001, 32000)  # for heatmaps
+# coldLvals = np.arange(0,64001,32000)  # for fit plots
 
 
-Lvals = np.array([0,800,32000,64000])
-hotLvals = Lvals
-coldLvals = Lvals
+# Lvals = np.array([0,800,32000,64000])
+# Lvals = np.array([32000])
+# hotLvals = Lvals
+# coldLvals = Lvals
 
-# Lvals = np.arange(0, 1601, 800)  # fs^2 units or length in mm?
-# hotLvals = np.arange(0, 1601, 800)  # for heatmaps
-# coldLvals = np.arange(0,1601,800)
+Lvals = np.arange(0, 64001, 800)  # fs^2 units or length in mm?
+hotLvals = np.arange(0, 64001, 8000)  # for heatmaps
+coldLvals = np.arange(0,64001,8000)
 
 
 
@@ -244,7 +284,7 @@ def compute_row(tau):
 def interfere_old(rules: dict, filenamedips, filenamewidths, filenamechisqs, params):
     print(f"MID-level running in PID {os.getpid()} (name={__name__})")
     
-    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = params
+    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, transfer_generator= params
 
     b = rules.get('b', 0.0)
     sigma_s = rules.get('sigma_s', sigma)  # default to pulse width if not given
@@ -304,7 +344,7 @@ def interfere_old(rules: dict, filenamedips, filenamewidths, filenamechisqs, par
 
 
             #For the multiple interfaces, disp_shared is just the transfer function
-            H = slab_transfer(n_air,n_BK7,L)
+            H = transfer_generator(n_air,n_BK7,L)
             disp_shared[:] = H(freqList)[:]
 
             print('starting:',L)
@@ -384,7 +424,7 @@ def interfere_old(rules: dict, filenamedips, filenamewidths, filenamechisqs, par
 def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params):
     print(f"MID-level running in PID {os.getpid()} (name={__name__})")
     
-    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = params
+    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, transfer_generator = params
 
     b = rules.get('b', 0.0)
     sigma_s = rules.get('sigma_s', sigma)  # default to pulse width if not given
@@ -444,7 +484,7 @@ def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params)
 
 
             #For the multiple interfaces, disp_shared is just the transfer function
-            H = slab_transfer(n_air,n_BK7,L)
+            H = transfer_generator(n_air,n_BK7,L)
             disp_shared[:] = H(freqList)[:]
 
             print('disp entry', L, disp_shared[40])
@@ -546,10 +586,28 @@ def main():
     #Moving the heavier toplevel code into init_pulse()
 
     tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = init_pulse()
-    params = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks
-
-    print(f"Running interfere() with b={args.b}, sigma_s={args.sigma_s}")
+    
+    filenamedips = args.output + '_frontheavy_'
+    filenamewidths = filenamedips+"widths.csv"
+    filenamechisqs = filenamedips+"chisqs.csv"
+    params = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_frontheavy
+    print(f"Running interfere() with b={args.b}, sigma_s={args.sigma_s}, frontheavy")
     interfere(rules, filenamedips, filenamewidths, filenamechisqs, params)
+
+    filenamedips = args.output + '_backheavy_'
+    filenamewidths = filenamedips+"widths.csv"
+    filenamechisqs = filenamedips+"chisqs.csv"
+    params = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_backheavy
+    print(f"Running interfere() with b={args.b}, sigma_s={args.sigma_s}, backheavy")
+    interfere(rules, filenamedips, filenamewidths, filenamechisqs, params)
+
+    filenamedips = args.output + '_lossless_'
+    filenamewidths = filenamedips+"widths.csv"
+    filenamechisqs = filenamedips+"chisqs.csv"
+    params = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_lossless
+    print(f"Running interfere() with b={args.b}, sigma_s={args.sigma_s}, lossless")
+    interfere(rules, filenamedips, filenamewidths, filenamechisqs, params)
+
 
     # rules={'b': 8300,'sigma_s': 10}
     # print("now try the big one")
