@@ -228,6 +228,10 @@ Lvals = np.arange(0, 64001, 800)  # fs^2 units or length in mm?
 hotLvals = np.arange(0, 64001, 8000)  # for heatmaps
 coldLvals = np.arange(0,64001,8000)
 
+Lvals = np.arange(3, 6, 1)  # fs^2 units or length in mm?
+hotLvals = Lvals # for heatmaps
+coldLvals = Lvals
+
 
 
 # ---------------------- Fit function ------------------------
@@ -248,9 +252,11 @@ def init_pulse():
     El = np.array([ELaser(t) for t in tlist])
     Elw = fft(El)
 
-    l_eps_data = pd.read_csv('eps_vs_L_BK7.csv')
-    epsilon_dict = dict(zip(l_eps_data['L'], l_eps_data['epsilon']))
-    eList = [epsilon_dict[L] for L in Lvals]
+    #for smaller L can't use this
+    l_eps_data,epsilon_dict,eList = None,None,None
+    # l_eps_data = pd.read_csv('eps_vs_L_BK7.csv')
+    # epsilon_dict = dict(zip(l_eps_data['L'], l_eps_data['epsilon']))
+    # eList = [epsilon_dict[L] for L in Lvals]
 
     tauList = np.arange(-50, 50, 0.5)
 
