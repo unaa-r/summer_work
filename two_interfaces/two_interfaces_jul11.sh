@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=two_interfaces_jul8_ghm
+#SBATCH --job-name=two_interfaces_jul11_ghm
 #SBATCH --cpus-per-task=32
 #SBATCH --time=4:00:00
-#SBATCH --output=two_interfaces_jul8_ghm.out
+#SBATCH --output=two_interfaces_jul11_ghm.out
 #SBATCH --mail-user=n2costa@uwaterloo.ca
 #SBATCH --mail-type=ALL
-#SBATCH --mem=16G
+#SBATCH --mem=64G
 
 module load python
 

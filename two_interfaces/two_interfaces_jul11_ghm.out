@@ -1,0 +1,57 @@
+Top-level running in PID 14680 (name=__main__)
+Running interfere() with b=8300.0, sigma_s=10.0, lossless
+MID-level running in PID 14680 (name=__main__)
+E1_shared element:  0j
+E1 element:  (-7.517732052215588e-10+9.838404890644257e-10j)
+this thing psm_e5196a48
+ill try to just make an array with this now
+testfreq element:  0.0
+did it
+disp entry 395.0 0.5178908480439486j
+starting: 395.0
+some stuff:
+tdelaylist (1+0j)
+ESFGt (4.2673798792324305e-27+9.38697545074426e-27j)
+ESFGw (-4.5713866719809815e-14+1.6866716356922495e-14j)
+intensity 2.374243731141412e-27
+data entry 395.0 [1.18242733e-27 1.19331480e-27 2.24800151e-27 ... 2.05589385e-27
+ 2.83618622e-27 2.25558513e-27]
+finishing 395.0
+disp entry 395.1 0.5180157555164584j
+starting: 395.1
+some stuff:
+tdelaylist (1+0j)
+ESFGt (-1.8417869484304325e-27+8.79428478857175e-27j)
+ESFGw (9.303365369750516e-14-3.4493675277191826e-14j)
+intensity 9.845074354435667e-27
+data entry 395.1 [1.57383141e-26 4.60623789e-27 2.87399635e-28 ... 4.79414598e-29
+ 7.56976938e-27 1.76423781e-26]
+finishing 395.1
+disp entry 395.20000000000005 0.5181406583219333j
+starting: 395.20000000000005
+some stuff:
+tdelaylist (1+0j)
+ESFGt (-2.93881620281649e-27+5.734195006740841e-27j)
+ESFGw (-2.820096586808596e-14+1.0574006947816628e-14j)
+intensity 9.071040988254234e-28
+data entry 395.20000000000005 [4.62848832e-28 6.25912376e-28 1.28118983e-27 ... 1.23606906e-27
+ 1.52287421e-27 1.03176739e-27]
+finishing 395.20000000000005
+disp entry 395.30000000000007 0.5182655564592483j
+starting: 395.30000000000007
+some stuff:
+tdelaylist (1+0j)
+ESFGt (3.518036993524679e-27+9.820462879501543e-27j)
+ESFGw (3.978154611283813e-14-1.466144913808698e-14j)
+intensity 1.797529501956578e-27
+data entry 395.30000000000007 [2.18310219e-27 2.46482137e-27 3.33965453e-27 ... 3.17213154e-27
+ 3.59433680e-27 2.93813096e-27]
+finishing 395.30000000000007
+/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/multiprocessing/resource_tracker.py:104: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 4 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+slurmstepd: error: Detected 307978 oom_kill events in StepId=29359548.0. Some of the step tasks have been OOM Killed.
+srun: error: gra89: task 0: Out Of Memory
+srun: Terminating StepId=29359548.0
+slurmstepd: error: Detected 307978 oom_kill events in StepId=29359548.batch. Some of the step tasks have been OOM Killed.
