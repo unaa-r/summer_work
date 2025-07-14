@@ -8,7 +8,7 @@ import multiprocessing as mp
 import argparse
 from tqdm import tqdm
 import shutil
-from scipy import binned_statistic
+from scipy.stats import binned_statistic
 
 def Ereffer(Ec, Ea, w, tau):
     return (Ec + Ea) * np.exp(1j * w * tau)
