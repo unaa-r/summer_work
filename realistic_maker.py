@@ -283,6 +283,16 @@ if __name__ == "__main__":
 
     #################################
 
+    # Remove existing folders (if not no_overwrite)
+    folder = f"results/{folder_name}"
+
+    if not no_overwrite:
+            if os.path.exists(folder):
+                shutil.rmtree(folder)
+
+    # Create necessary folders
+    os.makedirs(f"results/{folder_name}", exist_ok=True)
+
     with open(f"results/{folder_name}/plotting_params.txt", 'w') as f:
         f.write(f"{dispersion_type}\n")
         f.write(f"{args.tau_range}\n")
