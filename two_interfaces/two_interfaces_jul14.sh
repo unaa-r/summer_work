@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=two_interfaces_jul8_ghm
 #SBATCH --cpus-per-task=32
-#SBATCH --time=4:00:00
+#SBATCH --time=6:00:00
 #SBATCH --output=two_interfaces_jul8_ghm.out
 #SBATCH --mail-user=n2costa@uwaterloo.ca
 #SBATCH --mail-type=ALL
-#SBATCH --mem=16G
+#SBATCH --mem=64G
 
 module load python
 
-srun python -u interfaces_jul9.py --b 8300.0 --sigma_s 10.0 --output 2int_lin_jul11
+srun python -u interfaces_jul9.py --b 8300.0 --sigma_s 10.0 --output 2int_lin_jul14

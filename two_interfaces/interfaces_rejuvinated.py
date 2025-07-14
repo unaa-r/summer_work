@@ -231,24 +231,25 @@ def slab_lossless(n1: Callable, n2: Callable, L: float) -> Callable:
 
 # ---------------------- L Range Setup ------------------------
 
-# Lvals = np.arange(0, 64001, 32000)  # fs^2 units or length in mm?
-# hotLvals = np.arange(0, 64001, 32000)  # for heatmaps
-# coldLvals = np.arange(0,64001,32000)  # for fit plots
+def Lvals_gen(Lvals=None,hotLvals=None,coldLvals=None):
+    """Generates lists of L values for dispersive material, and the lists that must be plotted in heat maps and dip plots"""
 
+    if Lvals is not None:
+        trueLvals = np.arange(0, 64001, 800)
+    else:
+        trueLvals = Lvals
 
-# Lvals = np.array([0,800,32000,64000])
-# Lvals = np.array([32000])
-# hotLvals = Lvals
-# coldLvals = Lvals
+    if hotLvals is not None:
+        truehotLvals = np.arange(0, 64001, 8000)
+    else:
+        truehotLvals = hotLvals
 
-Lvals = np.arange(0, 64001, 800)  # fs^2 units or length in mm?
-hotLvals = np.arange(0, 64001, 8000)  # for heatmaps
-coldLvals = np.arange(0,64001,8000)
-
-Lvals = np.arange(395,405,0.1)  # fs^2 units or length in mm?
-hotLvals = Lvals # for heatmaps
-coldLvals = Lvals
-
+    if coldLvals is not None:
+        truecoldLvals = np.arange(0, 64001, 8000)
+    else:
+        truecoldLvals = coldLvals
+    
+    return trueLvals, truehotLvals, truecoldLvals
 
 
 # ---------------------- Fit function ------------------------
@@ -277,11 +278,13 @@ def init_pulse():
 
     tauList = np.arange(-200, 200, 1)
 
+    Lvals, hotLvals, coldLvals = Lvals_gen()
+
     xticks = [(i, tauList[i]) for i in range(0, len(tauList), 10)]
     yticks = [(i, round(2 * np.pi * c / (freqList[i + (lowplot - 1)]) * 1e-6, 2))
           for i in range(0, wRange + 10, 20)]
     
-    return tlist, dt, freqList, Elw, eList, tauList, xticks, yticks
+    return tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, Lvals, hotLvals, coldLvals
 
 
 #--------------- Function for the subprocesses ----------------
@@ -302,24 +305,20 @@ def compute_row(tau):
     return intensity
 
 
-# ---------------------- Main Interference Simulation ------------------------
+def source(Elw, chirp_phase, freqList, params):
+    """Simulates both the pulse shaper and the beam splitter"""
 
-def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params):
-    print(f"MID-level running in PID {os.getpid()} (name={__name__})")
-    
-    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, transfer_generator = params
+    phiList = chirp_phase(freqList, params)
 
-    b = rules.get('b', 0.0)
-    sigma_s = rules.get('sigma_s', sigma)  # default to pulse width if not given
-
-
-    phiList = chirp_phase(freqList, w0, b, sigma_s)
     Ec = Elw * np.exp(1j * phiList)
     Ea = Elw * np.exp(-1j * phiList)
     E1 = Ec + Ea
     E2 = Ec - Ea
 
-    # SHARED MEMORY SETUP
+    return E1, E2
+
+def memory_setup(E1, E2, freqList):
+
     shape = E1.shape
     dtype_str = str(E1.dtype)
     dtype_str_freq = str(freqList.dtype)
@@ -334,121 +333,137 @@ def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params)
     disp_shared = np.ndarray(shape, dtype=E1.dtype, buffer=shm_disp.buf)
     freq_shared = np.ndarray(shape, dtype=freqList.dtype, buffer=shm_freq.buf)
 
-    print("E1_shared element: ", E1_shared[0])
-    print("E1 element: ", E1[0])
-
-
     E1_shared[:] = E1[:]
     E2_shared[:] = E2[:]  # disp_shared[:] will be filled inside the L loop
     freq_shared[:] = freqList[:]
+
+    shm_names = (shm_E1.name, shm_E2.name, shm_disp.name, shm_freq.name)
+
+    initargs = (shm_names, shape, dtype_str, dtype_str_freq)
+
+    for_closing = (shm_E1, shm_E2, shm_disp, shm_freq)
+
+    return E1_shared, E2_shared, freq_shared, disp_shared, initargs, for_closing
+
+
+def hot_plotter(data, freqList, tauList, filenamedips, L):
+    "Makes the heatmap"
+    from matplotlib.colors import Normalize
+    maxI = np.max(data[:, lowplot:highplot])
+    norm = Normalize(vmin=0, vmax=maxI)
+    plt.figure(figsize=(8, 6))
+    plt.imshow(
+        data[:, lowplot:highplot].T / maxI,
+        aspect='auto',
+        cmap='rainbow',
+        origin='lower',
+        extent=[tauList[0], tauList[-1],
+                2 * np.pi * c / freqList[highplot] * 1e-6,
+                2 * np.pi * c / freqList[lowplot] * 1e-6]
+    )
+    plt.colorbar(label="Normalized Intensity")
+    plt.xlabel("τ (fs)")
+    plt.ylabel("λ (nm)")
+    plt.title(f"L = {L}")
+    plt.tight_layout()
+    plt.savefig(os.path.join(directpath, 'results', filenamedips, f"heat_{L}.png"))
+    plt.close()
+
+
+def dip_finder(data, widths, chisqs, tauList, filenamedips, k, L):
+
+    # Dip calculation
+    d = np.sum(data[:, low:high], axis=1)
+    dip_file = os.path.join(directpath, 'results', filenamedips, f"dip_{L}.txt")
+    np.savetxt(dip_file, d, delimiter=",")
+
+    def residuals(params, taus, ys):
+        a1, a2, T0, sigmaFWHM = params
+        model = fitfunc(taus, a1, a2, T0, sigmaFWHM)
+        return ys - model
+
+    # init_guess = [0.0025, 0.9, 0, 10.0]
+    init_guess = [6360,0.9,0,10.0]
+
+    # res = minimize(chisq, init_guess)
+    res = least_squares(residuals, init_guess, args=(tauList, d), method='lm', 
+                        ftol=1e-15, xtol=1e-15, gtol=1e-15)
+    widths[k] = np.abs(res.x[3])  # sigmaFWHM
+    # chisqs[k] = res.fun
+    chisqs[k] = 2 * res.cost        
+
+    return d, res
+
+def cold_plotter(d, res, tauList, filenamedips, L):
+
+    fit_curve = fitfunc(tauList, *res.x)
+    plt.figure()
+    plt.plot(tauList, d, label="Data", color='blue')
+    # plt.plot(tauList, fit_curve, label=f"Fit (FWHM = {np.abs(res.x[3]):.2f})", color='red')
+    plt.title(f"L = {L}, σ = {np.abs(res.x[3]):.2f}")
+    plt.legend()
+    plt.xlabel("τ (fs)")
+    plt.ylabel("Integrated Intensity")
+    plt.tight_layout()
+    plt.savefig(os.path.join(directpath, 'results', filenamedips, f"dip_{L}.png"))
+    plt.close()
+
+    return None
+
+
+
+
+
+# ---------------------- Main Interference Simulation ------------------------
+
+def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params):
+    print(f"MID-level running in PID {os.getpid()} (name={__name__})")
+    
+    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, transfer_generator, Lvals, hotLvals, coldLvals = params
+
+    b = rules.get('b', 0.0)
+    sigma_s = rules.get('sigma_s', sigma)  # default to pulse width if not given
+
+    E1, E2 = source(Elw, chirp_phase, freqList, params=(w0,b,sigma_s))
+
+    E1_shared, E2_shared, freq_shared, disp_shared, initargs, for_closing = memory_setup(E1, E2, freqList)
 
     widths = np.zeros(len(Lvals))
     chisqs = np.zeros(len(Lvals))
 
     os.makedirs(os.path.join(directpath, 'results', filenamedips), exist_ok=True)
 
-    shm_names = (shm_E1.name, shm_E2.name, shm_disp.name, shm_freq.name)
-    print('this thing', shm_E1.name)
-    print('ill try to just make an array with this now')
-    testfreq=np.ndarray(shape, dtype=np.dtype(dtype_str_freq), buffer=shm_freq.buf)
-    print("testfreq element: ", testfreq[0])
-    print('did it')
-
-    # return None
-
-    with Pool(initializer=init_worker, initargs=(shm_names, shape, dtype_str, dtype_str_freq)) as pool:
+    with Pool(initializer=init_worker, initargs=initargs) as pool:
 
         for k, L in enumerate(Lvals):
-            
-            #This block is for the simple dispersion case. Comment out as needed
-            # eps = eList[k]
-            # dispList = np.exp(1j * eps * (freqList - w0)**2)
-            # disp_shared[:] = dispList[:]
-
 
             #For the multiple interfaces, disp_shared is just the transfer function
             H = transfer_generator(n_air,n_BK7,L)
             disp_shared[:] = H(freqList)[:]
 
-            print('disp entry', L, disp_shared[40])
-
             print('starting:',L)
 
-            # args_list = [(tau, shm_names, shape, dtype_str) for tau in tauList]
             data = pool.map(compute_row, tauList)
             data = np.array(data)
 
-            print('data entry',L,data[40])
             print('finishing',L)
 
             # Export heatmap for selected L values
             if L in hotLvals:
-                from matplotlib.colors import Normalize
-                maxI = np.max(data[:, lowplot:highplot])
-                norm = Normalize(vmin=0, vmax=maxI)
-                plt.figure(figsize=(8, 6))
-                plt.imshow(
-                    data[:, lowplot:highplot].T / maxI,
-                    aspect='auto',
-                    cmap='rainbow',
-                    origin='lower',
-                    extent=[tauList[0], tauList[-1],
-                            2 * np.pi * c / freqList[highplot] * 1e-6,
-                            2 * np.pi * c / freqList[lowplot] * 1e-6]
-                )
-                plt.colorbar(label="Normalized Intensity")
-                plt.xlabel("τ (fs)")
-                plt.ylabel("λ (nm)")
-                plt.title(f"L = {L}")
-                plt.tight_layout()
-                plt.savefig(os.path.join(directpath, 'results', filenamedips, f"heat_{L}.png"))
-                plt.close()
+                hot_plotter(data, freqList, tauList, filenamedips, L)
 
-            # Dip calculation
-            d = np.sum(data[:, low:high], axis=1)
-            dip_file = os.path.join(directpath, 'results', filenamedips, f"dip_{L}.txt")
-            np.savetxt(dip_file, d, delimiter=",")
-
-            def residuals(params, taus, ys):
-                a1, a2, T0, sigmaFWHM = params
-                model = fitfunc(taus, a1, a2, T0, sigmaFWHM)
-                return ys - model
-
-            # init_guess = [0.0025, 0.9, 0, 10.0]
-            init_guess = [6360,0.9,0,10.0]
-
-            # res = minimize(chisq, init_guess)
-            res = least_squares(residuals, init_guess, args=(tauList, d), method='lm', 
-                               ftol=1e-15, xtol=1e-15, gtol=1e-15)
-            widths[k] = np.abs(res.x[3])  # sigmaFWHM
-            # chisqs[k] = res.fun
-            chisqs[k] = 2 * res.cost
+            d, res = dip_finder(data, widths, chisqs, tauList, filenamedips, k, L)
 
             # Save plot for cold values
             if L in coldLvals:
-                fit_curve = fitfunc(tauList, *res.x)
-                plt.figure()
-                plt.plot(tauList, d, label="Data", color='blue')
-                # plt.plot(tauList, fit_curve, label=f"Fit (FWHM = {np.abs(res.x[3]):.2f})", color='red')
-                plt.title(f"L = {L}, σ = {np.abs(res.x[3]):.2f}")
-                plt.legend()
-                plt.xlabel("τ (fs)")
-                plt.ylabel("Integrated Intensity")
-                plt.tight_layout()
-                plt.savefig(os.path.join(directpath, 'results', filenamedips, f"dip_{L}.png"))
-                plt.close()
-            
-            #trying to solve memory problems
-            del data, d
+                cold_plotter(d, res, tauList, filenamedips, L)
 
     # Export width and chisq data
     np.savetxt(os.path.join(directpath, 'results', filenamewidths), np.column_stack((Lvals, widths)), delimiter=",")
     np.savetxt(os.path.join(directpath, 'results', filenamechisqs), np.column_stack((Lvals, chisqs)), delimiter=",")
 
-    shm_E1.close(); shm_E1.unlink()
-    shm_E2.close(); shm_E2.unlink()
-    shm_disp.close(); shm_disp.unlink()
-    shm_freq.close(); shm_freq.unlink()
+    for memory in for_closing:
+        memory.close(); memory.unlink()
 
 
 # ---------------------- Entry Point for Execution ------------------------
@@ -471,7 +486,7 @@ def main():
 
     #Moving the heavier toplevel code into init_pulse()
 
-    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = init_pulse()
+    tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, Lvals, hotLvals, coldLvals = init_pulse()
     
     # filenamedips = args.output + '_frontheavy_'
     # filenamewidths = filenamedips+"widths.csv"
@@ -490,7 +505,7 @@ def main():
     filenamedips = args.output + '_lossless_'
     filenamewidths = filenamedips+"widths.csv"
     filenamechisqs = filenamedips+"chisqs.csv"
-    params = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_lossless
+    params = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_lossless, Lvals, hotLvals, coldLvals
     print(f"Running interfere() with b={args.b}, sigma_s={args.sigma_s}, lossless")
     interfere(rules, filenamedips, filenamewidths, filenamechisqs, params)
 
