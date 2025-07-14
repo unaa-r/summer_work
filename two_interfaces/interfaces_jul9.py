@@ -245,7 +245,7 @@ Lvals = np.arange(0, 64001, 800)  # fs^2 units or length in mm?
 hotLvals = np.arange(0, 64001, 8000)  # for heatmaps
 coldLvals = np.arange(0,64001,8000)
 
-Lvals = np.array(395,405,0.1)  # fs^2 units or length in mm?
+Lvals = np.arange(395,405,0.1)  # fs^2 units or length in mm?
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
 
