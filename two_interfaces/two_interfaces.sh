@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=two_interfaces_jul7
 #SBATCH --cpus-per-task=64
-#SBATCH --time=24:00:00
+#SBATCH --time=12:00:00
 #SBATCH --output=two_interfaces.out
 #SBATCH --mail-user=n2costa@uwaterloo.ca
 #SBATCH --mail-type=ALL

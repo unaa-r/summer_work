@@ -1,0 +1,119 @@
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.9
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.10
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.13
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.14
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.18
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.19
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+srun: Job 45964105 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=45964105.20
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfere_long.py", line 1, in <module>
+srun: error: nc30148: task 0: Exited with exit code 1
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
