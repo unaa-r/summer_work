@@ -367,14 +367,14 @@ if __name__ == "__main__":
         if not no_overwrite:
             for chirp_type in ["linear", "erf", "super_erf"]:
                 for style in ["ideal", "realistic"]:
-                    folder = f"results/{folder_name}/{chirp_type}/chirp_{c}/{style}"
+                    folder = f"results/{folder_name}/{chirp_type}/chirp_{chirp}/{style}"
                     if os.path.exists(folder):
                         shutil.rmtree(folder)
 
         # Create necessary folders
         for chirp_type in ["linear", "erf", "super_erf"]:
-            os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/ideal", exist_ok=True)
-            os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/realistic", exist_ok=True)
+            os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{chirp}/ideal", exist_ok=True)
+            os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{chirp}/realistic", exist_ok=True)
 
         # Phase generation
         lin_phase = lin_chirp(chirp, ws, w_0)
