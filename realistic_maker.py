@@ -279,10 +279,7 @@ if __name__ == "__main__":
     Ews = np.conj(fft(np.conj(Es), norm='ortho'))
     ws = 2 * np.pi * np.arange(Npts) / (Npts * dt)
 
-    initial_value = 1
-    num_elements = 6
-    powers_of_10 = np.power(10, np.arange(num_elements))
-    chirp_params = initial_value * powers_of_10
+    chirp_params = [1, 10, 100, 1000, 10000, 100000]
 
     ###This is what you can modify###
 
@@ -364,7 +361,7 @@ if __name__ == "__main__":
     SLM_mask = realistic_SLM_mask(mask_indices, ws)
     superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
 
-    for c in chirp_params:
+    for chirp in chirp_params:
 
         # Remove existing folders (if not no_overwrite)
         if not no_overwrite:
@@ -380,9 +377,9 @@ if __name__ == "__main__":
             os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/realistic", exist_ok=True)
 
         # Phase generation
-        lin_phase = lin_chirp(c, ws, w_0)
-        erf_phase = erf_chirp(c, ws, w_0, fwhm)
-        superf_phase = superf_chirp(c, ws, w_0, sigma_s)
+        lin_phase = lin_chirp(chirp, ws, w_0)
+        erf_phase = erf_chirp(chirp, ws, w_0, fwhm)
+        superf_phase = superf_chirp(chirp, ws, w_0, sigma_s)
 
         Ec_lin_ideal = chirper(Ews, lin_phase)
         Ea_lin_ideal = chirper(Ews, -lin_phase)
