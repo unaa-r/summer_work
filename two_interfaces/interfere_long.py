@@ -175,10 +175,14 @@ def slab_transfer(n1: Callable, n2: Callable, L: float) -> Callable:
 
 # ---------------------- L Range Setup ------------------------
 
-Lvals = np.arange(0, 64001, 800)  # fs^2 units or length in mm?
-hotLvals = np.arange(0, 64001, 4000)  # for heatmaps
-coldLvals = np.arange(0,64001,8000)  # for fit plots
+Lvals = np.arange(0, 64001, 32000)  # fs^2 units or length in mm?
+hotLvals = np.arange(0, 64001, 32000)  # for heatmaps
+coldLvals = np.arange(0,64001,32000)  # for fit plots
 
+
+Lvals = np.array([0,800,32000,64000])
+hotLvals = Lvals
+coldLvals = Lvals
 
 # Lvals = np.arange(0, 1601, 800)  # fs^2 units or length in mm?
 # hotLvals = np.arange(0, 1601, 800)  # for heatmaps

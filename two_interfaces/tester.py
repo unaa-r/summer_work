@@ -1,53 +1,68 @@
-import interfere_long as inter
+import interfaces_jul9 as inter
 import numpy as np
 import matplotlib as plt
 
 tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = inter.init_pulse()
 
-def stuff(w):
-    
-    c = 0.2998 #um/fs
-    b1 = 1.03961212
-    b2 = 0.231792344
-    b3 = 1.01046945
-    c1 = 6.00069867e-3
-    c2 = 2.00179144e-2
-    c3 = 1.03560653e2
 
-    if w == 0:
-        return 1 + b1 + b2 + b3
-
-    x = (2*np.pi*c/w)**2
-
-    return 1 + b1*x/(x-c1) + b2*x/(x-c2) + b3*x/(x-c3)
-
-stuff_vec = np.vectorize(stuff)
-
-ns = stuff_vec(freqList)
-
-inter.quick_plot(ns,freqList,file='test2',square=False,xlims=(0.185,0.186))
-
-negatives = []
-
-for i, n in enumerate(ns):
-    if n < 0:
-        negatives.append(freqList[i])
-
-print(min(negatives), max(negatives))
-
-
-negatives = []
-
-for i, n in enumerate(ns):
-    if n < 1e-3:
-        negatives.append(freqList[i])
-
-
-print(min(negatives), max(negatives))
+print(inter.n_BK7_float(inter.w0))
 
 
 
-# H = inter.slab_transfer(inter.n_air,inter.n_BK7,0)
-# freqs = np.array([1,2,3,4,5,6,7,8])
-# print(H(freqs))
-# print(inter.n_BK7(freqs))
+
+
+
+
+
+
+
+
+
+
+
+# L = 64000
+
+# H = inter.slab_transfer(inter.n_air,inter.n_BK7,L)
+# disps = H(freqList)[:]
+# phases = np.angle(disps)
+# norms = np.abs(disps)
+
+# eps = eList[-1]
+# disps_old = np.exp(1j * eps * (freqList - inter.w0)**2)
+
+# inter.quick_plot(phases,xvals=freqList,file='test_Hphases',square=False)
+# inter.quick_plot(norms,xvals=freqList,file='test_Hnorms',square=False)
+
+# inter.quick_plot(np.angle(disps_old),xvals=freqList,file='test_epsPhases',square=False)
+# inter.quick_plot(np.abs(disps_old),xvals=freqList,file='test_epsNorms',square=False)
+
+# r1 = inter.ref_coeff(inter.n_air,inter.n_BK7)
+# r2 = inter.ref_coeff(inter.n_BK7,inter.n_air)
+# t1 = inter.trans_coeff(inter.n_air,inter.n_BK7)
+
+# first_refs = r1(freqList)
+# second_refs = r2(freqList)
+# transes = t1(freqList)
+# second_terms = second_refs*transes
+
+# inter.quick_plot(first_refs,xvals=freqList,file='test_r1',square=True,ylims=(0,1))
+# inter.quick_plot(second_refs,xvals=freqList,file='test_r2',square=True)
+# inter.quick_plot(transes,xvals=freqList,file='test_t1',square=True)
+# inter.quick_plot(second_terms,xvals=freqList,file='test_secondTerms',square=True,ylims=(0,1))
+# inter.quick_plot(first_refs**2+inter.n_BK7(freqList)/inter.n_air(freqList)*transes**2,xvals=freqList,file='test_tot1',square=False,ylims=(0,2))
+
+
+# phases_old = np.angle(disps_old)
+
+# delays = np.imag(np.gradient(disps)/disps)
+# del_delays = np.gradient(delays)
+# delays_old = np.imag(np.gradient(disps_old)/disps_old)
+# del_delays_old = np.gradient(delays_old)
+
+# inter.quick_plot(delays,xvals=freqList,file='test_delays',square=False,ylims=(-5,5))
+# inter.quick_plot(del_delays,xvals=freqList,file='test_delDelays',square=False)
+# inter.quick_plot(delays_old,xvals=freqList,file='test_delays_old',square=False)
+# inter.quick_plot(del_delays_old,xvals=freqList,file='test_delDelays_old',square=False,ylims=(0,1))
+
+
+

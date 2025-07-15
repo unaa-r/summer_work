@@ -1,0 +1,719 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30238,        711]
+NotebookOptionsPosition[     29340,        688]
+NotebookOutlinePosition[     29734,        704]
+CellTagsIndexPosition[     29691,        701]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"variables", " ", "and", " ", "constants"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Npts", "=", 
+     RowBox[{"2", "^", "19"}]}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"number", " ", "of", " ", "points"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tmin", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tmax", "=", "400000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"t0", "=", "200000.0"}], ";"}], " ", 
+   RowBox[{"(*", "fs", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Sigma]", "=", "10.0"}], ";"}], " ", 
+   RowBox[{"(*", "fs", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"A", "=", "180337"}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{"fs", "^", "2"}], "*)"}], 
+   RowBox[{"(*", 
+    RowBox[{
+    "goes", " ", "from", " ", "10", "fs", " ", "to", " ", "100", "ps"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Aerf", " ", "=", "8300"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Aerfsuper", " ", "=", " ", "7450"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"deltat", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"tmax", "-", "tmin"}], ")"}], "/", "Npts"}]}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+    "the", " ", "spacing", " ", "between", " ", "consecutive", " ", "time", 
+     " ", "points"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"c", " ", "=", " ", "299792458"}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"m", "/", "s"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"w0", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"2", "*", "Pi", "*", 
+      RowBox[{"c", "/", "800"}], " ", "*", 
+      RowBox[{"(", 
+       RowBox[{"10", "^", 
+        RowBox[{"-", "6"}]}], ")"}]}], "//", "N", " "}]}]}]}]], "Input",
+ CellChangeTimes->{3.960911143110886*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"3b946038-6dab-461d-9186-3ac37f297361"],
+
+Cell[BoxData["2.3545644591360664`"], "Output",
+ CellChangeTimes->{3.960933461876135*^9, 3.960934433305682*^9, 
+  3.960934640537004*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"5cfe0b34-c42e-4ce7-bdec-547d4764d57f"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"phi", "[", "w_", "]"}], ":=", 
+    RowBox[{"A", "*", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"w", "-", "w0"}], ")"}], "^", "2"}]}]}], ";"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"Replace", " ", "with", " ", "your", " ", "function"}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"freqList", "=", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"2", "*", "Pi", "*", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"s", "-", "1"}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"deltat", "*", "Npts"}], ")"}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"s", ",", "1", ",", "Npts"}], "}"}]}], "]"}], "//", "N"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tList", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{"t", ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "tmin", ",", "tmax", ",", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"tmax", "-", "tmin"}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"Npts", "-", "1"}], ")"}]}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"phiList", " ", "=", " ", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"phi", "[", 
+       RowBox[{"freqList", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "Npts"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Show", "[", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"freqList", ",", "phiList"}], "}"}], "]"}], "]"}], "]"}], 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ELaser", "=", " ", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "_Real"}], "}"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "2"}], "*", 
+        RowBox[{"Log", "[", "2", "]"}], "*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"t", "-", "t0"}], ")"}], "^", "2"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"\[Sigma]", "^", "2"}], ")"}]}]}], "]"}], "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "I"}], "*", "w0", "*", "t"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Quiet", "[", 
+   RowBox[{"El", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"ELaser", "[", "t", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "tmin", ",", "tmax", ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"tmax", "-", "tmin"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"Npts", "-", "1"}], ")"}]}]}], "}"}]}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Elw", "=", 
+   RowBox[{"Fourier", "[", "El", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EcaTrue", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"InverseFourier", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Elw", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{"I", "*", 
+            RowBox[{"phiList", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "1", ",", " ", "Npts"}], "}"}]}], "]"}], "+", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Elw", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", "I"}], "*", 
+            RowBox[{"phiList", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "1", ",", " ", "Npts"}], "}"}]}], "]"}]}], 
+      "]"}], "]"}], "^", "2"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.960910564379545*^9, 3.960910605217057*^9}, {
+  3.9609106373342113`*^9, 3.960910714329969*^9}, {3.9609259794257402`*^9, 
+  3.960925979647719*^9}, {3.960930545586849*^9, 3.960930607427628*^9}, {
+  3.960932597500866*^9, 3.960932599415957*^9}, {3.960932881244687*^9, 
+  3.96093291528935*^9}, {3.960932964172324*^9, 3.9609329646751127`*^9}, {
+  3.960933985132928*^9, 3.960933985860284*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"797e18ae-4102-4b46-9433-650c17f25099"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\n", 
+  RowBox[{
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "xmin", ",", "xmax", ",", "xvals", ",", "mids", ",", "yvals", ",", 
+         "phiApproxList", ",", "stairs", ",", "Ec", ",", "Ea", ",", "phase", 
+         ",", "pulse", ",", "truepulse"}], "}"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{
+        RowBox[{
+         RowBox[{"phiApprox", "[", "w_", "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"mid", ",", "start", ",", "end", ",", "slope"}], "}"}], 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"mid", "=", 
+             RowBox[{
+              RowBox[{"bin", "*", 
+               RowBox[{"Floor", "[", 
+                RowBox[{"w", "/", "bin"}], "]"}]}], "+", 
+              RowBox[{"bin", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"start", "=", 
+             RowBox[{"mid", "-", 
+              RowBox[{"bin", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"end", "=", 
+             RowBox[{"mid", "+", 
+              RowBox[{"bin", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"slope", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"phi", "[", "end", "]"}], "-", 
+                RowBox[{"phi", "[", "start", "]"}]}], ")"}], "/", "bin"}]}], 
+            ";", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"phi", "[", "mid", "]"}], "+", 
+             RowBox[{"slopy", "*", "slope", "*", 
+              RowBox[{"(", 
+               RowBox[{"w", "-", "mid"}], ")"}]}]}]}]}], 
+          "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"xmin", "=", 
+         RowBox[{"w0", "-", "0.5"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"xmax", "=", 
+         RowBox[{"w0", "+", "0.5"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"xvals", "=", 
+         RowBox[{"Range", "[", 
+          RowBox[{"xmin", ",", "xmax", ",", "bin"}], "]"}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{"Bin", " ", "edges"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"mids", "=", 
+         RowBox[{
+          RowBox[{"Most", "[", "xvals", "]"}], "+", 
+          RowBox[{"bin", "/", "2"}]}]}], ";", 
+        RowBox[{"(*", "Midpoints", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"yvals", "=", 
+         RowBox[{"phi", "/@", "mids"}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{"Function", " ", "at", " ", "midpoints"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"phiApproxList", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"phiApprox", "[", 
+            RowBox[{"freqList", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "1", ",", "Npts"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"stairs", "=", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"xvals", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], ",", 
+                  RowBox[{"yvals", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"xvals", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"i", "+", "1"}], "]"}], "]"}], ",", 
+                  RowBox[{"yvals", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"Length", "[", "yvals", "]"}]}], "}"}]}], "]"}]}], 
+          ";"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"Ec", " ", "=", " ", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Elw", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "*", 
+            RowBox[{"Exp", "[", 
+             RowBox[{"I", "*", 
+              RowBox[{"phiApproxList", "[", 
+               RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", " ", "1", ",", " ", "Npts"}], "}"}]}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Ea", " ", "=", " ", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Elw", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "*", 
+            RowBox[{"Exp", "[", 
+             RowBox[{
+              RowBox[{"-", "I"}], "*", 
+              RowBox[{"phiApproxList", "[", 
+               RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", " ", "1", ",", " ", "Npts"}], "}"}]}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Eca", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"InverseFourier", "[", 
+            RowBox[{"Ec", "+", "Ea"}], "]"}], "]"}], "^", "2"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"phase", "=", 
+         RowBox[{"Show", "[", "\[IndentingNewLine]", 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{"Plot", "[", 
+             RowBox[{
+              RowBox[{"phi", "[", "x", "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}], ",", 
+              RowBox[{"PlotStyle", "->", "LightGray"}]}], "]"}], ","}], 
+           "*)"}], "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{
+             RowBox[{"Transpose", "[", 
+              RowBox[{"{", 
+               RowBox[{"freqList", ",", "phiList"}], "}"}], "]"}], ",", 
+             RowBox[{"PlotStyle", "->", "Green"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{
+             RowBox[{"Transpose", "[", 
+              RowBox[{"{", 
+               RowBox[{"freqList", ",", "phiApproxList"}], "}"}], "]"}], ",", 
+             
+             RowBox[{"PlotStyle", "->", "Blue"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{
+             RowBox[{"Graphics", "[", 
+              RowBox[{"{", 
+               RowBox[{"Thick", ",", "stairs"}], "}"}], "]"}], ","}], "*)"}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"PlotRange", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"xmin", ",", "xmax"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", 
+                RowBox[{"6", "*", 
+                 RowBox[{"10", "^", "4"}]}]}], "}"}]}], "}"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ImageSize", "->", "Large"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Axes", "->", "True"}]}], "\[IndentingNewLine]", "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"pulse", "=", 
+         RowBox[{"Show", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{
+             RowBox[{"Transpose", "[", 
+              RowBox[{"{", 
+               RowBox[{"tList", ",", "Eca"}], "}"}], "]"}], ",", 
+             RowBox[{"PlotStyle", "->", "Blue"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{
+             RowBox[{"Transpose", "[", 
+              RowBox[{"{", 
+               RowBox[{"tList", ",", "EcaTrue"}], "}"}], "]"}], ",", 
+             RowBox[{"PlotStyle", "->", "Green"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"PlotRange", "->", "All"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"ImageSize", "->", "Large"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Axes", "->", "True"}]}], "\[IndentingNewLine]", "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"truepulse", "=", 
+         RowBox[{"Show", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{
+             RowBox[{"Transpose", "[", 
+              RowBox[{"{", 
+               RowBox[{"tList", ",", "EcaTrue"}], "}"}], "]"}], ",", 
+             RowBox[{"PlotStyle", "->", "Green"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"PlotRange", "->", "All"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"ImageSize", "->", "Large"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Axes", "->", "True"}]}], "\[IndentingNewLine]", "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Column", "[", 
+         RowBox[{"{", 
+          RowBox[{"phase", ",", "pulse", ",", "truepulse"}], "}"}], "]"}]}]}],
+       "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"bin", ",", "0.05", ",", "\"\<Bin Width\>\""}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"InputField", "[", 
+         RowBox[{"#", ",", "Number", ",", 
+          RowBox[{"FieldSize", "->", "Medium"}]}], "]"}], "&"}]}], "}"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"slopy", ",", "0", ",", "\"\<Amount of Slope\>\""}], "}"}], 
+       ",", 
+       RowBox[{
+        RowBox[{"InputField", "[", 
+         RowBox[{"#", ",", "Number", ",", 
+          RowBox[{"FieldSize", "->", "Medium"}]}], "]"}], "&"}]}], "}"}]}], 
+    "\[IndentingNewLine]", "]"}], "\n", "\n", "\n"}]}]], "Input",
+ CellChangeTimes->{{3.96090865438129*^9, 3.960908654383512*^9}, 
+   3.960909429508902*^9, {3.960909473324679*^9, 3.9609095849813957`*^9}, {
+   3.9609096185178747`*^9, 3.960909622695262*^9}, {3.960909851176268*^9, 
+   3.960909923380015*^9}, {3.960909960635314*^9, 3.960909990405793*^9}, {
+   3.960910305062269*^9, 3.9609103617253027`*^9}, 3.960910647214334*^9, {
+   3.960910772233818*^9, 3.9609107797543497`*^9}, 3.960910865732543*^9, {
+   3.960911116335457*^9, 3.9609111296735783`*^9}, {3.960911171678419*^9, 
+   3.960911237432118*^9}, {3.960926014233658*^9, 3.960926015362216*^9}, {
+   3.960929685970693*^9, 3.9609297492556343`*^9}, {3.9609297886410227`*^9, 
+   3.960929790811369*^9}, {3.960929861146723*^9, 3.960929881617189*^9}, {
+   3.9609299193010406`*^9, 3.960930013919691*^9}, {3.96093076621671*^9, 
+   3.9609307726798573`*^9}, {3.960930803337109*^9, 3.960930809580269*^9}, {
+   3.960930858740004*^9, 3.9609308910536947`*^9}, {3.960930933434587*^9, 
+   3.9609309700705748`*^9}, {3.96093110279031*^9, 3.960931131202161*^9}, {
+   3.9609312153014097`*^9, 3.960931244500701*^9}, {3.960931368947919*^9, 
+   3.9609314486626787`*^9}, {3.960931504389449*^9, 3.960931536545101*^9}, {
+   3.9609316729378147`*^9, 3.9609317507548037`*^9}, {3.960931826919887*^9, 
+   3.960931885103078*^9}, {3.96093206462644*^9, 3.960932110385867*^9}, 
+   3.960932549337616*^9, {3.96093263935246*^9, 3.960932759595414*^9}, {
+   3.960932798961945*^9, 3.960932852981881*^9}, {3.960932933885256*^9, 
+   3.9609329826472282`*^9}, {3.960933033250553*^9, 3.9609330902513237`*^9}, {
+   3.960933290825739*^9, 3.9609333411427298`*^9}, {3.96093352139095*^9, 
+   3.960933521682455*^9}, {3.9609336463317623`*^9, 3.960933651705043*^9}, {
+   3.9609337285646152`*^9, 3.960933749632553*^9}, {3.9609339026610327`*^9, 
+   3.960934005984713*^9}, {3.960934332239758*^9, 3.960934397686932*^9}, {
+   3.960934524100685*^9, 3.960934568602788*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"090368ef-4be5-43f9-af13-0b93664a47fb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`bin$$ = 0.08, $CellContext`slopy$$ = 0.3, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`bin$$], 0.05, "Bin Width"}, 
+      InputField[#, Number, FieldSize -> Medium]& }, {{
+       Hold[$CellContext`slopy$$], 0, "Amount of Slope"}, 
+      InputField[#, Number, FieldSize -> Medium]& }}, Typeset`size$$ = {
+    576., {534.634033203125, 540.365966796875}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`bin$$ = 0.05, $CellContext`slopy$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`xmin$, $CellContext`xmax$, $CellContext`xvals$, \
+$CellContext`mids$, $CellContext`yvals$, $CellContext`phiApproxList$, \
+$CellContext`stairs$, $CellContext`Ec$, $CellContext`Ea$, \
+$CellContext`phase$, $CellContext`pulse$, $CellContext`truepulse$}, \
+$CellContext`phiApprox[
+           Pattern[$CellContext`w$, 
+            Blank[]]] := 
+         Module[{$CellContext`mid$, $CellContext`start$, $CellContext`end$, \
+$CellContext`slope$}, $CellContext`mid$ = $CellContext`bin$$ 
+              Floor[$CellContext`w$/$CellContext`bin$$] + $CellContext`bin$$/
+              2; $CellContext`start$ = $CellContext`mid$ - $CellContext`bin$$/
+             2; $CellContext`end$ = $CellContext`mid$ + $CellContext`bin$$/
+              2; $CellContext`slope$ = ($CellContext`phi[$CellContext`end$] - \
+$CellContext`phi[$CellContext`start$])/$CellContext`bin$$; \
+$CellContext`phi[$CellContext`mid$] + $CellContext`slopy$$ \
+$CellContext`slope$ ($CellContext`w$ - $CellContext`mid$)]; \
+$CellContext`xmin$ = $CellContext`w0 - 
+          0.5; $CellContext`xmax$ = $CellContext`w0 + 
+          0.5; $CellContext`xvals$ = 
+         Range[$CellContext`xmin$, $CellContext`xmax$, $CellContext`bin$$]; \
+$CellContext`mids$ = 
+         Most[$CellContext`xvals$] + $CellContext`bin$$/
+           2; $CellContext`yvals$ = 
+         Map[$CellContext`phi, $CellContext`mids$]; \
+$CellContext`phiApproxList$ = Table[
+           $CellContext`phiApprox[
+            Part[$CellContext`freqList, $CellContext`i]], {$CellContext`i, 
+            1, $CellContext`Npts}]; $CellContext`Ec$ = 
+         Table[Part[$CellContext`Elw, $CellContext`i] 
+           Exp[I Part[$CellContext`phiApproxList$, $CellContext`i]], \
+{$CellContext`i, 1, $CellContext`Npts}]; $CellContext`Ea$ = 
+         Table[Part[$CellContext`Elw, $CellContext`i] 
+           Exp[(-I) 
+             Part[$CellContext`phiApproxList$, $CellContext`i]], \
+{$CellContext`i, 1, $CellContext`Npts}]; $CellContext`Eca = Abs[
+            
+            InverseFourier[$CellContext`Ec$ + $CellContext`Ea$]]^2; \
+$CellContext`phase$ = Show[
+           ListPlot[
+            Transpose[{$CellContext`freqList, $CellContext`phiList}], 
+            PlotStyle -> Green], 
+           ListPlot[
+            Transpose[{$CellContext`freqList, $CellContext`phiApproxList$}], 
+            PlotStyle -> Blue], 
+           PlotRange -> {{$CellContext`xmin$, $CellContext`xmax$}, {
+             0, 6 10^4}}, ImageSize -> Large, Axes -> 
+           True]; $CellContext`pulse$ = Show[
+           ListPlot[
+            Transpose[{$CellContext`tList, $CellContext`Eca}], PlotStyle -> 
+            Blue], 
+           ListPlot[
+            Transpose[{$CellContext`tList, $CellContext`EcaTrue}], PlotStyle -> 
+            Green], PlotRange -> All, ImageSize -> Large, Axes -> 
+           True]; $CellContext`truepulse$ = Show[
+           ListPlot[
+            Transpose[{$CellContext`tList, $CellContext`EcaTrue}], PlotStyle -> 
+            Green], PlotRange -> All, ImageSize -> Large, Axes -> True]; 
+        Column[{$CellContext`phase$, $CellContext`pulse$, \
+$CellContext`truepulse$}]], 
+      "Specifications" :> {{{$CellContext`bin$$, 0.05, "Bin Width"}, 
+         InputField[#, Number, FieldSize -> 
+          Medium]& }, {{$CellContext`slopy$$, 0, "Amount of Slope"}, 
+         InputField[#, Number, FieldSize -> Medium]& }}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{620., {590., 595.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Input",
+ CellChangeTimes->{3.96093470489812*^9},
+ CellLabel->"In[23]:=",ExpressionUUID->"79261cc2-9d7c-430e-b8ad-fe49328b68a4"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`bin$$ = 0.08, $CellContext`slopy$$ = 0.5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`bin$$], 0.08, "Bin Width"}, 
+      InputField[#, Number, FieldSize -> Medium]& }, {{
+       Hold[$CellContext`slopy$$], 0.5, "Amount of Slope"}, 
+      InputField[#, Number, FieldSize -> Medium]& }}, Typeset`size$$ = {
+    576., {534.634033203125, 540.365966796875}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`bin$$ = 0.08, $CellContext`slopy$$ = 0.5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`xmin$, $CellContext`xmax$, $CellContext`xvals$, \
+$CellContext`mids$, $CellContext`yvals$, $CellContext`phiApproxList$, \
+$CellContext`stairs$, $CellContext`Ec$, $CellContext`Ea$, \
+$CellContext`phase$, $CellContext`pulse$, $CellContext`truepulse$}, \
+$CellContext`phiApprox[
+           Pattern[$CellContext`w$, 
+            Blank[]]] := 
+         Module[{$CellContext`mid$, $CellContext`start$, $CellContext`end$, \
+$CellContext`slope$}, $CellContext`mid$ = $CellContext`bin$$ 
+              Floor[$CellContext`w$/$CellContext`bin$$] + $CellContext`bin$$/
+              2; $CellContext`start$ = $CellContext`mid$ - $CellContext`bin$$/
+             2; $CellContext`end$ = $CellContext`mid$ + $CellContext`bin$$/
+              2; $CellContext`slope$ = ($CellContext`phi[$CellContext`end$] - \
+$CellContext`phi[$CellContext`start$])/$CellContext`bin$$; \
+$CellContext`phi[$CellContext`mid$] + $CellContext`slopy$$ \
+$CellContext`slope$ ($CellContext`w$ - $CellContext`mid$)]; \
+$CellContext`xmin$ = $CellContext`w0 - 
+          0.5; $CellContext`xmax$ = $CellContext`w0 + 
+          0.5; $CellContext`xvals$ = 
+         Range[$CellContext`xmin$, $CellContext`xmax$, $CellContext`bin$$]; \
+$CellContext`mids$ = 
+         Most[$CellContext`xvals$] + $CellContext`bin$$/
+           2; $CellContext`yvals$ = 
+         Map[$CellContext`phi, $CellContext`mids$]; \
+$CellContext`phiApproxList$ = Table[
+           $CellContext`phiApprox[
+            Part[$CellContext`freqList, $CellContext`i]], {$CellContext`i, 
+            1, $CellContext`Npts}]; $CellContext`Ec$ = 
+         Table[Part[$CellContext`Elw, $CellContext`i] 
+           Exp[I Part[$CellContext`phiApproxList$, $CellContext`i]], \
+{$CellContext`i, 1, $CellContext`Npts}]; $CellContext`Ea$ = 
+         Table[Part[$CellContext`Elw, $CellContext`i] 
+           Exp[(-I) 
+             Part[$CellContext`phiApproxList$, $CellContext`i]], \
+{$CellContext`i, 1, $CellContext`Npts}]; $CellContext`Eca = Abs[
+            
+            InverseFourier[$CellContext`Ec$ + $CellContext`Ea$]]^2; \
+$CellContext`phase$ = Show[
+           ListPlot[
+            Transpose[{$CellContext`freqList, $CellContext`phiList}], 
+            PlotStyle -> Green], 
+           ListPlot[
+            Transpose[{$CellContext`freqList, $CellContext`phiApproxList$}], 
+            PlotStyle -> Blue], 
+           PlotRange -> {{$CellContext`xmin$, $CellContext`xmax$}, {
+             0, 6 10^4}}, ImageSize -> Large, Axes -> 
+           True]; $CellContext`pulse$ = Show[
+           ListPlot[
+            Transpose[{$CellContext`tList, $CellContext`Eca}], PlotStyle -> 
+            Blue], 
+           ListPlot[
+            Transpose[{$CellContext`tList, $CellContext`EcaTrue}], PlotStyle -> 
+            Green], PlotRange -> All, ImageSize -> Large, Axes -> 
+           True]; $CellContext`truepulse$ = Show[
+           ListPlot[
+            Transpose[{$CellContext`tList, $CellContext`EcaTrue}], PlotStyle -> 
+            Green], PlotRange -> All, ImageSize -> Large, Axes -> True]; 
+        Column[{$CellContext`phase$, $CellContext`pulse$, \
+$CellContext`truepulse$}]], 
+      "Specifications" :> {{{$CellContext`bin$$, 0.08, "Bin Width"}, 
+         InputField[#, Number, FieldSize -> 
+          Medium]& }, {{$CellContext`slopy$$, 0.5, "Amount of Slope"}, 
+         InputField[#, Number, FieldSize -> Medium]& }}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{620., {590., 595.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.960934886184855*^9, 3.960934976211541*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"1ff943db-29f6-441a-a6f9-eb3b6fefb066"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, 70}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5ed5cd5d-66f3-47d0-95db-411d16d4fab2"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1990, 56, 262, "Input",ExpressionUUID->"3b946038-6dab-461d-9186-3ac37f297361"],
+Cell[2573, 80, 214, 3, 34, "Output",ExpressionUUID->"5cfe0b34-c42e-4ce7-bdec-547d4764d57f"]
+}, Open  ]],
+Cell[2802, 86, 4510, 131, 262, "Input",ExpressionUUID->"797e18ae-4102-4b46-9433-650c17f25099"],
+Cell[7315, 219, 11733, 264, 1060, "Input",ExpressionUUID->"090368ef-4be5-43f9-af13-0b93664a47fb"],
+Cell[CellGroupData[{
+Cell[19073, 487, 5109, 98, 1200, "Input",ExpressionUUID->"79261cc2-9d7c-430e-b8ad-fe49328b68a4"],
+Cell[24185, 587, 5139, 98, 1204, "Output",ExpressionUUID->"1ff943db-29f6-441a-a6f9-eb3b6fefb066"]
+}, Open  ]]
+}
+]
+*)
+
