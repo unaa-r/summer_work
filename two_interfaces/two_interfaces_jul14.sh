@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=two_interfaces_jul8_ghm
+#SBATCH --job-name=two_interfaces_jul11_ghm
 #SBATCH --cpus-per-task=32
 #SBATCH --time=6:00:00
 #SBATCH --output=two_interfaces_jul8_ghm.out
