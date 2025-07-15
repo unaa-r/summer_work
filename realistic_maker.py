@@ -138,7 +138,11 @@ def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
     SFG_band = SFG_data[:, (wavelengths >= 400 - (integration_range/2)) & (wavelengths <= 400 + (integration_range/2))]
     signal_vs_tau = np.sum(SFG_band, axis=1)
     
-    
+    if np.all(SFG_band == 0):
+        print(f"⚠️ SFG_band all zero for L = {L}")
+        print(" min wl:", np.min(wavelengths), " max wl:", np.max(wavelengths))
+        print(" band range:", 400 - (integration_range / 2), "-", 400 + (integration_range / 2))
+
     
     out_path = os.path.join(output_dir, f"L{L}.txt")
     with open(out_path, 'w') as f:
@@ -345,6 +349,8 @@ if __name__ == "__main__":
 
     epsilon = np.nan_to_num(epsilon, nan=1e-6, posinf=1e-6, neginf=1e-6)
     epsilon = np.clip(epsilon, -1e6, 1e6)  # or tighter limits
+    print("🧪 epsilon stats — min:", np.min(epsilon), " max:", np.max(epsilon), " nan:", np.isnan(epsilon).any())
+
 
     # Path builder
     def p(chirp_type, c, style):
@@ -393,6 +399,12 @@ if __name__ == "__main__":
         Ea_erf_realistic = chirper(Ews, -erf_phase_realistic) * SLM_mask
         Ec_superf_realistic = chirper(Ews, superf_phase_realistic) * superf_SLM_mask
         Ea_superf_realistic = chirper(Ews, -superf_phase_realistic) * superf_SLM_mask
+
+        print("🧪 max |Ec_lin_ideal|:", np.max(np.abs(Ec_lin_ideal)))
+        print("🧪 max |Ea_lin_ideal|:", np.max(np.abs(Ea_lin_ideal)))
+        print("🧪 max |Ec_lin_realistic|:", np.max(np.abs(Ec_lin_realistic)))
+        print("🧪 max |Ea_lin_realistic|:", np.max(np.abs(Ea_lin_realistic)))
+
 
         for L in Lvals:
             
