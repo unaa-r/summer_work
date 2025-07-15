@@ -127,6 +127,10 @@ def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
     for tau in taus:
         Eref_w = Ereffer(Ec, Ea, ws, tau)
         Esfg_t = np.conj(ifft(np.conj(Eref_w), norm="ortho")) * Esamp_t
+
+        print("Esamp_t max:", np.max(np.abs(Esamp_t)))
+        print("Eref_t max:", np.max(np.abs(ifft(np.conj(Eref_w), norm='ortho'))))
+
         Esfg_w = np.conj(fft(np.conj(Esfg_t), norm="ortho"))
         Isfg_w = np.abs(Esfg_w)**2
         SFG_data.append(Isfg_w)
@@ -408,7 +412,7 @@ if __name__ == "__main__":
                 if not os.path.exists(p("super_erf", c, "realistic") + f"/L{L}.txt"):
                     tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
             else:
-                tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
+                tasks.append((L, Ews, Ews, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
                 tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
                 tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c, "ideal")))
 
