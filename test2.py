@@ -138,13 +138,10 @@ def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
     SFG_band = SFG_data[:, (wavelengths >= 400 - (integration_range/2)) & (wavelengths <= 400 + (integration_range/2))]
     signal_vs_tau = np.sum(SFG_band, axis=1)
     
-    
+    print(f"L={L} | Signal max: {np.max(signal_vs_tau)}, min: {np.min(signal_vs_tau)}")
     
     out_path = os.path.join(output_dir, f"L{L}.txt")
-    with open(out_path, 'w') as f:
-        np.savetxt(f, signal_vs_tau, fmt="%.15f")
-        f.flush()
-        os.fsync(f.fileno())
+    np.savetxt(out_path, signal_vs_tau, fmt="%.15f")
     #print(f"✅ {chirp_type} L={L} saved.")
 
 def run_cpi_unpack(args):
@@ -351,10 +348,8 @@ if __name__ == "__main__":
         return f"./results/{folder_name}/{chirp_type}/chirp_{c}/{style}"
     
     mask_indices = find_mask_indices(ws, w_0, fwhm, num_pixels)
-    superf_indices = find_mask_indices(ws, w_0, sigma_s, num_pixels)
 
     SLM_mask = realistic_SLM_mask(mask_indices, ws)
-    superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
 
     for c in chirp_params:
 
@@ -367,57 +362,31 @@ if __name__ == "__main__":
                         shutil.rmtree(folder)
 
         # Create necessary folders
-        for chirp_type in ["linear", "erf", "super_erf"]:
+        for chirp_type in ["linear"]:
             os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/ideal", exist_ok=True)
             os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/realistic", exist_ok=True)
 
         # Phase generation
         lin_phase = lin_chirp(c, ws, w_0)
-        erf_phase = erf_chirp(c, ws, w_0, fwhm)
-        superf_phase = superf_chirp(c, ws, w_0, sigma_s)
 
         Ec_lin_ideal = chirper(Ews, lin_phase)
         Ea_lin_ideal = chirper(Ews, -lin_phase)
-        Ec_erf_ideal = chirper(Ews, erf_phase)
-        Ea_erf_ideal = chirper(Ews, -erf_phase)
-        Ec_superf_ideal = chirper(Ews, superf_phase)
-        Ea_superf_ideal = chirper(Ews, -superf_phase)
 
         lin_phase_realistic = realistic_SLM_phase(ws, lin_phase, mask_indices, num_pixels, bit_levels)
-        erf_phase_realistic = realistic_SLM_phase(ws, erf_phase, mask_indices, num_pixels, bit_levels)
-        superf_phase_realistic = realistic_SLM_phase(ws, superf_phase, superf_indices, num_pixels, bit_levels)
 
         Ec_lin_realistic = chirper(Ews, lin_phase_realistic) * SLM_mask
         Ea_lin_realistic = chirper(Ews, -lin_phase_realistic) * SLM_mask
-        Ec_erf_realistic = chirper(Ews, erf_phase_realistic) * SLM_mask
-        Ea_erf_realistic = chirper(Ews, -erf_phase_realistic) * SLM_mask
-        Ec_superf_realistic = chirper(Ews, superf_phase_realistic) * superf_SLM_mask
-        Ea_superf_realistic = chirper(Ews, -superf_phase_realistic) * superf_SLM_mask
+
+        print(np.max(Ec_lin_realistic))
 
         for L in Lvals:
             
             if no_overwrite:
-                if not os.path.exists(p("linear", c,"ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
-                if not os.path.exists(p("erf", c, "ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
-                if not os.path.exists(p("super_erf", c, "ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c,"ideal")))
+                continue
 
-                if not os.path.exists(p("linear", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", c, "realistic")))
-                if not os.path.exists(p("erf", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", c, "realistic")))
-                if not os.path.exists(p("super_erf", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
             else:
                 tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
-                tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
-                tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c, "ideal")))
-
                 tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", c, "realistic")))
-                tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", c, "realistic")))
-                tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
 
             
     # Run in parallel using 4 workers
