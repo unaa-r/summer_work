@@ -5,7 +5,7 @@
 #SBATCH --output=two_interfaces_jul15_nv.out
 #SBATCH --mail-user=n2costa@uwaterloo.ca
 #SBATCH --mail-type=ALL
-#SBATCH --mem=64G
+#SBATCH --mem=128G
 
 module load python
 
