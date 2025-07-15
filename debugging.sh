@@ -9,4 +9,4 @@
 
 module load python/3.13.2
 
-srun python -u dip_maker.py "$@"
+srun python -u realistic_maker.py "$@"
