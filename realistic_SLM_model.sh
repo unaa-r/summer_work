@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=realistic_SLM_model
-#SBATCH --cpus-per-task=64
-#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=32
+#SBATCH --time=8:00:00
 #SBATCH --output=test_output.out
 #SBATCH --mail-user=urajnis@uwaterloo.ca
 #SBATCH --mail-type=ALL
