@@ -341,6 +341,12 @@ if __name__ == "__main__":
     # Path builder
     def p(chirp_type, c, style):
         return f"./results/{folder_name}/{chirp_type}/chirp_{c}/{style}"
+    
+    mask_indices = find_mask_indices(ws, w_0, fwhm, num_pixels)
+    superf_indices = find_mask_indices(ws, w_0, sigma_s, num_pixels)
+
+    SLM_mask = realistic_SLM_mask(mask_indices, ws)
+    superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
 
     for c in chirp_params:
 
@@ -368,12 +374,6 @@ if __name__ == "__main__":
         Ea_erf_ideal = chirper(Ews, -erf_phase)
         Ec_superf_ideal = chirper(Ews, superf_phase)
         Ea_superf_ideal = chirper(Ews, -superf_phase)
-
-        mask_indices = find_mask_indices(ws, w_0, fwhm)
-        superf_indices = find_mask_indices(ws, w_0, sigma_s)
-
-        SLM_mask = realistic_SLM_mask(mask_indices, ws)
-        superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
 
         lin_phase_realistic = realistic_SLM_phase(ws, lin_phase, mask_indices, num_pixels, bit_levels)
         erf_phase_realistic = realistic_SLM_phase(ws, erf_phase, mask_indices, num_pixels, bit_levels)
