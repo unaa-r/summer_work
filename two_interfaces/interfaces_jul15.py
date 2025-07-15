@@ -251,7 +251,7 @@ Lvals = np.arange(0, 64001, 800)  # fs^2 units or length in mm?
 hotLvals = np.arange(0, 64001, 8000)  # for heatmaps
 coldLvals = np.arange(0,64001,8000)
 
-Lvals = np.array([10])  # fs^2 units or length in mm?
+Lvals = np.arange(10,10.4,0.008)  # fs^2 units or length in mm?
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
 
@@ -507,6 +507,10 @@ def main():
     filenameErf3Realistic = filenamedips + "_lossless_erf_s12.0_"
     filenameVphRealistic = filenamedips + "_lossless_vph_"
 
+    names = [filenameLinLossless,filenameErf1Lossless,filenameErf2Lossless,filenameErf3Lossless,filenameVphLossless,
+             filenameLinRealistic,filenameErf1Realistic,filenameErf2Realistic,filenameErf3Realistic,filenameVphRealistic,]
+
+
     paramsLinLossless = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_lossless, lin_ch, (A, w0)
     paramsErf1Lossless = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_lossless, erf_ch, (b1, s1, w0)
     paramsErf2Lossless = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_lossless, erf_ch, (b2, s2, w0)
@@ -518,9 +522,9 @@ def main():
     paramsErf3Realistic = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_transfer, erf_ch, (b3, s3, w0)
     paramsVphRealistic = tlist, dt, freqList, Elw, eList, tauList, xticks, yticks, slab_transfer, step_ch, (50000, w0)
 
-    for params in [paramsLinLossless, paramsErf1Lossless, paramsErf2Lossless, paramsErf3Lossless, paramsVphLossless,
-                   paramsLinRealistic, paramsErf1Realistic, paramsErf2Realistic, paramsErf3Realistic, paramsVphRealistic]:
-        interfere(rules, filenamedips, filenamewidths, filenamechisqs, params, fit=False)
+    for k, params in enumerate([paramsLinLossless, paramsErf1Lossless, paramsErf2Lossless, paramsErf3Lossless, paramsVphLossless,
+                   paramsLinRealistic, paramsErf1Realistic, paramsErf2Realistic, paramsErf3Realistic, paramsVphRealistic]):
+        interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False)
 
     return None
 
