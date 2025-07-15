@@ -116,6 +116,10 @@ def water_epsilon(w, w0, T=20, S=0):
 
 def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
   
+    if np.all(np.abs(Ec) < 1e-12) or np.all(np.abs(Ea) < 1e-12):
+        print(f"Warning: Ec or Ea near zero for L = {L}")
+
+
     Esamp_w = Esampler(Ec, Ea, epsilon*L)
     Esamp_t = np.conj(ifft(np.conj(Esamp_w), norm="ortho"))
 
@@ -134,7 +138,8 @@ def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
     SFG_band = SFG_data[:, (wavelengths >= 400 - (integration_range/2)) & (wavelengths <= 400 + (integration_range/2))]
     signal_vs_tau = np.sum(SFG_band, axis=1)
     
-   
+    print(f"L={L} | Signal max: {np.max(signal_vs_tau)}, min: {np.min(signal_vs_tau)}")
+    
     out_path = os.path.join(output_dir, f"L{L}.txt")
     np.savetxt(out_path, signal_vs_tau, fmt="%.15f")
     #print(f"✅ {chirp_type} L={L} saved.")
