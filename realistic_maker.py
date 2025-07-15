@@ -180,7 +180,7 @@ def find_mask_indices(ws, w_0, fwhm, num_pixels):
     i_center = np.argmin(np.abs(ws - w_0))
 
     # Step 2: Desired number of modulation points (must be divisible by num_pixels)
-    dw = ws[1] - ws[0]
+    dw = ws[2] - ws[1]
     mod_bw = 3 * fwhm_w  # Total width = ±1.5*fwhm
     N_target = int(np.round(mod_bw / dw))  # number of points in ±3*fwhm
 
@@ -315,7 +315,7 @@ if __name__ == "__main__":
     # Build task list
     tasks = []
 
-    ws[0] = ws[1]
+    ws[0] = 1e-6
 
     match dispersion_type:
         case "freshwater":
