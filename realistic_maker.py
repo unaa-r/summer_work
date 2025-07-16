@@ -408,27 +408,27 @@ if __name__ == "__main__":
         for L in Lvals:
             
             if no_overwrite:
-                if not os.path.exists(p("linear", c,"ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
-                if not os.path.exists(p("erf", c, "ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
-                if not os.path.exists(p("super_erf", c, "ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c,"ideal")))
+                if not os.path.exists(p("linear", chirp,"ideal") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", chirp, "ideal")))
+                if not os.path.exists(p("erf", chirp, "ideal") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", chirp, "ideal")))
+                if not os.path.exists(p("super_erf", chirp, "ideal") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", chirp,"ideal")))
 
-                if not os.path.exists(p("linear", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", c, "realistic")))
-                if not os.path.exists(p("erf", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", c, "realistic")))
-                if not os.path.exists(p("super_erf", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
+                if not os.path.exists(p("linear", chirp, "realistic") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", chirp, "realistic")))
+                if not os.path.exists(p("erf", chirp, "realistic") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", chirp, "realistic")))
+                if not os.path.exists(p("super_erf", chirp, "realistic") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", chirp, "realistic")))
             else:
-                tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
-                tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
-                tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c, "ideal")))
+                tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", chirp, "ideal")))
+                tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", chirp, "ideal")))
+                tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", chirp, "ideal")))
 
-                tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", c, "realistic")))
-                tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", c, "realistic")))
-                tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
+                tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", chirp, "realistic")))
+                tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", chirp, "realistic")))
+                tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", chirp, "realistic")))
 
             
     # Run in parallel using 4 workers
