@@ -455,7 +455,7 @@ def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params,
                 plt.xlabel("τ (fs)")
                 plt.ylabel("Integrated Intensity")
                 plt.tight_layout()
-                plt.savefig(os.path.join(directpath, 'results', filenamedips, f"dip_{L}.png"))
+                plt.savefig(os.path.join(directpath, 'results', filenamedips, f"dip_{L:.3f}.png"))
                 plt.close()
             
             #trying to solve memory problems -- didn't work :(
@@ -501,11 +501,11 @@ def main():
     filenameErf2Lossless = filenamedips + "_lossless_erf_s11.0_"
     filenameErf3Lossless = filenamedips + "_lossless_erf_s12.0_"
     filenameVphLossless = filenamedips + "_lossless_vph_"
-    filenameLinRealistic = filenamedips + "_lossless_lin_"
-    filenameErf1Realistic = filenamedips + "_lossless_erf_s10.0_"
-    filenameErf2Realistic = filenamedips + "_lossless_erf_s11.0_"
-    filenameErf3Realistic = filenamedips + "_lossless_erf_s12.0_"
-    filenameVphRealistic = filenamedips + "_lossless_vph_"
+    filenameLinRealistic = filenamedips + "_realistic_lin_"
+    filenameErf1Realistic = filenamedips + "_realistic_erf_s10.0_"
+    filenameErf2Realistic = filenamedips + "_realistic_erf_s11.0_"
+    filenameErf3Realistic = filenamedips + "_realistic_erf_s12.0_"
+    filenameVphRealistic = filenamedips + "_realistic_vph_"
 
     names = [filenameLinLossless,filenameErf1Lossless,filenameErf2Lossless,filenameErf3Lossless,filenameVphLossless,
              filenameLinRealistic,filenameErf1Realistic,filenameErf2Realistic,filenameErf3Realistic,filenameVphRealistic,]
