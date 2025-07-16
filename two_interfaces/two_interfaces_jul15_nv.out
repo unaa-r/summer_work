@@ -1,8 +1,8 @@
-Top-level running in PID 12567 (name=__main__)
-MID-level running in PID 12567 (name=__main__)
+Top-level running in PID 3824522 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (-7.517729831990187e-10+9.838404890644257e-10j)
-this thing psm_ccde2bc7
+this thing psm_2a65ae82
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -363,10 +363,10 @@ ESFGt (-1.1143423387839007e-26+1.4736370535464978e-26j)
 ESFGw (-6.8595303048812895e-15+2.5457067009959644e-15j)
 intensity 5.353377861108055e-29
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (3.040848814903593e-12-3.979539371706424e-12j)
-this thing psm_92fbb914
+this thing psm_c358b50c
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -727,10 +727,10 @@ ESFGt (5.31941652028229e-28-1.0169029408696863e-27j)
 ESFGw (-3.1973798608753157e-12+1.284614775665105e-12j)
 intensity 1.187347309658816e-23
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (7.517411329896179e-10-9.837988068993388e-10j)
-this thing psm_2683384b
+this thing psm_3c3689d1
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -1091,10 +1091,10 @@ ESFGt (-7.037213728316322e-29+1.726277833657135e-27j)
 ESFGw (2.1219206947087343e-12-1.0971071273679911e-11j)
 intensity 1.2486695232679774e-22
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (-7.324645957611237e-10+9.585717260675052e-10j)
-this thing psm_218d1cc9
+this thing psm_c97f03cb
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -1455,10 +1455,10 @@ ESFGt (2.6711299425373506e-28+8.371930500477263e-28j)
 ESFGw (5.020168308833561e-12+1.2274792293709424e-11j)
 intensity 1.7587261570272512e-22
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (7.397199639011573e-10-9.680667798919434e-10j)
-this thing psm_fc190176
+this thing psm_1c00ec65
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -1819,10 +1819,10 @@ ESFGt (-3.855870430711371e-21+1.0044247084539465e-21j)
 ESFGw (-4.227049266170013e-12-1.6571678057575312e-11j)
 intensity 2.924884591425515e-22
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (-7.517729831990187e-10+9.838404890644257e-10j)
-this thing psm_678f16c7
+this thing psm_2905956b
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -2183,10 +2183,10 @@ ESFGt (-6.905467703514467e-27+4.435518324693794e-27j)
 ESFGw (-1.2073675392798577e-15-1.212138028838794e-16j)
 intensity 1.4724291609162704e-30
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (3.040848814903593e-12-3.979539371706424e-12j)
-this thing psm_f2bcbb24
+this thing psm_f47e63e0
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -2547,10 +2547,10 @@ ESFGt (1.5410891107438455e-28-2.645796702034757e-28j)
 ESFGw (-8.458264470767585e-13+3.911489188102024e-13j)
 intensity 8.68419855260883e-25
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (7.517411329896179e-10-9.837988068993388e-10j)
-this thing psm_8bb36228
+this thing psm_f25cbbf5
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -2911,10 +2911,10 @@ ESFGt (-2.8594228281774893e-29+4.328796681792922e-28j)
 ESFGw (3.811881366111436e-13-2.892564660017527e-12j)
 intensity 8.512234707875389e-24
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (-7.324645957611237e-10+9.585717260675052e-10j)
-this thing psm_34125d98
+this thing psm_58bb6c9c
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
@@ -3275,10 +3275,10 @@ ESFGt (4.0312953210376616e-29+2.1656018975888216e-28j)
 ESFGw (1.5780037866675034e-12+3.201162425414683e-12j)
 intensity 1.2737536824623798e-23
 finishing 10.399999999999956
-MID-level running in PID 12567 (name=__main__)
+MID-level running in PID 3824522 (name=__main__)
 E1_shared element:  0j
 E1 element:  (7.397199639011573e-10-9.680667798919434e-10j)
-this thing psm_650f6778
+this thing psm_1aa4d3b6
 ill try to just make an array with this now
 testfreq element:  0.0
 did it
