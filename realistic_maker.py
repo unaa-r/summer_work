@@ -157,7 +157,7 @@ def run_cpi_unpack(args):
     return run_cpi_for_L(*args)
 
 def lin_chirp(A, w, w_0):
-    return A * ((w - w_0) ** 2)
+    return 0.5 * A * ((w - w_0) ** 2)
 
 def erf_chirp(B, w, w_0, sigma):
     x = (w - w_0) * 2 * sigma / np.sqrt(2 * np.log(256))
@@ -186,7 +186,7 @@ def chirper(Ews, phi):
 #    our mask over, set the value of indices corresponding to each bin to the value of that bin
 #
 
-def find_mask_indices(ws, w_0, fwhm, num_pixels):
+def find_mask_indices(ws, w_0, fwhm, num_pixels = 800):
     #from fwhm t * fwhm f = 2 ln 2/pi (gaussian pulse) and w = 2pi*f
     fwhm_w = 4*np.log(2)/fwhm
     
@@ -213,7 +213,16 @@ def find_mask_indices(ws, w_0, fwhm, num_pixels):
         i_end = len(ws)
         i_start = i_end - N_target
 
-    return np.arange(i_start, i_end)
+    mask_indices = np.arange(i_start, i_end)
+
+    ws_mod = ws[mask_indices]
+
+    # Step 2: Bin to n pixels (averaging unwrapped phase)
+    bin_edges = np.linspace(ws_mod[0], ws_mod[-1], num_pixels + 1)
+    delta_w = ws[mask_indices[-1]] - ws[mask_indices[0]] #bandwidth; amount of frequencies between SLM edges
+    del_w = bin_edges[1] - bin_edges[0] #frequency spacing between adjacent bins
+
+    return  mask_indices, delta_w, del_w
 
 def realistic_SLM_mask(mask_indices, ws):
     SLM_mask = np.zeros_like(ws)
@@ -244,6 +253,39 @@ def realistic_SLM_phase(ws, phase, mask_indices, num_pixels = 800, bit_depth = 2
     phi_test = phi_test/(bit_depth - 1) * np.pi * 2
 
     return phi_test
+
+'''
+Finding max possible chirping!
+
+applying a spectral phase phi but discretely, where the difference between frequencies at each bin edge (pixel)
+is del_w.
+To avoid aliasing, phase change between adjacent pixels must be less than pi -> |phi(w + del_w) - phi(w)| < pi
+
+For linear, phi = (A/2)(w - w_0)**2
+Using that at the extreme case (aka ends of w spectrum), w - w_0 = delta_w/2, we get
+
+A < 2pi/(del_w*delta_w + del_w^2)
+
+For erf, phi = B * psi(x), where psi(x) = (e^-x^2 - 1)/sqrt(pi) + xerfx
+x =  (constant terms) * (w - w0)
+del_x = (constant terms) *(del_w -> frequency spacing bw pixels)
+
+so for erf |phi(w + del_w) - phi(w)| < pi = |B||psi(x + del_x) - psi(x)|
+
+-> |B| < pi/|psi(x + del_x) - psi(x)|
+and again, replacing w - w0 with  delta_w/2 for the worst case at the edges
+'''
+def get_max_chirp_lin(delta_w, del_w):
+    return 2*np.pi/(del_w*delta_w + del_w**2)
+
+def get_max_chirp_erf(delta_w, del_w, sigma):
+    x_del = (delta_w/2 + del_w)*2*sigma/np.sqrt(2*np.log(256))
+    x = (delta_w/2)*2*sigma/np.sqrt(2*np.log(256))
+
+    def psi(a):
+        return (np.exp(-(a**2)) - 1)/np.sqrt(np.pi) + a*erf(a)
+
+    return np.pi/np.abs(psi(x_del) - psi(x))
 
 
 # Constants
@@ -279,8 +321,6 @@ if __name__ == "__main__":
     Ews = np.conj(fft(np.conj(Es), norm='ortho'))
     ws = 2 * np.pi * np.arange(Npts) / (Npts * dt)
 
-    chirp_params = [1, 10, 100, 1000, 10000, 100000]
-
     ###This is what you can modify###
 
     taus = np.arange(-args.tau_range, args.tau_range + .5, 0.5)
@@ -293,6 +333,22 @@ if __name__ == "__main__":
     num_pixels = args.num_pixels
 
     #################################
+
+    #finding SLM mask indices, estimated max chirp for linear , erf, super erf, and making the SLM masks
+    mask_indices, delta_w, del_w = find_mask_indices(ws, w_0, fwhm, num_pixels)
+    superf_indices, delta_w_superf, del_w_superf = find_mask_indices(ws, w_0, sigma_s, num_pixels)
+
+    max_lin_chirp = get_max_chirp_lin(delta_w, del_w)
+    max_erf_chirp = get_max_chirp_erf(delta_w, del_w, fwhm)
+    max_superf_chirp = get_max_chirp_erf(delta_w, del_w, sigma_s)
+
+    SLM_mask = realistic_SLM_mask(mask_indices, ws)
+    superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
+
+    lin_chirps = [round(num) for num in [max_lin_chirp/10, max_lin_chirp/2, max_lin_chirp, 2*max_lin_chirp, 10*max_lin_chirp]]
+    erf_chirps = [round(num) for num in [max_erf_chirp/10, max_erf_chirp/2, max_erf_chirp, 2*max_erf_chirp, 10*max_erf_chirp]]
+    superf_chirps = [round(num) for num in [max_superf_chirp/10, max_superf_chirp/2, max_superf_chirp, 2*max_superf_chirp, 10*max_superf_chirp]]
+
 
     # Remove existing folders (if not no_overwrite)
     folder = f"results/{folder_name}"
@@ -311,6 +367,10 @@ if __name__ == "__main__":
         f.write(f"{args.L_stepsize}\n")
         f.write(f"{bit_levels}\n")
         f.write(f"{num_pixels}\n")
+        f.write(f"{max_lin_chirp:.2f}\n")
+        f.write(f"{max_erf_chirp:.2f}\n")
+        f.write(f"{max_superf_chirp:.2f}\n")
+        
 
     with open(f"results/{folder_name}/run_info.txt", 'w') as f:
         f.write(f"Dispersion type: {dispersion_type}\n")
@@ -320,6 +380,9 @@ if __name__ == "__main__":
         f.write(f"L stepsize: {args.L_stepsize} um\n")
         f.write(f"Bit levels: {bit_levels} unique values\n")
         f.write(f"Number of SLM pixels: {num_pixels}\n")
+        f.write(f"Estimated Max Linear Chirp: {max_lin_chirp:.2f}\n")
+        f.write(f"Estimated Max Erf Chirp: {max_erf_chirp:.2f}\n")
+        f.write(f"Estimated Max Super Erf Chirp: {max_superf_chirp:.2f}\n")
 
     print(f"📊 Sweeping {len(Lvals)} dispersion values")
 
@@ -348,38 +411,36 @@ if __name__ == "__main__":
 
     epsilon = np.nan_to_num(epsilon, nan=1e-6, posinf=1e-6, neginf=1e-6)
     epsilon = np.clip(epsilon, -1e6, 1e6)  # or tighter limits
-    print("🧪 epsilon stats — min:", np.min(epsilon), " max:", np.max(epsilon), " nan:", np.isnan(epsilon).any())
-
 
     # Path builder
-    def p(chirp_type, c, style):
-        return f"./results/{folder_name}/{chirp_type}/chirp_{c}/{style}"
+    def p(chirp_type, chirp, style):
+        return f"./results/{folder_name}/{chirp_type}/chirp_{chirp}/{style}"
     
-    mask_indices = find_mask_indices(ws, w_0, fwhm, num_pixels)
-    superf_indices = find_mask_indices(ws, w_0, sigma_s, num_pixels)
-
-    SLM_mask = realistic_SLM_mask(mask_indices, ws)
-    superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
-
-    for chirp in chirp_params:
+    for i in range(5):
 
         # Remove existing folders (if not no_overwrite)
         if not no_overwrite:
-            for chirp_type in ["linear", "erf", "super_erf"]:
-                for style in ["ideal", "realistic"]:
-                    folder = f"results/{folder_name}/{chirp_type}/chirp_{c}/{style}"
-                    if os.path.exists(folder):
-                        shutil.rmtree(folder)
+            for style in ["ideal", "realistic"]:
+                lin = f"results/{folder_name}/linear/chirp_{lin_chirps[i]}/{style}"
+                erf = f"results/{folder_name}/linear/chirp_{erf_chirps[i]}/{style}"
+                superf = f"results/{folder_name}/linear/chirp_{superf_chirps[i]}/{style}"
+                if os.path.exists(lin):
+                    shutil.rmtree(lin)
+                if os.path.exists(erf):
+                    shutil.rmtree(erf)
+                if os.path.exists(superf):
+                    shutil.rmtree(superf)
 
         # Create necessary folders
-        for chirp_type in ["linear", "erf", "super_erf"]:
-            os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/ideal", exist_ok=True)
-            os.makedirs(f"results/{folder_name}/{chirp_type}/chirp_{c}/realistic", exist_ok=True)
+        for style in ["ideal", "realistic"]:
+            os.makedirs(f"results/{folder_name}/linear/chirp_{lin_chirps[i]}/{style}", exist_ok=True)
+            os.makedirs(f"results/{folder_name}/linear/chirp_{erf_chirps[i]}/{style}", exist_ok=True)
+            os.makedirs(f"results/{folder_name}/linear/chirp_{superf_chirps[i]}/{style}", exist_ok=True)
 
         # Phase generation
-        lin_phase = lin_chirp(chirp, ws, w_0)
-        erf_phase = erf_chirp(chirp, ws, w_0, fwhm)
-        superf_phase = superf_chirp(chirp, ws, w_0, sigma_s)
+        lin_phase = lin_chirp(lin_chirps[i], ws, w_0)
+        erf_phase = erf_chirp(erf_chirps[i], ws, w_0, fwhm)
+        superf_phase = superf_chirp(superf_chirps[i], ws, w_0, sigma_s)
 
         Ec_lin_ideal = chirper(Ews, lin_phase)
         Ea_lin_ideal = chirper(Ews, -lin_phase)
@@ -399,36 +460,30 @@ if __name__ == "__main__":
         Ec_superf_realistic = chirper(Ews, superf_phase_realistic) * superf_SLM_mask
         Ea_superf_realistic = chirper(Ews, -superf_phase_realistic) * superf_SLM_mask
 
-        print("🧪 max |Ec_lin_ideal|:", np.max(np.abs(Ec_lin_ideal)))
-        print("🧪 max |Ea_lin_ideal|:", np.max(np.abs(Ea_lin_ideal)))
-        print("🧪 max |Ec_lin_realistic|:", np.max(np.abs(Ec_lin_realistic)))
-        print("🧪 max |Ea_lin_realistic|:", np.max(np.abs(Ea_lin_realistic)))
-
-
         for L in Lvals:
             
             if no_overwrite:
-                if not os.path.exists(p("linear", c,"ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
-                if not os.path.exists(p("erf", c, "ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
-                if not os.path.exists(p("super_erf", c, "ideal") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c,"ideal")))
+                if not os.path.exists(p("linear", lin_chirps[i],"ideal") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", lin_chirps[i], "ideal")))
+                if not os.path.exists(p("erf", erf_chirps[i], "ideal") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", erf_chirps[i], "ideal")))
+                if not os.path.exists(p("super_erf", superf_chirps[i], "ideal") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", superf_chirps[i],"ideal")))
 
-                if not os.path.exists(p("linear", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", c, "realistic")))
-                if not os.path.exists(p("erf", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", c, "realistic")))
-                if not os.path.exists(p("super_erf", c, "realistic") + f"/L{L}.txt"):
-                    tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
+                if not os.path.exists(p("linear", lin_chirps[i], "realistic") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", lin_chirps[i], "realistic")))
+                if not os.path.exists(p("erf", erf_chirps[i], "realistic") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", erf_chirps[i], "realistic")))
+                if not os.path.exists(p("super_erf", superf_chirps[i], "realistic") + f"/L{L}.txt"):
+                    tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", superf_chirps[i], "realistic")))
             else:
-                tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", c, "ideal")))
-                tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", c, "ideal")))
-                tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", c, "ideal")))
+                tasks.append((L, Ec_lin_ideal, Ea_lin_ideal, ws, taus, epsilon, integration_range, p("linear", lin_chirps[i], "ideal")))
+                tasks.append((L, Ec_erf_ideal, Ea_erf_ideal, ws, taus, epsilon, integration_range, p("erf", erf_chirps[i], "ideal")))
+                tasks.append((L, Ec_superf_ideal, Ea_superf_ideal, ws, taus, epsilon, integration_range, p("super_erf", superf_chirps[i], "ideal")))
 
-                tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", c, "realistic")))
-                tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", c, "realistic")))
-                tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", c, "realistic")))
+                tasks.append((L, Ec_lin_realistic, Ea_lin_realistic, ws, taus, epsilon, integration_range, p("linear", lin_chirps[i], "realistic")))
+                tasks.append((L, Ec_erf_realistic, Ea_erf_realistic, ws, taus, epsilon, integration_range, p("erf", erf_chirps[i], "realistic")))
+                tasks.append((L, Ec_superf_realistic, Ea_superf_realistic, ws, taus, epsilon, integration_range, p("super_erf", superf_chirps[i], "realistic")))
 
             
     # Run in parallel using 4 workers
