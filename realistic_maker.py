@@ -338,9 +338,9 @@ if __name__ == "__main__":
     mask_indices, delta_w, del_w = find_mask_indices(ws, w_0, fwhm, num_pixels)
     superf_indices, delta_w_superf, del_w_superf = find_mask_indices(ws, w_0, sigma_s, num_pixels)
 
-    max_lin_chirp = get_max_chirp_lin(delta_w, del_w)
-    max_erf_chirp = get_max_chirp_erf(delta_w, del_w, fwhm)
-    max_superf_chirp = get_max_chirp_erf(delta_w, del_w, sigma_s)
+    max_lin_chirp = round(get_max_chirp_lin(delta_w, del_w), 2)
+    max_erf_chirp = round(get_max_chirp_erf(delta_w, del_w, fwhm), 2)
+    max_superf_chirp = round(get_max_chirp_erf(delta_w, del_w, sigma_s), 2)
 
     SLM_mask = realistic_SLM_mask(mask_indices, ws)
     superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
@@ -367,9 +367,9 @@ if __name__ == "__main__":
         f.write(f"{args.L_stepsize}\n")
         f.write(f"{bit_levels}\n")
         f.write(f"{num_pixels}\n")
-        f.write(f"{max_lin_chirp:.2f}\n")
-        f.write(f"{max_erf_chirp:.2f}\n")
-        f.write(f"{max_superf_chirp:.2f}\n")
+        f.write(f"{max_lin_chirp}\n")
+        f.write(f"{max_erf_chirp}\n")
+        f.write(f"{max_superf_chirp}\n")
         
 
     with open(f"results/{folder_name}/run_info.txt", 'w') as f:
@@ -380,9 +380,9 @@ if __name__ == "__main__":
         f.write(f"L stepsize: {args.L_stepsize} um\n")
         f.write(f"Bit levels: {bit_levels} unique values\n")
         f.write(f"Number of SLM pixels: {num_pixels}\n")
-        f.write(f"Estimated Max Linear Chirp: {max_lin_chirp:.2f}\n")
-        f.write(f"Estimated Max Erf Chirp: {max_erf_chirp:.2f}\n")
-        f.write(f"Estimated Max Super Erf Chirp: {max_superf_chirp:.2f}\n")
+        f.write(f"Estimated Max Linear Chirp: {max_lin_chirp}\n")
+        f.write(f"Estimated Max Erf Chirp: {max_erf_chirp}\n")
+        f.write(f"Estimated Max Super Erf Chirp: {max_superf_chirp}\n")
 
     print(f"📊 Sweeping {len(Lvals)} dispersion values")
 
