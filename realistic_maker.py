@@ -418,10 +418,6 @@ if __name__ == "__main__":
     
     for i in range(5):
 
-        # Remove existing folders (if not no_overwrite)
-        if not no_overwrite:
-            shutil.rmtree(f"results/{folder_name}", ignore_errors=True)
-
         # Create necessary folders
         for style in ["ideal", "realistic"]:
             os.makedirs(f"results/{folder_name}/linear/chirp_{lin_chirps[i]}/{style}", exist_ok=True)
