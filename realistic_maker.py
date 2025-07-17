@@ -420,22 +420,13 @@ if __name__ == "__main__":
 
         # Remove existing folders (if not no_overwrite)
         if not no_overwrite:
-            for style in ["ideal", "realistic"]:
-                lin_c = f"results/{folder_name}/linear/chirp_{lin_chirps[i]}/{style}"
-                erf_c = f"results/{folder_name}/linear/chirp_{erf_chirps[i]}/{style}"
-                superf_c = f"results/{folder_name}/linear/chirp_{superf_chirps[i]}/{style}"
-                if os.path.exists(lin_c):
-                    shutil.rmtree(lin_c)
-                if os.path.exists(erf_c):
-                    shutil.rmtree(erf_c)
-                if os.path.exists(superf_c):
-                    shutil.rmtree(superf_c)
+            shutil.rmtree(f"results/{folder_name}", ignore_errors=True)
 
         # Create necessary folders
         for style in ["ideal", "realistic"]:
             os.makedirs(f"results/{folder_name}/linear/chirp_{lin_chirps[i]}/{style}", exist_ok=True)
-            os.makedirs(f"results/{folder_name}/linear/chirp_{erf_chirps[i]}/{style}", exist_ok=True)
-            os.makedirs(f"results/{folder_name}/linear/chirp_{superf_chirps[i]}/{style}", exist_ok=True)
+            os.makedirs(f"results/{folder_name}/erf/chirp_{erf_chirps[i]}/{style}", exist_ok=True)
+            os.makedirs(f"results/{folder_name}/super_erf/chirp_{superf_chirps[i]}/{style}", exist_ok=True)
 
         # Phase generation
         lin_phase = lin_chirp(lin_chirps[i], ws, w_0)
