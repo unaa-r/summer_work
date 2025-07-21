@@ -313,6 +313,9 @@ if __name__ == "__main__":
     parser.add_argument("--L_stepsize", type=int, default=800)
     parser.add_argument("--bit_levels", type=int, default=256)
     parser.add_argument("--num_pixels", type=int, default=800)
+    parser.add_argument("--lin_chirp", type=int, default=-1)
+    parser.add_argument("--erf_chirp", type=int, default=-1)
+    parser.add_argument("--super_erf_chirp", type=int, default=-1)
 
     args = parser.parse_args()
 
@@ -331,6 +334,9 @@ if __name__ == "__main__":
     no_overwrite = args.no_overwrite #choose to to not files in folder; good if run times out before you check all cases
     bit_levels = args.bit_levels
     num_pixels = args.num_pixels
+    max_lin_chirp = args.lin_chirp
+    max_erf_chirp = args.erf_chirp
+    max_superf_chirp = args.super_erf_chirp
 
     #################################
 
@@ -338,9 +344,13 @@ if __name__ == "__main__":
     mask_indices, delta_w, del_w = find_mask_indices(ws, w_0, fwhm, num_pixels)
     superf_indices, delta_w_superf, del_w_superf = find_mask_indices(ws, w_0, sigma_s, num_pixels)
 
-    max_lin_chirp = round(get_max_chirp_lin(delta_w, del_w), 2)
-    max_erf_chirp = round(get_max_chirp_erf(delta_w, del_w, fwhm), 2)
-    max_superf_chirp = round(get_max_chirp_erf(delta_w, del_w, sigma_s), 2)
+    #if no chirp is chosen, will calculate the max possible based on number of pixels
+    if max_lin_chirp == -1:
+        max_lin_chirp = round(get_max_chirp_lin(delta_w, del_w), 2)
+    if max_erf_chirp == -1:
+        max_erf_chirp = round(get_max_chirp_erf(delta_w, del_w, fwhm), 2)
+    if max_superf_chirp == -1:
+        max_superf_chirp = round(get_max_chirp_erf(delta_w, del_w, sigma_s), 2)
 
     SLM_mask = realistic_SLM_mask(mask_indices, ws)
     superf_SLM_mask = realistic_SLM_mask(superf_indices, ws)
