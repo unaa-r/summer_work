@@ -1,11 +1,11 @@
-import interfaces_jul9 as inter
+import interfaces_jul21 as inter
 import numpy as np
 import matplotlib as plt
 
-tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = inter.init_pulse()
+# tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = inter.init_pulse()
 
 
-print(inter.n_BK7_float(inter.w0))
+print(inter.extract_param_names(inter.step_ch))
 
 
 
