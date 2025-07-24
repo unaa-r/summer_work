@@ -1,0 +1,10 @@
+Dispersion type: BK7
+Integration range: 10 nm
+Tau range: 100 fs
+Maximum L value (exclusive): 64001 um
+L stepsize: 800 um
+Bit levels: 256 unique values
+Number of SLM pixels: 800
+Estimated Max Linear Chirp: 7082.33
+Estimated Max Erf Chirp: 497.23
+Estimated Max Super Erf Chirp: 443.83
