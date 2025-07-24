@@ -1,0 +1,2262 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     87801,       2252]
+NotebookOptionsPosition[     86410,       2224]
+NotebookOutlinePosition[     86803,       2240]
+CellTagsIndexPosition[     86760,       2237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"myAbs", "[", "x_", "]"}], ":=", 
+   RowBox[{"Piecewise", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"x", ">=", "0"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "x"}], ",", 
+        RowBox[{"x", "<", "0"}]}], "}"}]}], "}"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"phi", " ", "=", " ", 
+  RowBox[{"b", " ", "T0", " ", 
+   RowBox[{"Erf", "[", "x", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"phi1", "=", 
+  RowBox[{
+   RowBox[{"myAbs", "[", 
+    RowBox[{"b", " ", "T0", " ", 
+     RowBox[{"Erf", "[", "x", "]"}]}], "]"}], "-", 
+   RowBox[{"b", " ", 
+    RowBox[{"T0", " ", "/", " ", "2"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"phi2", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"myAbs", "[", "phi1", "]"}], " ", "-", " ", 
+   RowBox[{"b", " ", 
+    RowBox[{"T0", " ", "/", " ", "4"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"phi3", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"myAbs", "[", "phi2", "]"}], " ", "-", " ", 
+   RowBox[{"b", " ", 
+    RowBox[{"T0", " ", "/", " ", "8"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.9622921577435293`*^9, 3.962292224116091*^9}, {
+  3.962292332377857*^9, 3.9622923512373*^9}, {3.9622923929482117`*^9, 
+  3.962292394521945*^9}, {3.962292877795052*^9, 3.962292890908177*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"d43a235e-29c3-45ee-8e67-2f2e972552ee"],
+
+Cell[BoxData[
+ RowBox[{"b", " ", "T0", " ", 
+  RowBox[{"Erf", "[", "x", "]"}]}]], "Output",
+ CellChangeTimes->{3.962292225918396*^9, 3.9622923719357367`*^9, 
+  3.962292892967251*^9},
+ CellLabel->"Out[54]=",ExpressionUUID->"f104d366-5b95-43a9-8a2d-00de4a933964"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], 
+          RowBox[{
+           RowBox[{"b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}]},
+         {
+          RowBox[{
+           RowBox[{"-", "b"}], " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], 
+          RowBox[{
+           RowBox[{"b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+         {"0", 
+          TagBox["True",
+           "PiecewiseDefault",
+           AutoDelete->True]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False,
+    StripWrapperBoxes->True], ")"}]}]], "Output",
+ CellChangeTimes->{3.962292225918396*^9, 3.9622923719357367`*^9, 
+  3.962292892968994*^9},
+ CellLabel->"Out[55]=",ExpressionUUID->"0b5ae52d-a511-45af-a0c4-d5fd1483019d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"b", " ", "T0"}], "4"]}], "+", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+           RowBox[{"(", 
+            TagBox[GridBox[{
+               {"\[Piecewise]", GridBox[{
+                  {
+                   RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                   RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                  {
+                   RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                   RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                  {"0", 
+                   TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                 },
+                 AllowedDimensions->{2, Automatic},
+                 Editable->True,
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                 Selectable->True]}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+              
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.35]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}],
+             "Piecewise",
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True,
+             Selectable->False,
+             StripWrapperBoxes->True], ")"}]}], 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+            RowBox[{"(", 
+             TagBox[GridBox[{
+                {"\[Piecewise]", GridBox[{
+                   {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                   {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                   {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                  },
+                  AllowedDimensions->{2, Automatic},
+                  Editable->True,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                  Selectable->True]}
+               },
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+               GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                   Offset[0.27999999999999997`]}, "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}}],
+              "Piecewise",
+              DeleteWithContents->True,
+              Editable->False,
+              SelectWithContents->True,
+              Selectable->False,
+              StripWrapperBoxes->True], ")"}]}], "\[GreaterEqual]", "0"}]},
+         {
+          RowBox[{
+           FractionBox[
+            RowBox[{"b", " ", "T0"}], "2"], "-", 
+           RowBox[{"(", 
+            TagBox[GridBox[{
+               {"\[Piecewise]", GridBox[{
+                  {
+                   RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                   RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                  {
+                   RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                   RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                  {"0", 
+                   TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                 },
+                 AllowedDimensions->{2, Automatic},
+                 Editable->True,
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                 Selectable->True]}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+              
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.35]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}],
+             "Piecewise",
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True,
+             Selectable->False,
+             StripWrapperBoxes->True], ")"}]}], 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+            RowBox[{"(", 
+             TagBox[GridBox[{
+                {"\[Piecewise]", GridBox[{
+                   {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                   {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                   {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                  },
+                  AllowedDimensions->{2, Automatic},
+                  Editable->True,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                  Selectable->True]}
+               },
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+               GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                   Offset[0.27999999999999997`]}, "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}}],
+              "Piecewise",
+              DeleteWithContents->True,
+              Editable->False,
+              SelectWithContents->True,
+              Selectable->False,
+              StripWrapperBoxes->True], ")"}]}], "<", "0"}]},
+         {"0", 
+          TagBox["True",
+           "PiecewiseDefault",
+           AutoDelete->True]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False,
+    StripWrapperBoxes->True], ")"}]}]], "Output",
+ CellChangeTimes->{3.962292225918396*^9, 3.9622923719357367`*^9, 
+  3.9622928929718113`*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"ee7ab1c7-f47c-45ad-bf11-685d92e2645b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"b", " ", "T0"}], "8"]}], "+", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{"b", " ", "T0"}], "4"]}], "+", 
+           RowBox[{"(", 
+            TagBox[GridBox[{
+               {"\[Piecewise]", GridBox[{
+                  {
+                   RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                  {
+                   RowBox[{
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"], "-", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "<", "0"}]},
+                  {"0", 
+                   TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                 },
+                 AllowedDimensions->{2, Automatic},
+                 Editable->True,
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                 Selectable->True]}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+              
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.35]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}],
+             "Piecewise",
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True,
+             Selectable->False,
+             StripWrapperBoxes->True], ")"}]}], 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"b", " ", "T0"}], "4"]}], "+", 
+            RowBox[{"(", 
+             TagBox[GridBox[{
+                {"\[Piecewise]", GridBox[{
+                   {
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                   {
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"], "-", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "<", "0"}]},
+                   {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                  },
+                  AllowedDimensions->{2, Automatic},
+                  Editable->True,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                  Selectable->True]}
+               },
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+               GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                   Offset[0.27999999999999997`]}, "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}}],
+              "Piecewise",
+              DeleteWithContents->True,
+              Editable->False,
+              SelectWithContents->True,
+              Selectable->False,
+              StripWrapperBoxes->True], ")"}]}], "\[GreaterEqual]", "0"}]},
+         {
+          RowBox[{
+           FractionBox[
+            RowBox[{"b", " ", "T0"}], "4"], "-", 
+           RowBox[{"(", 
+            TagBox[GridBox[{
+               {"\[Piecewise]", GridBox[{
+                  {
+                   RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                  {
+                   RowBox[{
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"], "-", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "<", "0"}]},
+                  {"0", 
+                   TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                 },
+                 AllowedDimensions->{2, Automatic},
+                 Editable->True,
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                 Selectable->True]}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+              
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.35]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}],
+             "Piecewise",
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True,
+             Selectable->False,
+             StripWrapperBoxes->True], ")"}]}], 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"b", " ", "T0"}], "4"]}], "+", 
+            RowBox[{"(", 
+             TagBox[GridBox[{
+                {"\[Piecewise]", GridBox[{
+                   {
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                   {
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"], "-", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"b", " ", "T0"}], "2"]}], "+", 
+                    RowBox[{"(", 
+                    TagBox[GridBox[{
+                    {"\[Piecewise]", GridBox[{
+                    {
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", 
+                    "0"}]},
+                    {
+                    RowBox[{
+                    RowBox[{"-", "b"}], " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], 
+                    RowBox[{
+                    RowBox[{"b", " ", "T0", " ", 
+                    RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+                    {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                    },
+                    AllowedDimensions->{2, Automatic},
+                    Editable->True,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                    Selectable->True]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                    "Piecewise",
+                    DeleteWithContents->True,
+                    Editable->False,
+                    SelectWithContents->True,
+                    Selectable->False,
+                    StripWrapperBoxes->True], ")"}]}], "<", "0"}]},
+                   {"0", 
+                    TagBox["True",
+                    "PiecewiseDefault",
+                    AutoDelete->True]}
+                  },
+                  AllowedDimensions->{2, Automatic},
+                  Editable->True,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.84]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}},
+                  Selectable->True]}
+               },
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+               GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.35]}, 
+                   Offset[0.27999999999999997`]}, "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}}],
+              "Piecewise",
+              DeleteWithContents->True,
+              Editable->False,
+              SelectWithContents->True,
+              Selectable->False,
+              StripWrapperBoxes->True], ")"}]}], "<", "0"}]},
+         {"0", 
+          TagBox["True",
+           "PiecewiseDefault",
+           AutoDelete->True]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False,
+    StripWrapperBoxes->True], ")"}]}]], "Output",
+ CellChangeTimes->{3.962292225918396*^9, 3.9622923719357367`*^9, 
+  3.962292892977592*^9},
+ CellLabel->"Out[57]=",ExpressionUUID->"88c925b2-3c8c-4045-b1f6-c1960d29e1b3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Integrate", "[", 
+  RowBox[{"phi", ",", " ", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{"phi1", ",", "x", ",", " ", 
+   RowBox[{"Assumptions", " ", "->", " ", 
+    RowBox[{"x", "\[Element]", "Reals"}]}]}], " ", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{"phi2", ",", " ", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{"phi3", ",", " ", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"myAbs", "[", "x", "]"}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9622922891969843`*^9, 3.962292319172491*^9}, {
+  3.962292354624988*^9, 3.962292361176729*^9}, {3.962292397734673*^9, 
+  3.9622924058831873`*^9}, {3.962292478110813*^9, 3.9622925236891212`*^9}, {
+  3.962292692673461*^9, 3.96229270171558*^9}, {3.96229291253883*^9, 
+  3.962292912689299*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"857745ae-f248-4505-8ed7-90893052b3f0"],
+
+Cell[BoxData[
+ RowBox[{"b", " ", "T0", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       SuperscriptBox["x", "2"]}]], 
+     SqrtBox["\[Pi]"]], "+", 
+    RowBox[{"x", " ", 
+     RowBox[{"Erf", "[", "x", "]"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.9622923216649017`*^9, {3.9622923622203217`*^9, 3.9622924238257504`*^9}, 
+   3.9622925253769484`*^9, 3.962292573432012*^9, 3.962292702574872*^9, 
+   3.962292913646865*^9},
+ CellLabel->"Out[58]=",ExpressionUUID->"f52c2e87-a64a-4fd0-bd56-21444521ecf2"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "-", 
+         FractionBox[
+          RowBox[{"b", " ", "T0", " ", "x"}], "2"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{"b", " ", "T0", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "-", 
+         FractionBox[
+          RowBox[{"b", " ", "T0", " ", "x"}], "2"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{"b", " ", "T0", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", "2"]}], " ", "b", " ", "T0", " ", "x"}], 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False,
+  StripWrapperBoxes->True]], "Output",
+ CellChangeTimes->{
+  3.9622923216649017`*^9, {3.9622923622203217`*^9, 3.9622924238257504`*^9}, 
+   3.9622925253769484`*^9, 3.962292573432012*^9, 3.962292702574872*^9, 
+   3.962292913679472*^9},
+ CellLabel->"Out[59]=",ExpressionUUID->"35678c2d-b36a-4051-821f-4efadcb07dfe"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "-", 
+         FractionBox[
+          RowBox[{"3", " ", "b", " ", "T0", " ", "x"}], "4"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[GreaterEqual]", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "-", 
+         FractionBox[
+          RowBox[{"3", " ", "b", " ", "T0", " ", "x"}], "4"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[LessEqual]", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "+", 
+         FractionBox[
+          RowBox[{"b", " ", "T0", " ", "x"}], "4"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "<", "0"}]}]},
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "+", 
+         FractionBox[
+          RowBox[{"b", " ", "T0", " ", "x"}], "4"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], ">", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", "4"]}], " ", "b", " ", "T0", " ", "x"}], 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False,
+  StripWrapperBoxes->True]], "Output",
+ CellChangeTimes->{
+  3.9622923216649017`*^9, {3.9622923622203217`*^9, 3.9622924238257504`*^9}, 
+   3.9622925253769484`*^9, 3.962292573432012*^9, 3.962292702574872*^9, 
+   3.9622929137364197`*^9},
+ CellLabel->"Out[60]=",ExpressionUUID->"f0078570-32e5-4cf6-b7ea-8d4a454909ea"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "-", 
+         FractionBox[
+          RowBox[{"7", " ", "b", " ", "T0", " ", "x"}], "8"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "3"}], " ", "b", " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[GreaterEqual]", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "-", 
+         FractionBox[
+          RowBox[{"7", " ", "b", " ", "T0", " ", "x"}], "8"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[LessEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"3", " ", "b", " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[LessEqual]", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "+", 
+         FractionBox[
+          RowBox[{"b", " ", "T0", " ", "x"}], "8"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[LessEqual]", "0"}]}]},
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "+", 
+         FractionBox[
+          RowBox[{"b", " ", "T0", " ", "x"}], "8"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], ">", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", "b", " ", "T0", " ", "x"}], "8"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "3"}], " ", "b", " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "<", "0"}]}]},
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "+", 
+         FractionBox[
+          RowBox[{"5", " ", "b", " ", "T0", " ", "x"}], "8"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "\[LessEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"3", " ", "b", " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], ">", "0"}]}]},
+       {
+        RowBox[{
+         FractionBox[
+          RowBox[{"b", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", 
+             SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+          SqrtBox["\[Pi]"]], "-", 
+         FractionBox[
+          RowBox[{"3", " ", "b", " ", "T0", " ", "x"}], "8"], "+", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], ">", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", 
+              SuperscriptBox["x", "2"]}]], " ", "T0"}], 
+           SqrtBox["\[Pi]"]]}], "-", 
+         FractionBox[
+          RowBox[{"3", " ", "b", " ", "T0", " ", "x"}], "8"], "-", 
+         RowBox[{"b", " ", "T0", " ", "x", " ", 
+          RowBox[{"Erf", "[", "x", "]"}]}]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", " ", "T0", " ", 
+           RowBox[{"Erf", "[", "x", "]"}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"4", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], "<", "0"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", " ", "T0"}], "+", 
+           RowBox[{"2", " ", "b", " ", "T0", " ", 
+            RowBox[{"Erf", "[", "x", "]"}]}]}], ">", "0"}]}]},
+       {
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", "8"]}], " ", "b", " ", "T0", " ", "x"}], 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False,
+  StripWrapperBoxes->True]], "Output",
+ CellChangeTimes->{
+  3.9622923216649017`*^9, {3.9622923622203217`*^9, 3.9622924238257504`*^9}, 
+   3.9622925253769484`*^9, 3.962292573432012*^9, 3.962292702574872*^9, 
+   3.9622929138433323`*^9},
+ CellLabel->"Out[61]=",ExpressionUUID->"ab0b92dc-26b1-46d3-b107-d74d7909ffce"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox["x", "2"], "2"]}], 
+        RowBox[{"x", "\[LessEqual]", "0"}]},
+       {
+        FractionBox[
+         SuperscriptBox["x", "2"], "2"], 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False,
+  StripWrapperBoxes->True]], "Output",
+ CellChangeTimes->{
+  3.9622923216649017`*^9, {3.9622923622203217`*^9, 3.9622924238257504`*^9}, 
+   3.9622925253769484`*^9, 3.962292573432012*^9, 3.962292702574872*^9, 
+   3.962292913853318*^9},
+ CellLabel->"Out[62]=",ExpressionUUID->"b84dbd66-bced-4525-9d0a-37eeffb15e34"]
+}, Open  ]]
+},
+WindowSize->{808, 703},
+WindowMargins->{{Automatic, 246}, {1, Automatic}},
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"05e5e41e-2379-4eb8-9b78-3fb10d19a1d2"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1429, 38, 136, "Input",ExpressionUUID->"d43a235e-29c3-45ee-8e67-2f2e972552ee"],
+Cell[2012, 62, 261, 5, 34, "Output",ExpressionUUID->"f104d366-5b95-43a9-8a2d-00de4a933964"],
+Cell[2276, 69, 1969, 56, 69, "Output",ExpressionUUID->"0b5ae52d-a511-45af-a0c4-d5fd1483019d"],
+Cell[4248, 127, 11161, 288, 143, "Output",ExpressionUUID->"ee7ab1c7-f47c-45ad-bf11-685d92e2645b"],
+Cell[15412, 417, 50706, 1239, 485, "Output",ExpressionUUID->"88c925b2-3c8c-4045-b1f6-c1960d29e1b3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66155, 1661, 987, 20, 115, "Input",ExpressionUUID->"857745ae-f248-4505-8ed7-90893052b3f0"],
+Cell[67145, 1683, 574, 15, 64, "Output",ExpressionUUID->"f52c2e87-a64a-4fd0-bd56-21444521ecf2"],
+Cell[67722, 1700, 2626, 74, 111, "Output",ExpressionUUID->"35678c2d-b36a-4051-821f-4efadcb07dfe"],
+Cell[70351, 1776, 4712, 131, 181, "Output",ExpressionUUID->"f0078570-32e5-4cf6-b7ea-8d4a454909ea"],
+Cell[75066, 1909, 9705, 263, 411, "Output",ExpressionUUID->"ab0b92dc-26b1-46d3-b107-d74d7909ffce"],
+Cell[84774, 2174, 1620, 47, 73, "Output",ExpressionUUID->"b84dbd66-bced-4525-9d0a-37eeffb15e34"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
