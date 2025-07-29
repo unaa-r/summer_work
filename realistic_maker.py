@@ -344,7 +344,7 @@ if __name__ == "__main__":
     parser.add_argument("--lin_chirp", type=int, default=-1)
     parser.add_argument("--erf_chirp", type=int, default=-1)
     parser.add_argument("--super_erf_chirp", type=int, default=-1)
-    parser.add_argument("--noise", action="store_false")
+    parser.add_argument("--noise", action="store_true")
 
     args = parser.parse_args()
 
