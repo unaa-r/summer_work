@@ -461,7 +461,7 @@ if __name__ == "__main__":
     #if running with noise is selected: this will just run at one chirp, but five different noise values (hardcoded), for both 
     #gaussian and binned noise
     if noise:
-        gaussian_noises = [0,5,10,15,20]
+        gaussian_noises = [0,10,20,30,40]
         binned_noises = [0,1,2,4,6]
 
         for style, noise in zip(["gaussian", "binned"], [gaussian_noises, binned_noises]):
