@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 from scipy.fft import fft, ifft, fftfreq, fftshift, ifftshift
 from scipy.optimize import minimize, least_squares
-from scipy.special import erf
+from scipy.special import erf, erfc, erfinv
 import csv
 import os
 from multiprocessing import Pool, cpu_count, shared_memory
@@ -150,6 +150,126 @@ def barc_erf_ch(w, params):
     return b * ((np.exp(-x**2) - 1) / np.sqrt(np.pi) + x * erf(x)) * np.sign(x)
 
 
+def barc_erf_sh_ch_flt(w, params):
+    """Barc erf/super chirp where the group delay range is centred at zero. For erf, let sigma_s = 10. params = b, sigma_s, w0"""
+    b, sigma_s, w0 = params
+    x = 2 * (w - w0) * sigma_s / np.sqrt(2 * np.log(256))
+    
+    if x < 0:
+        return 1/2 * b * (-2/np.sqrt(np.pi) * np.exp(-x**2) - 3*x + 2*x*erfc(x) + 2/np.sqrt(np.pi))
+    elif x >= 0:
+        return 1/2 * b * (2/np.sqrt(np.pi) * np.exp(-x**2) + x - 2*x*erfc(x) - 2/np.sqrt(np.pi))
+    else:
+        raise Exception("something went wrong with barc_erf_sh_ch. Invalid input?")
+    
+def barc_erf_sh_ch(w, params):
+    """Barc erf/super chirp where the group delay range is centred at zero. For erf, let sigma_s = 10. params = b, sigma_s, w0"""
+    b, sigma_s, w0 = params
+    x = 2 * (w - w0) * sigma_s / np.sqrt(2 * np.log(256))
+
+    phis = np.empty_like(x, dtype=np.float64)
+
+    mask1 = x < 0
+    mask2 = x >= 0
+
+    x1 = x[mask1]
+    x2 = x[mask2]
+
+    phis[mask1] = 1/2 * b * (-2/np.sqrt(np.pi) * np.exp(-x1**2) - 3*x1 + 2*x1*erfc(x1) + 2/np.sqrt(np.pi))
+    phis[mask2] = 1/2 * b * (2/np.sqrt(np.pi) * np.exp(-x2**2) + x2 - 2*x2*erfc(x2) - 2/np.sqrt(np.pi))
+
+    return phis
+
+
+
+
+def woof_erf_ch_flt(w, params):
+    """Woof erf/super chirp where the group delay range is centred at zero. For erf, let sigma_s = 10. params = b, sigma_s, w0"""
+    b, sigma_s, w0 = params
+    x = 2 * (w - w0) * sigma_s / np.sqrt(2 * np.log(256))
+
+    a = 4*(1-2*np.exp(-erfinv(1/2)**2))/np.sqrt(np.pi)
+
+    if x >= erfinv(1/2):
+        return 1/4 * b * (4/np.sqrt(np.pi) * np.exp(-x**2) + x - 4*x*erfc(x) + a)
+    elif 0 <= x and x < erfinv(1/2):
+        return 1/4 * b * (-4/np.sqrt(np.pi) * np.exp(-x**2) + x - 4*x*erf(x) + 4/np.sqrt(np.pi))
+    elif erfinv(-1/2) < x and x < 0:
+        return 1/4 * b * (4/np.sqrt(np.pi) * np.exp(-x**2) + x + 4*x*erf(x) - 4/np.sqrt(np.pi))
+    elif x <= erfinv(-1/2):
+        return 1/4 * b * (-4/np.sqrt(np.pi) * np.exp(-x**2) -7*x + 4*x*erfc(x) - a)
+    else:
+        raise Exception("something went wrong with woof_erf_ch. Invalid input?")
+    
+def woof_erf_ch(w, params):
+    """Woof erf/super chirp where the group delay range is centred at zero. For erf, let sigma_s = 10. params = b, sigma_s, w0"""
+    b, sigma_s, w0 = params
+    x = 2 * (w - w0) * sigma_s / np.sqrt(2 * np.log(256))
+
+    a = 4*(1-2*np.exp(-erfinv(1/2)**2))/np.sqrt(np.pi)
+
+    phis = np.zeros_like(x, dtype=np.float64)
+
+    mask1 = x >= erfinv(1/2)
+    mask2 = (x >= 0) & (x < erfinv(1/2))
+    mask3 = (x > erfinv(-1/2)) & (x < 0)
+    mask4 = x <= erfinv(-1/2)
+
+    x1 = x[mask1]
+    x2 = x[mask2]
+    x3 = x[mask3]
+    x4 = x[mask4]
+
+    phis[mask1] = 1/4 * b * (4/np.sqrt(np.pi) * np.exp(-x1**2) + x1 - 4*x1*erfc(x1) + a)
+    phis[mask2] = 1/4 * b * (-4/np.sqrt(np.pi) * np.exp(-x2**2) + x2 - 4*x2*erf(x2) + 4/np.sqrt(np.pi))
+    phis[mask3] = 1/4 * b * (4/np.sqrt(np.pi) * np.exp(-x3**2) + x3 + 4*x3*erf(x3) - 4/np.sqrt(np.pi))
+    phis[mask4] = 1/4 * b * (-4/np.sqrt(np.pi) * np.exp(-x4**2) - 7*x4 + 4*x4*erfc(x4) - a)
+
+    return phis
+
+def woof_lin_ch(w, params):
+    """Woof lin chirp where the group delay range is centred at zero. T is the total range over which we fold. params = A, T, w0"""
+    
+    A, T, w0 = params
+
+    phis = np.zeros_like(w, dtype=np.float64)
+    
+    mask1 = w-w0 < -T/(8*A)
+    mask2 = (w-w0 >= -T/(8*A)) & (w-w0 < 0)
+    mask3 = (w-w0 >= 0) & (w-w0 < T/(8*A))
+    mask4 = w-w0 >= T/(8*A)
+
+    w1 = w[mask1]
+    w2 = w[mask2]
+    w3 = w[mask3]
+    w4 = w[mask4]
+
+    phis[mask1] = -A*(w1-w0)**2 - 3*T/8 * (w1-w0) - T**2/(32*A)
+    phis[mask2] = A*(w2-w0)**2 + T/8 * (w2-w0)
+    phis[mask3] = -A*(w3-w0)**2 + T/8 * (w3-w0)
+    phis[mask4] = A*(w4-w0)**2 - 3*T/8 * (w4-w0) + T**2/(32*A)
+
+    return phis
+
+def barc_lin_sh_ch(w, params):
+    """Barc lin chirp where the group delay range is centred at zero. T is the total range over which we fold. params = A, T, w0"""
+
+    A, T, w0 = params
+
+    phis = np.zeros_like(w, dtype=np.float64)
+
+    mask1 = w-w0 > 0
+    mask2 = w-w0 < 0
+
+    w1 = w[mask1]
+    w2 = w[mask2]
+
+    phis[mask1] = A * (w1-w0)**2 - T/4 * (w1-w0)
+    phis[mask2] = -A * (w2-w0)**2 - T/4 * (w2-w0)
+
+    return phis
+
+
 
 # -------------- Interfaces: Replaces the Dispersion ------------
 
@@ -197,6 +317,35 @@ def n_BK7_float(w: float) -> float:
 
     
     return np.sqrt(nsq)
+
+#from una, edited; I just need the derivative
+def k_deriv_BK7(w0):
+    
+    c = 0.2998; #(*um/fs*)
+
+    b1 = 1.03961212
+    b2 = 0.231792344
+    b3 = 1.01046945
+    c1 = 6.00069867e-3
+    c2 = 2.00179144e-2
+    c3 = 1.03560653e2
+    
+    k_deriv = np.sqrt(1 +((4*b1*(c**2)*(np.pi**2))/(-c1*(w0**2) + (2*c*np.pi)**2)) + 
+                      ((4*b2*(c**2)*(np.pi**2))/(-c2*(w0**2) + (2*c*np.pi)**2)) + 
+                      ((4*b3*(c**2)*(np.pi**2))/(-c3*(w0**2) + (2*c*np.pi)**2)))/c + w0*(
+                          (32*b1*(c*np.pi)**4)/((w0**5)*((-c1 + ((2*c*np.pi)**2)/(w0**2))**2)) +
+                          (32*b2*(c*np.pi)**4)/((w0**5)*((-c2 + ((2*c*np.pi)**2)/(w0**2))**2)) +
+                          (32*b3*(c*np.pi)**4)/((w0**5)*((-c3 + ((2*c*np.pi)**2)/(w0**2))**2)) -
+                          (8*b1*(c*np.pi)**2)/((w0**3)*(-c1 + ((2*c*np.pi)**2)/(w0**2))) -
+                          (8*b2*(c*np.pi)**2)/((w0**3)*(-c2 + ((2*c*np.pi)**2)/(w0**2))) -
+                          (8*b3*(c*np.pi)**2)/((w0**3)*(-c3 + ((2*c*np.pi)**2)/(w0**2))))/(
+                              2*c*np.sqrt(1 + (b1*(2*np.pi*c/w0)**2)/((2*np.pi*c/w0)**2 - c1) + 
+                                          (b2*(2*np.pi*c/w0)**2)/((2*np.pi*c/w0)**2 - c2) + 
+                                          (b3*(2*np.pi*c/w0)**2)/((2*np.pi*c/w0)**2 - c3)))
+
+    return k_deriv
+
+
 
 #the vectorized function
 n_BK7 = np.vectorize(n_BK7_float)
@@ -256,6 +405,26 @@ def slab_lossless(n1: Callable, n2: Callable, L: float) -> Callable:
     
     return H
 
+#For adding bulk dispersion
+
+def dispy_transfer_gen(transfer_generator: Callable, params: tuple, n_bulk: Callable, D: float, w0: float, k_deriv: Callable):
+    """Returns the transfer function for a systyem consisting of a thin slab of dispersive material, shielded by some other dispersive material"""
+
+
+    c = 0.2998 #um/fs
+
+    h = transfer_generator(*params)
+
+    def H(w):
+        return np.exp(1j*D*w*n_bulk(w)/c) * h(w) * np.exp(1j*D*w*n_bulk(w)/c) * np.exp(-2j*D*k_deriv(w0)*w)
+    
+    return H
+
+
+
+
+
+
 
 # ---------------------- L Range Setup ------------------------
 
@@ -279,6 +448,10 @@ Lvals = np.arange(1,11)
 Lvals = np.array([10])
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
+
+Dvals = np.array([0,500,1000,10000])
+hotDvals = Dvals
+coldDvals = Dvals
 
 
 
@@ -414,7 +587,7 @@ def extract_param_names(func):
     return []
 
 
-def save_simulation_metadata(output_dir: str, filename: str, params: tuple, Lvals, setup):
+def save_simulation_metadata(output_dir: str, filename: str, params: tuple, Lvals, setup, Dvals = None):
     """Saves simulation metadata (e.g. chirp and transfer function types, parameters) to a text file."""
 
     os.makedirs(output_dir, exist_ok=True)
@@ -470,8 +643,19 @@ def save_simulation_metadata(output_dir: str, filename: str, params: tuple, Lval
             f.write("N/A")
         f.write("\n\n")
 
-        f.write(f"Initial Pulse Width: {sigma:.3f} fs \n")
+        if Dvals is not None:
+            f.write(f"Bulk Length Range: {min(Dvals):.2f} -- {max(Dvals):.2f} um\n")
+            f.write(f"Number of Dvals: {len(Dvals)}\n")
+            f.write(f"D Step, Maybe: {Dvals[min(1,len(Dvals)-1)] - Dvals[0]:.2f} um\n")
+            f.write(f"All Dvals, Maybe: ")
+            if len(Dvals) < 5:
+                for D in Dvals:
+                    f.write(f"{D:.2f}  ")
+            else:
+                f.write("N/A")
+            f.write("\n\n") 
 
+        f.write(f"Initial Pulse Width: {sigma:.3f} fs \n")
 
 
 
@@ -488,12 +672,12 @@ def compute_row(tau):
     ESFGw = fft(ESFGt)
     intensity = np.abs(ESFGw)**2
     # print('Doing something with this tau',tau)
-    if tau == 0:
-        print('some stuff:')
-        print('tdelaylist',tdelayList[42])
-        print('ESFGt',ESFGt[42])
-        print('ESFGw',ESFGw[42])
-        print('intensity',intensity[42])
+    # if tau == 0:
+    #     print('some stuff:')
+    #     print('tdelaylist',tdelayList[42])
+    #     print('ESFGt',ESFGt[42])
+    #     print('ESFGw',ESFGw[42])
+    #     print('intensity',intensity[42])
     return intensity
 
 
@@ -579,7 +763,7 @@ def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params,
     with Pool(initializer=init_worker, initargs=(shm_names, shape, dtype_str, dtype_str_freq)) as pool:
 
         for k, L in enumerate(Lvals):
-            
+
             #This block is for the simple dispersion case. Comment out as needed
             # eps = eList[k]
             # dispList = np.exp(1j * eps * (freqList - w0)**2)
@@ -697,6 +881,216 @@ def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params,
     shm_freq.close(); shm_freq.unlink()
 
 
+
+def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, params, fit=True, setup='pm'):
+    """Runs the main interferometry sim, where there is a large amount of bulk dispersion of width D before the slab of width L."""
+    
+    print(f"MID-level running in PID {os.getpid()} (name={__name__})")
+    
+    tlist, dt, freqList, Elw, eList, tauList, det_bandwidth, plot_bandwidth, transfer_generator, chirp, chirp_params = params
+
+
+    low, high = bandwidth_cutoff(det_bandwidth, freqList)
+    lowplot, highplot = bandwidth_cutoff(plot_bandwidth, freqList)
+
+    # b = rules.get('b', 0.0)
+    # sigma_s = rules.get('sigma_s', sigma)  # default to pulse width if not given
+
+
+    phiList = chirp(freqList, chirp_params)
+    Ec = Elw * np.exp(1j * phiList)
+    Ea = Elw * np.exp(-1j * phiList)
+    
+    if setup == 'pm':
+        E1 = Ec + Ea
+        E2 = Ec - Ea
+    elif setup == 'pp':
+        E1 = Ec + Ea
+        E2 = Ec + Ea
+    elif setup == 'cc':
+        E1 = Ec
+        E2 = Ec
+    elif setup == 'aa':
+        E1 = Ea
+        E2 = Ea
+    else:
+        raise Exception("Invalid setup")
+
+    if plot_pulse:
+        Ect = ifft(Ec)
+        quick_plot(Ect, xvals=tlist, file=filenamedips, xlims = (600000,1000000))
+        return None
+
+
+    # SHARED MEMORY SETUP
+    shape = E1.shape
+    dtype_str = str(E1.dtype)
+    dtype_str_freq = str(freqList.dtype)
+
+    shm_E1 = shared_memory.SharedMemory(create=True, size=E1.nbytes)
+    shm_E2 = shared_memory.SharedMemory(create=True, size=E2.nbytes)
+    shm_disp = shared_memory.SharedMemory(create=True, size=E1.nbytes)  # same shape as others
+    shm_freq = shared_memory.SharedMemory(create=True, size=freqList.nbytes)
+
+    E1_shared = np.ndarray(shape, dtype=E1.dtype, buffer=shm_E1.buf)
+    E2_shared = np.ndarray(shape, dtype=E2.dtype, buffer=shm_E2.buf)
+    disp_shared = np.ndarray(shape, dtype=E1.dtype, buffer=shm_disp.buf)
+    freq_shared = np.ndarray(shape, dtype=freqList.dtype, buffer=shm_freq.buf)
+
+    # print("E1_shared element: ", E1_shared[0])
+    # print("E1 element: ", E1[0])
+
+
+    E1_shared[:] = E1[:]
+    E2_shared[:] = E2[:]  # disp_shared[:] will be filled inside the L loop
+    freq_shared[:] = freqList[:]
+
+    widths = np.zeros(len(Lvals))
+    chisqs = np.zeros(len(Lvals))
+
+    os.makedirs(os.path.join(directpath, 'results', filenamedips), exist_ok=True)
+
+    save_simulation_metadata(os.path.join(directpath,'results', filenamedips), filenamedips+'meta.txt', params, Lvals, setup, Dvals=Dvals)
+
+    shm_names = (shm_E1.name, shm_E2.name, shm_disp.name, shm_freq.name)
+    # print('this thing', shm_E1.name)
+    # print('ill try to just make an array with this now')
+    # testfreq=np.ndarray(shape, dtype=np.dtype(dtype_str_freq), buffer=shm_freq.buf)
+    # print("testfreq element: ", testfreq[0])
+    # print('did it')
+
+    # return None
+
+    with Pool(initializer=init_worker, initargs=(shm_names, shape, dtype_str, dtype_str_freq)) as pool:
+
+        for k, L in enumerate(Lvals):
+            
+
+            for m, D in enumerate(Dvals):
+
+
+                #This block is for the simple dispersion case. Comment out as needed
+                # eps = eList[k]
+                # dispList = np.exp(1j * eps * (freqList - w0)**2)
+                # disp_shared[:] = dispList[:]
+
+
+                #For the multiple interfaces, disp_shared is just the transfer function
+                H = dispy_transfer_gen(transfer_generator, (n_air,n_BK7,L), n_BK7, D, w0, k_deriv_BK7)
+                disp_shared[:] = H(freqList)[:]
+
+                # print('disp entry', L, disp_shared[40])
+
+                print(f"starting: L: {L}, D: {D}")
+
+                # args_list = [(tau, shm_names, shape, dtype_str) for tau in tauList]
+                data = pool.map(compute_row, tauList)
+                data = np.array(data)
+
+                # print('data entry',L,data[40])
+                print(f"finishing: L: {L}, D: {D}")
+
+                # Export heatmap for selected L values
+                if L in hotLvals and D in hotDvals:
+                    from matplotlib.colors import Normalize
+                    maxI = np.max(data[:, lowplot:highplot])
+                    norm = Normalize(vmin=0, vmax=maxI)
+                    plt.figure(figsize=(8, 6))
+                    plt.imshow(
+                        data[:, lowplot:highplot].T / maxI,
+                        aspect='auto',
+                        cmap='rainbow',
+                        origin='upper',
+                        extent=[tauList[0], tauList[-1],
+                                0,1], #use generalized extent and then do some transformations as needed
+                        interpolation='none'
+                    )
+
+                    plt.axhline(y=wavelength_position(400,freqList,lowplot,highplot), color='black', linewidth=1.2, linestyle='-')
+
+                    if det_bandwidth < plot_bandwidth:
+                        plt.axhline(y=wavelength_position(400 + det_bandwidth/2,freqList,lowplot,highplot), color='black', linewidth=0.8, linestyle='--')
+                        plt.axhline(y=wavelength_position(400 - det_bandwidth/2,freqList,lowplot,highplot), color='black', linewidth=0.8, linestyle='--')
+
+
+                    plt.colorbar(label="Normalized Intensity")
+                    plt.xlabel("τ (fs)")
+                    plt.ylabel("λ (nm)")
+                    plt.title(f"L = {L}, D = {D}")
+
+                    tick_locs, tick_labels = get_wavelength_ticks(freqList, lowplot, highplot)
+                    plt.yticks(tick_locs, tick_labels)
+
+                    plt.tight_layout()
+                    plt.savefig(os.path.join(directpath, 'results', filenamedips, f"heat_L{L:.3f}_D{D:.3f}.png"))
+                    plt.close()
+
+                d = None
+                res = None
+
+                # Dip calculation
+                d = np.sum(data[:, low:high], axis=1)
+                dip_file = os.path.join(directpath, 'results', filenamedips, f"dip_L{L:.3f}_D{D:.3f}.txt")
+                np.savetxt(dip_file, d, delimiter=",")
+
+                if fit:
+
+                    def residuals(params, taus, ys):
+                        a1, a2, T0, sigmaFWHM = params
+                        model = fitfunc(taus, a1, a2, T0, sigmaFWHM)
+                        return ys - model
+
+                    # init_guess = [0.0025, 0.9, 0, 10.0]
+                    init_guess = [6360,0.9,0,10.0]
+
+                    # res = minimize(chisq, init_guess)
+                    res = least_squares(residuals, init_guess, args=(tauList, d), method='lm', 
+                                    ftol=1e-15, xtol=1e-15, gtol=1e-15)
+                    widths[k] = np.abs(res.x[3])  # sigmaFWHM
+                    # chisqs[k] = res.fun
+                    chisqs[k] = 2 * res.cost
+
+                else:
+                    widths[k] = 0
+                    chisqs[k] = 0
+
+                # Save plot for cold values
+                if L in coldLvals and D in hotDvals:
+                    if fit:
+                        fit_curve = fitfunc(tauList, *res.x)
+                    plt.figure()
+                    plt.plot(tauList, d, label="Data", color='blue')
+                    if fit:
+                        plt.plot(tauList, fit_curve, label=f"Fit (FWHM = {np.abs(res.x[3]):.2f})", color='red')
+                    if fit:
+                        plt.title(f"L = {L}, D = {D}, σ = {np.abs(res.x[3]):.2f}")
+                    else:
+                        plt.title(f"L = {L}, D = {D}")
+                    plt.legend()
+                    plt.xlabel("τ (fs)")
+                    plt.ylabel("Integrated Intensity")
+                    plt.tight_layout()
+                    plt.savefig(os.path.join(directpath, 'results', filenamedips, f"dip_L{L:.3f}_D{D:.3f}.png"))
+                    plt.close()
+                
+                #trying to solve memory problems -- didn't work :(
+                del data, d
+
+    # Export width and chisq data
+    np.savetxt(os.path.join(directpath, 'results', filenamewidths), np.column_stack((Lvals, widths)), delimiter=",")
+    np.savetxt(os.path.join(directpath, 'results', filenamechisqs), np.column_stack((Lvals, chisqs)), delimiter=",")
+
+    shm_E1.close(); shm_E1.unlink()
+    shm_E2.close(); shm_E2.unlink()
+    shm_disp.close(); shm_disp.unlink()
+    shm_freq.close(); shm_freq.unlink()
+
+
+
+
+
+
+
 # ---------------------- Entry Point for Execution ------------------------
 
 def main():
@@ -722,6 +1116,14 @@ def main():
     s2 = 11.0
     s3 = 12.0
 
+    #I'm going to try now with an order of magnitude less chirp
+    # b1 = 830
+    # b2 = 830 * 10/11
+    # b3 = 830 * 10/12
+
+
+
+
     dband = args.dband
     pband = args.pband
 
@@ -735,6 +1137,16 @@ def main():
     filenameBarcErf2Lossless = filenamedips + "_lossless_barc_erf_s11.0_"
     filenameBarcErf3Lossless = filenamedips + "_lossless_barc_erf_s12.0_"
 
+    filenameBarcErfSh1Lossless = filenamedips + "_lossless_barc_erf_sh_s10.0_"
+    filenameBarcErfSh2Lossless = filenamedips + "_lossless_barc_erf_sh_s11.0_"
+    filenameBarcErfSh3Lossless = filenamedips + "_lossless_barc_erf_sh_s12.0_"
+
+    filenameBarcLinShLossless = filenamedips + "_lossless_barc_lin_sh_"
+    filenameWoofLinLossless = filenamedips + "_lossless_woof_lin_"
+
+    filenameWoof1Lossless = filenamedips + "_lossless_woof_s10.0_"
+    filenameWoof2Lossless = filenamedips + "_lossless_woof_s11.0_"
+    filenameWoof3Lossless = filenamedips + "_lossless_woof_s12.0_"
 
     filenameLinRealistic = filenamedips + "_realistic_lin_"
     filenameErf1Realistic = filenamedips + "_realistic_erf_s10.0_"
@@ -750,6 +1162,9 @@ def main():
 
     names = [filenameLinLossless,filenameErf1Lossless,filenameErf2Lossless,filenameErf3Lossless,filenameVphLossless, 
              filenameBarcLinLossless, filenameBarcErf1Lossless, filenameBarcErf2Lossless, filenameBarcErf3Lossless, 
+             filenameBarcErfSh1Lossless, filenameBarcErfSh2Lossless, filenameBarcErfSh3Lossless,
+             filenameBarcLinShLossless, filenameWoofLinLossless, 
+             filenameWoof1Lossless, filenameWoof2Lossless, filenameWoof3Lossless,
              filenameLinRealistic,filenameErf1Realistic,filenameErf2Realistic,filenameErf3Realistic,filenameVphRealistic, 
              filenameBarcLinRealistic, filenameBarcErf1Realistic, filenameBarcErf2Realistic, filenameBarcErf3Realistic]
 
@@ -765,7 +1180,17 @@ def main():
     paramsBarcErf2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b2, s2, w0)
     paramsBarcErf3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b3, s3, w0)
     
-    
+    paramsBarcErfSh1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b1, s1, w0)
+    paramsBarcErfSh2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b2, s2, w0)
+    paramsBarcErfSh3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b3, s3, w0)
+
+    paramsBarcLinShLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_lin_sh_ch, (4*A, 200000, w0)
+    paramsWoofLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_lin_ch, (4*A, 200000, w0)
+
+    paramsWoof1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_erf_ch, (4*b1, s1, w0)
+    paramsWoof2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_erf_ch, (4*b2, s2, w0)
+    paramsWoof3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_erf_ch, (4*b3, s3, w0)
+
     paramsLinRealistic = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_transfer, lin_ch, (A, w0)
     paramsErf1Realistic = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_transfer, erf_ch, (b1, s1, w0)
     paramsErf2Realistic = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_transfer, erf_ch, (b2, s2, w0)
@@ -782,15 +1207,24 @@ def main():
     for k, params in enumerate([
         paramsLinLossless, paramsErf1Lossless, paramsErf2Lossless, paramsErf3Lossless, paramsVphLossless,
         paramsBarcLinLossless, paramsBarcErf1Lossless, paramsBarcErf2Lossless, paramsBarcErf3Lossless,
+        paramsBarcErfSh1Lossless, paramsBarcErfSh2Lossless, paramsBarcErfSh3Lossless,
+        paramsBarcLinShLossless, paramsWoofLinLossless,
+        paramsWoof1Lossless, paramsWoof2Lossless, paramsWoof3Lossless,
         paramsLinRealistic, paramsErf1Realistic, paramsErf2Realistic, paramsErf3Realistic, paramsVphRealistic,
         paramsBarcLinRealistic, paramsBarcErf1Realistic, paramsBarcErf2Realistic, paramsBarcErf3Realistic
     ]):
         if k in []:
             interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False)
-        if k in [0,1,2,3]:
+        if k in []:
             interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False, setup='pp')
-        if k in [5,6,7,8]:
+        if k in []:
             interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False, setup = 'cc') #setup doen't affect filenames so be careful
+        if k in []:
+            interfere_dispy(rules, names[k], filenamewidths, filenamechisqs, params, fit=False)
+        if k in []:
+            interfere_dispy(rules, names[k]+"pp_", filenamewidths, filenamechisqs, params, fit=False, setup='pp')
+        if k in [13,14,15]:
+            interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc')
 
     return None
 

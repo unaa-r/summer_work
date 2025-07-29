@@ -1,11 +1,14 @@
-import interfaces_jul21 as inter
+import interfaces_jul23 as inter
 import numpy as np
 import matplotlib as plt
 
-# tlist, dt, freqList, Elw, eList, tauList, xticks, yticks = inter.init_pulse()
+tlist, dt, freqList, Elw, eList, tauList = inter.init_pulse()
 
+phiList = inter.woof_lin_ch(freqList, (180337, 100000, inter.w0))
+inter.quick_plot(phiList, xvals=freqList,square=False,file='test_woof_lin', xlims=(2,2.7), ylims=(-1500,1500))
+delays = np.gradient(phiList)
+inter.quick_plot(delays, xvals=freqList,square=False,file='test_woof_lin_del', xlims=(2,2.7), ylims=(-0.2,0.2))
 
-print(inter.extract_param_names(inter.step_ch))
 
 
 
