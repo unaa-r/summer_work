@@ -143,13 +143,13 @@ def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
         print(" min wl:", np.min(wavelengths), " max wl:", np.max(wavelengths))
         print(" band range:", 400 - (integration_range / 2), "-", 400 + (integration_range / 2))
 
-    
+            
     out_path = os.path.join(output_dir, f"L{L}.txt")
     with open(out_path, 'w') as f:
         np.savetxt(f, signal_vs_tau, fmt="%.15f")
         f.flush()
         os.fsync(f.fileno())
-    print(f"📁 Wrote {out_path} — size: {os.path.getsize(out_path)} bytes")
+    #print(f"📁 Wrote {out_path} — size: {os.path.getsize(out_path)} bytes")
 
     #print(f"✅ {chirp_type} L={L} saved.")
 
