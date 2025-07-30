@@ -444,14 +444,14 @@ def dispy_transfer_gen(transfer_generator: Callable, params: tuple, n_bulk: Call
 
 # Lvals = np.arange(10,10.4,0.008)  # fs^2 units or length in mm?
 
-Lvals = np.arange(1,11)
+# Lvals = np.arange(1,11)
 Lvals = np.array([10])
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
 
-Dvals = np.array([0,500,1000,10000])
-hotDvals = Dvals
-coldDvals = Dvals
+Dvals = np.arange(0,10001,500)
+hotDvals = np.arange(0,10001,2000)
+coldDvals = hotDvals
 
 
 
@@ -1221,9 +1221,9 @@ def main():
             interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False, setup = 'cc') #setup doen't affect filenames so be careful
         if k in []:
             interfere_dispy(rules, names[k], filenamewidths, filenamechisqs, params, fit=False)
-        if k in []:
+        if k in [0,1,2,3,4]:
             interfere_dispy(rules, names[k]+"pp_", filenamewidths, filenamechisqs, params, fit=False, setup='pp')
-        if k in [13,14,15]:
+        if k in [9,10,11,12,13,14,15,16]:
             interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc')
 
     return None
