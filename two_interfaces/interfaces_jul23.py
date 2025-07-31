@@ -20,10 +20,10 @@ tmin = 0.0
 tmax = 1600000.0
 t0 = 800000.0  # fs
 sigma = 10.0   # fs
-A = 180337     # fs^2
+# A = 180337     # fs^2
 
 #fake A
-A = 180337
+# A = 180337
 
 
 Aerf = 8300
@@ -423,9 +423,6 @@ def dispy_transfer_gen(transfer_generator: Callable, params: tuple, n_bulk: Call
 
 
 
-
-
-
 # ---------------------- L Range Setup ------------------------
 
 # Lvals = np.arange(0, 64001, 32000)  # fs^2 units or length in mm?
@@ -449,8 +446,8 @@ Lvals = np.array([10])
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
 
-Dvals = np.arange(0,10001,500)
-hotDvals = np.arange(0,10001,2000)
+Dvals = np.array([0,3000])
+hotDvals = Dvals
 coldDvals = hotDvals
 
 
@@ -918,7 +915,7 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
 
     if plot_pulse:
         Ect = ifft(Ec)
-        quick_plot(Ect, xvals=tlist, file=filenamedips, xlims = (600000,1000000))
+        quick_plot(Ect, xvals=tlist, file=filenamedips, xlims = (797500,802500))
         return None
 
 
@@ -1089,8 +1086,6 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
 
 
 
-
-
 # ---------------------- Entry Point for Execution ------------------------
 
 def main():
@@ -1109,20 +1104,27 @@ def main():
 
     tlist, dt, freqList, Elw, eList, tauList = init_pulse()
 
-    b1 = 8300
-    b2 = 8300 * 10/11
-    b3 = 8300 * 10/12
-    s1 = 10.0
-    s2 = 11.0
-    s3 = 12.0
+    #"Ordinary" params:
+    # b1 = 8300
+    # b2 = 8300 * 10/11
+    # b3 = 8300 * 10/12
+    # s1 = 10.0
+    # s2 = 11.0
+    # s3 = 12.0
 
     #I'm going to try now with an order of magnitude less chirp
     # b1 = 830
     # b2 = 830 * 10/11
     # b3 = 830 * 10/12
 
-
-
+    #Mazurek params:
+    A = 2500/2
+    b1 = 8300 * A/180337
+    b2 = 8300 * 10/11 * A/180337
+    b3 = 8300 * 10/12 * A/180337
+    s1 = 10.0
+    s2 = 11.0
+    s3 = 12.0
 
     dband = args.dband
     pband = args.pband
@@ -1184,8 +1186,8 @@ def main():
     paramsBarcErfSh2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b2, s2, w0)
     paramsBarcErfSh3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b3, s3, w0)
 
-    paramsBarcLinShLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_lin_sh_ch, (4*A, 200000, w0)
-    paramsWoofLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_lin_ch, (4*A, 200000, w0)
+    paramsBarcLinShLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_lin_sh_ch, (2*A, 200000*A/180337, w0)
+    paramsWoofLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_lin_ch, (4*A, 200000*A/180337, w0)
 
     paramsWoof1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_erf_ch, (4*b1, s1, w0)
     paramsWoof2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, woof_erf_ch, (4*b2, s2, w0)
@@ -1221,9 +1223,9 @@ def main():
             interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False, setup = 'cc') #setup doen't affect filenames so be careful
         if k in []:
             interfere_dispy(rules, names[k], filenamewidths, filenamechisqs, params, fit=False)
-        if k in [0,1,2,3,4]:
+        if k in []:
             interfere_dispy(rules, names[k]+"pp_", filenamewidths, filenamechisqs, params, fit=False, setup='pp')
-        if k in [9,10,11,12,13,14,15,16]:
+        if k in [6,7,9,10]:
             interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc')
 
     return None
