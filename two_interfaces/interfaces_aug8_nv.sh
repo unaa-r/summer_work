@@ -16,4 +16,6 @@ read A band <<< "$line"
 
 echo "Running with A=$A, bandwidth=$band"
 
-srun python -u interfaces_aug6.py --b 8300.0 --sigma_s 10.0 --dband $band --pband 0.1 --output two_interfaces_aug8 --A $A
+outfile = "two_interfaces_aug8_A${A}_band${band}"
+
+srun python -u interfaces_aug6.py --b 8300.0 --sigma_s 10.0 --dband $band --pband 0.1 --output outfile --A $A
