@@ -1,9 +1,19 @@
 from scipy.special import erfinv
 import numpy as np
-print(erfinv(0.5))
-print(1/np.sqrt(np.pi))
+import interfaces_aug6 as inter
+import aug7results_processing as proc
 
+# tlist, dt, freqList, Elw, eList, tauList = inter.init_pulse()
 
+# ns = inter.n_BK7(freqList)
+
+# inter.quick_plot(ns,xvals=freqList,file='test',square=False,xlims=(1,6),ylims = (1,2))
+print(inter.w0)
+print(inter.n_BK7_float(0.5*inter.w0))
+
+print("The funny ones:")
+print(proc.n_BK7(inter.w0))
+print(2 * np.pi * inter.c / 800 *  1e-6)
 
 
 

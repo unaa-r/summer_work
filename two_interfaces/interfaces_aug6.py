@@ -10,6 +10,7 @@ from multiprocessing import Pool, cpu_count, shared_memory
 import pandas as pd
 from typing import Callable
 import re
+import json
 
 # ---------------------- Constants & Parameters ------------------------
 
@@ -442,11 +443,11 @@ def dispy_transfer_gen(transfer_generator: Callable, params: tuple, n_bulk: Call
 # Lvals = np.arange(10,10.4,0.008)  # fs^2 units or length in mm?
 
 # Lvals = np.arange(1,11)
-Lvals = np.array([10])
+Lvals = np.array([1,2,3,4,5,10,15,20])
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
 
-Dvals = np.array([3000,6000,0])
+Dvals = np.arange(0,6001,500)
 hotDvals = Dvals
 coldDvals = hotDvals
 
@@ -607,6 +608,33 @@ def barc_lin_centre_paper(D, params):
     wcent = 2*w0 - 0.34 * eps * sigmaw / (2 * A)
 
     return 2 * np.pi * c / wcent * 1e-6
+
+
+def find_smoothed_max(data, window_size=1):
+    """Returns thelocation of the, possibly smoothed, data"""
+
+    kernel = np.ones(window_size) / window_size
+
+    smoothed_data = np.convolve(data, kernel, mode='same')
+
+    return np.argmax(smoothed_data)
+
+def centre_from_max(data, tau, tauList, freqList):
+
+    colm = np.argmin(np.abs(tauList-tau))
+
+    wcent = freqList[find_smoothed_max(data[colm])]
+
+    return 2 * np.pi * c / wcent * 1e-6
+
+def slab_delay(L, n, w0):
+    """Returns the estimated time delay between the two interfaces of the slab (in fs). L is the slab width in um.
+    n is the index of refraction as a function of freq."""
+
+    c = 0.2998; #(*um/fs*)
+
+    return 2 * n(w0) * L / c
+
 
 
 
@@ -924,14 +952,14 @@ def interfere(rules: dict, filenamedips, filenamewidths, filenamechisqs, params,
 
 
 
-def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, params, fit=True, setup='pm', band_cent_func=None, band_cent_params=None):
+def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, params, fit=True, setup='pm', band_cent_func=None, band_cent_params=None, manual_cent=False):
     """Runs the main interferometry sim, where there is a large amount of bulk dispersion of width D before the slab of width L."""
     
     print(f"MID-level running in PID {os.getpid()} (name={__name__})")
     
     tlist, dt, freqList, Elw, eList, tauList, det_bandwidth, plot_bandwidth, transfer_generator, chirp, chirp_params = params
 
-    if band_cent_func is None:
+    if band_cent_func is None and manual_cent is False:
         low, high = bandwidth_cutoff(det_bandwidth, freqList)
     lowplot, highplot = bandwidth_cutoff(plot_bandwidth, freqList)
 
@@ -1009,17 +1037,16 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
             
 
             for m, D in enumerate(Dvals):
-
+                
                 if band_cent_func is not None:
                     cent = band_cent_func(D, band_cent_params)
                     print("yes function")
                     print(cent)
                     low, high = bandwidth_cutoff(det_bandwidth, freqList, centre=cent)
-                else:
+                elif not manual_cent:
                     cent = 400
                     print("no function?")
-
-                print(cent)
+                    print(cent)
 
                 #This block is for the simple dispersion case. Comment out as needed
                 # eps = eList[k]
@@ -1038,6 +1065,11 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
                 # args_list = [(tau, shm_names, shape, dtype_str) for tau in tauList]
                 data = pool.map(compute_row, tauList)
                 data = np.array(data)
+
+                if manual_cent:
+                    cent = centre_from_max(data, -slab_delay(L,n_BK7,w0)/2, tauList, freqList)
+                    print('manual centre', cent)
+                    low, high = bandwidth_cutoff(det_bandwidth, freqList, centre=cent)
 
                 # print('data entry',L,data[40])
                 print(f"finishing: L: {L}, D: {D}")
@@ -1127,6 +1159,17 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
                     plt.tight_layout()
                     plt.savefig(os.path.join(directpath, 'results', filenamedips, f"dip_L{L:.3f}_D{D:.3f}.png"))
                     plt.close()
+
+                #Save some stuff in a json file cuz why the hell not
+                params_dict = {
+                    'L': L, 'D': D, 
+                    'centre wavelength': cent, 'filter band': det_bandwidth,
+                }
+
+                params_file = os.path.join(directpath, 'results', filenamedips, f"dip_L{L:.3f}_D{D:.3f}.json")
+
+                with open(params_file,'w') as jsonfile:
+                    json.dump(params_dict, jsonfile, indent=2)
                 
                 #trying to solve memory problems -- didn't work :(
                 del data, d
@@ -1154,6 +1197,7 @@ def main():
     parser.add_argument("--dband", type = float, default=1.0, help="Detector bandwidth (nm)")
     parser.add_argument("--pband", type=float, default=1.0, help="Heatmap wavelength range")
     parser.add_argument("--output", type=str, default="results", help="Output subfolder name")
+    parser.add_argument("--A", type=float, default=0.0, help="Chirp parameter A (fs^2)")
     args = parser.parse_args()
     rules = {"b": args.b, "sigma_s": args.sigma_s}
     filenamedips = args.output
@@ -1235,7 +1279,7 @@ def main():
     paramsErf3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, erf_ch, (b3, s3, w0)
     paramsVphLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, step_ch, (50000, w0)
     
-    paramsBarcLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_lin_ch, (2*A, w0)
+    paramsBarcLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_lin_ch, (args.A, w0)
     paramsBarcErf1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b1, s1, w0)
     paramsBarcErf2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b2, s2, w0)
     paramsBarcErf3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b3, s3, w0)
@@ -1281,12 +1325,17 @@ def main():
             interfere(rules, names[k], filenamewidths, filenamechisqs, params, fit=False, setup = 'cc') #setup doen't affect filenames so be careful
         if k in []:
             interfere_dispy(rules, names[k], filenamewidths, filenamechisqs, params, fit=False)
-        if k in [0]:
+        if k in []:
             interfere_dispy(rules, names[k]+"pp_", filenamewidths, filenamechisqs, params, fit=False, setup='pp')
         if k in []:
             interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc')
         if k in []:
             interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', band_cent_func=barc_lin_centre_paper, band_cent_params=(A,w0,sigma))
+        if k in [5]:
+            interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', manual_cent=True)
+
+
+
 
     return None
 
