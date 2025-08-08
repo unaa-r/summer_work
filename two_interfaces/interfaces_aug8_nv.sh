@@ -3,7 +3,7 @@
 #SBATCH --array=0-9
 #SBATCH --cpus-per-task=64
 #SBATCH --time=24:00:00
-#SBATCH --output=two_interfaces_jul29_nv.out
+#SBATCH --output=two_interfaces_aug8_nv.out
 #SBATCH --mail-user=n2costa@uwaterloo.ca
 #SBATCH --mail-type=ALL
 #SBATCH --mem=128G
