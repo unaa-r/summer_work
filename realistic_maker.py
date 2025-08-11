@@ -478,17 +478,20 @@ if __name__ == "__main__":
             lin_gauss = realistic_SLM_phase(ws, lin_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
             erf_gauss = realistic_SLM_phase(ws, erf_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
             superf_gauss = realistic_SLM_phase(ws, superf_phase, superf_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
+            neg_lin_gauss = realistic_SLM_phase(ws, -lin_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
+            neg_erf_gauss = realistic_SLM_phase(ws, -erf_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
+            neg_superf_gauss = realistic_SLM_phase(ws, -superf_phase, superf_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
 
             lin_bin = realistic_SLM_phase(ws, lin_phase, mask_indices, num_pixels, bit_levels, binned_noises[i], "binned")
             erf_bin = realistic_SLM_phase(ws, erf_phase, mask_indices, num_pixels, bit_levels, binned_noises[i], "binned")
             superf_bin = realistic_SLM_phase(ws, superf_phase, superf_indices, num_pixels, bit_levels, binned_noises[i], "binned")
 
             Ec_lin_gauss = chirper(Ews, lin_gauss) * SLM_mask
-            Ea_lin_gauss = chirper(Ews, -lin_gauss) * SLM_mask
+            Ea_lin_gauss = chirper(Ews, neg_lin_gauss) * SLM_mask
             Ec_erf_gauss = chirper(Ews, erf_gauss) * SLM_mask
-            Ea_erf_gauss = chirper(Ews, -erf_gauss) * SLM_mask
+            Ea_erf_gauss = chirper(Ews, neg_erf_gauss) * SLM_mask
             Ec_superf_gauss = chirper(Ews, superf_gauss) * superf_SLM_mask
-            Ea_superf_gauss = chirper(Ews, -superf_gauss) * superf_SLM_mask
+            Ea_superf_gauss = chirper(Ews, neg_superf_gauss) * superf_SLM_mask
 
             Ec_lin_bin = chirper(Ews, lin_bin) * SLM_mask
             Ea_lin_bin = chirper(Ews, -lin_bin) * SLM_mask
