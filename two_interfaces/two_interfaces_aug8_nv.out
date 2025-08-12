@@ -1,0 +1,92 @@
+Running with A=, bandwidth=
+Running with A=7500, bandwidth=0.1
+Top-level running in PID 804765 (name=__main__)
+usage: interfaces_aug6.py [-h] [--b B] [--sigma_s SIGMA_S] [--dband DBAND]
+                          [--pband PBAND] [--output OUTPUT] [--A A]
+interfaces_aug6.py: error: argument --dband: expected one argument
+Top-level running in PID 3448988 (name=__main__)
+srun: error: nc30347: task 0: Exited with exit code 2
+MID-level running in PID 2540435 (name=__main__)
+/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py:554: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+MID-level running in PID 3812112 (name=__main__)
+/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py:554: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+MID-level running in PID 3448988 (name=__main__)
+/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py:554: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+starting: L: 1, D: 0
+starting: L: 1, D: 0
+starting: L: 1, D: 0
+manual centre 399.9647800202814
+manual centre 399.9647800202814
+finishing: L: 1, D: 0
+finishing: L: 1, D: 0
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1386, in <module>
+    main()
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1335, in main
+    interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', manual_cent=True)
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1172, in interfere_dispy
+    json.dump(params_dict, jsonfile, indent=2)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 4 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1386, in <module>
+    main()
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1335, in main
+    interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', manual_cent=True)
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1172, in interfere_dispy
+    json.dump(params_dict, jsonfile, indent=2)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 4 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+srun: error: nc30321: task 0: Exited with exit code 1
+srun: error: nc30329: task 0: Exited with exit code 1
+manual centre 399.9647800202814
+finishing: L: 1, D: 0
+Traceback (most recent call last):
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1386, in <module>
+    main()
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1335, in main
+    interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', manual_cent=True)
+  File "/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6.py", line 1172, in interfere_dispy
+    json.dump(params_dict, jsonfile, indent=2)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 4 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+srun: error: nc30340: task 0: Exited with exit code 1
