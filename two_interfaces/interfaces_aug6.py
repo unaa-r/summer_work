@@ -452,7 +452,13 @@ hotDvals = Dvals
 coldDvals = hotDvals
 
 
+# Lvals = np.array([1])
+# hotLvals = Lvals # for heatmaps
+# coldLvals = Lvals
 
+# Dvals = np.array([100])
+# hotDvals = Dvals
+# coldDvals = hotDvals
 
 
 
@@ -727,7 +733,12 @@ def save_simulation_metadata(output_dir: str, filename: str, params: tuple, Lval
 
         f.write(f"Initial Pulse Width: {sigma:.3f} fs \n")
 
+def to_native(val):
+    """Converts numpy scalars to their python equivalents, so that they are JSON serializable, whatever that means **rolls eyes**"""
 
+    if isinstance(val, np.generic):
+        return val.item()  # Convert to plain Python int/float
+    return val             # Leave unchanged if already native
 
 
 
@@ -1162,8 +1173,8 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
 
                 #Save some stuff in a json file cuz why the hell not
                 params_dict = {
-                    'L': L, 'D': D, 
-                    'centre wavelength': cent, 'filter band': det_bandwidth,
+                    'L': to_native(L), 'D': to_native(D), 
+                    'centre wavelength': to_native(cent), 'filter band': to_native(det_bandwidth),
                 }
 
                 params_file = os.path.join(directpath, 'results', filenamedips, f"dip_L{L:.3f}_D{D:.3f}.json")
