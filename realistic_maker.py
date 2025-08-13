@@ -231,7 +231,7 @@ def realistic_SLM_mask(mask_indices, ws):
 
     return SLM_mask
 
-def realistic_SLM_phase(ws, phase, mask_indices, num_pixels = 800, bit_depth = 2**8, noise_level = 0, noise_type = "gaussian"):
+def realistic_SLM_phase(ws, phase, mask_indices, num_pixels = 800, bit_depth = 2**8, noise_level = 0, noise_type = "gaussian", sign = 'pos'):
   
     ws_mod = ws[mask_indices]
     phi_mod = phase[mask_indices]  # UNWRAPPED phase!
@@ -257,8 +257,11 @@ def realistic_SLM_phase(ws, phase, mask_indices, num_pixels = 800, bit_depth = 2
 
     binned_phi = np.copy(phi_test)
 
-    if noise_level != 0:
-        
+    if noise_level != 0: 
+        if sign == 'pos':
+            random.seed(10)
+        if sign == 'neg':
+            random.seed(110)
         #if uncertainty is gaussian, each phase point can have a random value with an x degree gaussian distribution centered on actual
         #value, then do bit crushing as normal
         if noise_type == "gaussian":
@@ -478,9 +481,9 @@ if __name__ == "__main__":
             lin_gauss = realistic_SLM_phase(ws, lin_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
             erf_gauss = realistic_SLM_phase(ws, erf_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
             superf_gauss = realistic_SLM_phase(ws, superf_phase, superf_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
-            neg_lin_gauss = realistic_SLM_phase(ws, -lin_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
-            neg_erf_gauss = realistic_SLM_phase(ws, -erf_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
-            neg_superf_gauss = realistic_SLM_phase(ws, -superf_phase, superf_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian")
+            neg_lin_gauss = realistic_SLM_phase(ws, -lin_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian", 'neg')
+            neg_erf_gauss = realistic_SLM_phase(ws, -erf_phase, mask_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian", 'neg')
+            neg_superf_gauss = realistic_SLM_phase(ws, -superf_phase, superf_indices, num_pixels, bit_levels, gaussian_noises[i], "gaussian", 'neg')
 
             lin_bin = realistic_SLM_phase(ws, lin_phase, mask_indices, num_pixels, bit_levels, binned_noises[i], "binned")
             erf_bin = realistic_SLM_phase(ws, erf_phase, mask_indices, num_pixels, bit_levels, binned_noises[i], "binned")
