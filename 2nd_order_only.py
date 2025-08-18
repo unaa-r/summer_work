@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
     ws[0] = 1e-6
 
-    epsilon = 0.0223238
+    epsilon = 0.0223238*(ws - w_0)**2
 
 
     for L in Lvals:
