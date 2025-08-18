@@ -7,4 +7,6 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mem=128G
 
+module load python/3.13.2
+
 srun python -u 2nd_order_only.py "$@"
