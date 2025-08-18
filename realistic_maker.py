@@ -11,10 +11,11 @@ import shutil
 from scipy.stats import binned_statistic
 import random
 
+#reference pulse
 def Ereffer(Ec, Ea, w, tau):
     return (Ec + Ea) * np.exp(1j * w * tau)
 
-#this phi is the dispersion from going through optical elements
+#sample pulse: this phi is the dispersion from going through optical elements
 def Esampler(Ec, Ea, phi):
     return (Ec - Ea) * np.exp(1j * phi)
 
@@ -116,10 +117,6 @@ def water_epsilon(w, w0, T=20, S=0):
 
 
 def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
-  
-    if np.all(np.abs(Ec) < 1e-12) or np.all(np.abs(Ea) < 1e-12):
-        print(f"Warning: Ec or Ea near zero for L = {L}")
-
 
     Esamp_w = Esampler(Ec, Ea, epsilon*L)
     Esamp_t = np.conj(ifft(np.conj(Esamp_w), norm="ortho"))
@@ -138,13 +135,7 @@ def run_cpi_for_L(L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
 
     SFG_band = SFG_data[:, (wavelengths >= 400 - (integration_range/2)) & (wavelengths <= 400 + (integration_range/2))]
     signal_vs_tau = np.sum(SFG_band, axis=1)
-    
-    if np.all(SFG_band == 0):
-        print(f"⚠️ SFG_band all zero for L = {L}")
-        print(" min wl:", np.min(wavelengths), " max wl:", np.max(wavelengths))
-        print(" band range:", 400 - (integration_range / 2), "-", 400 + (integration_range / 2))
-
-            
+     
     out_path = os.path.join(output_dir, f"L{L}.txt")
     with open(out_path, 'w') as f:
         np.savetxt(f, signal_vs_tau, fmt="%.15f")
