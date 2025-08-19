@@ -1,0 +1,4637 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    193457,       4627]
+NotebookOptionsPosition[    189786,       4558]
+NotebookOutlinePosition[    190227,       4575]
+CellTagsIndexPosition[    190184,       4572]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "[", "T_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "1"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", 
+        RowBox[{"\[Sigma]", "^", "2"}]}], ")"}]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"4", 
+          RowBox[{"A", "^", "2"}]}], ")"}]}], "+", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"4", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"A", "+", "\[CurlyPhi]"}], " ", ")"}], "^", "2"}]}], 
+         ")"}]}]}], ")"}], "*", 
+     RowBox[{"T", "^", "2"}]}], "]"}], "+", 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "1"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", 
+        RowBox[{"\[Sigma]", "^", "2"}]}], ")"}]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"4", 
+          RowBox[{"A", "^", "2"}]}], ")"}]}], "+", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"4", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"A", "-", "\[CurlyPhi]"}], " ", ")"}], "^", "2"}]}], 
+         ")"}]}]}], ")"}], "*", 
+     RowBox[{"T", "^", "2"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[CapitalOmega]", "[", "T_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"2", "w"}], " ", "-", " ", 
+   RowBox[{"\[CurlyPhi]", " ", "*", " ", 
+    RowBox[{"T", " ", "/", " ", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", 
+       RowBox[{"A", "^", "2"}]}], ")"}]}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.964094818211396*^9, 3.964094990054577*^9}, {
+  3.96409502918775*^9, 3.9640952116601562`*^9}, {3.9640954305087976`*^9, 
+  3.9640954437694597`*^9}, {3.964095481844401*^9, 3.96409548365388*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"9b7ab269-8624-45ad-a5d2-a4586ea2e090"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"W", "=", 
+  RowBox[{"Assuming", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", ">", "0"}], ",", 
+      RowBox[{"\[Sigma]", ">", "0"}], ",", 
+      RowBox[{"\[CurlyPhi]", "\[Element]", "Reals"}], ",", 
+      RowBox[{"w", "\[Element]", "Reals"}]}], "}"}], ",", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"i", "[", "T", "]"}], " ", 
+       RowBox[{"\[CapitalOmega]", "[", "T", "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"T", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.96409522222945*^9, 3.964095225066811*^9}, {
+  3.964095456390258*^9, 3.964095469088984*^9}, {3.964095651548757*^9, 
+  3.964095662989073*^9}, {3.9640964925837717`*^9, 3.9640964978514214`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"be76532d-c63a-4d6e-b3d5-94e7ebe0d483"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", "\[Sigma]", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"\[Sigma]", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"], " ", "\[CurlyPhi]"}], 
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", "2"]}], "-", 
+       RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}]]}], "-", 
+    FractionBox[
+     RowBox[{"\[Sigma]", " ", "\[CurlyPhi]", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]}], 
+     RowBox[{
+      RowBox[{"2", " ", 
+       SuperscriptBox["A", "2"]}], "+", 
+      RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "2"]}]], "+", 
+    FractionBox[
+     RowBox[{"A", " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]}], 
+     RowBox[{
+      SqrtBox[
+       RowBox[{
+        RowBox[{"2", " ", 
+         SuperscriptBox["A", "2"]}], "-", 
+        RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+        SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"A", "-", "\[CurlyPhi]"}], "]"}]}]], "+", 
+    FractionBox[
+     RowBox[{"A", " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]}], 
+     RowBox[{
+      SqrtBox[
+       RowBox[{
+        RowBox[{"2", " ", 
+         SuperscriptBox["A", "2"]}], "+", 
+        RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+        SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}]]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.964095644442384*^9, 3.964095821653349*^9, 
+  3.964096568540204*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"40df18eb-85fe-464a-ac4c-016f38144f89"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ComplexExpand", "[", "W", "]"}], "//", "FullSimplify"}]], "Input",
+ CellChangeTimes->{{3.9640958694383383`*^9, 3.964095891744439*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"a5f7edcc-e380-4510-bcf8-44a10771a9aa"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", "\[Sigma]", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"A", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["1", "2"]}], " ", "\[ImaginaryI]", " ", 
+        RowBox[{"Arg", "[", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           SuperscriptBox["A", "2"]}], "-", 
+          RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}], "]"}]}]], " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+      SqrtBox[
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           SuperscriptBox["A", "2"]}], "-", 
+          RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}], ")"}], "2"], ")"}], 
+      RowBox[{"1", "/", "4"}]]], "+", 
+    FractionBox[
+     RowBox[{"A", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["1", "2"]}], " ", "\[ImaginaryI]", " ", 
+        RowBox[{"Arg", "[", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           SuperscriptBox["A", "2"]}], "+", 
+          RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}], "]"}]}]], " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+      SqrtBox[
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           SuperscriptBox["A", "2"]}], "+", 
+          RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}], ")"}], "2"], ")"}], 
+      RowBox[{"1", "/", "4"}]]], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "\[Sigma]", " ", "\[CurlyPhi]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         SuperscriptBox["A", "4"]}], "-", 
+        RowBox[{
+         SuperscriptBox["A", "2"], " ", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+        SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], 
+     RowBox[{
+      RowBox[{"4", " ", 
+       SuperscriptBox["A", "4"]}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "4"]}]]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.964095874801282*^9, 3.964095897052231*^9}, 
+   3.964096741447205*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"06ca6af3-be66-4daf-8c7e-d8ece0894afe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"W", "//", "FullSimplify"}]], "Input",
+ CellChangeTimes->{{3.9640967569594517`*^9, 3.964096760348104*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"7d215d25-7254-4099-9179-8b7447c34e9f"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", "\[Sigma]", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"2", " ", "\[Sigma]", " ", "\[CurlyPhi]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "4"]}], "-", 
+         RowBox[{
+          SuperscriptBox["A", "2"], " ", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], 
+      RowBox[{
+       RowBox[{"4", " ", 
+        SuperscriptBox["A", "4"]}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "4"]}]]}], "+", 
+    FractionBox[
+     RowBox[{"A", " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+      RowBox[{"(", 
+       RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], " ", 
+      RowBox[{"Sign", "[", 
+       RowBox[{"A", "-", "\[CurlyPhi]"}], "]"}]}], 
+     SqrtBox[
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", "2"]}], "-", 
+       RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}]]], "+", 
+    FractionBox[
+     RowBox[{"A", " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+      RowBox[{"(", 
+       RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], " ", 
+      RowBox[{"Sign", "[", 
+       RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}], 
+     SqrtBox[
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", "2"]}], "+", 
+       RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}]]]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.964096776222855*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"2f4147ba-1fa3-4796-8ce8-685b2e233d70"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "=", 
+  RowBox[{"Assuming", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", ">", "0"}], ",", 
+      RowBox[{"\[Sigma]", ">", "0"}], ",", 
+      RowBox[{"\[CurlyPhi]", "\[Element]", "Reals"}], ",", 
+      RowBox[{"w", "\[Element]", "Reals"}]}], "}"}], ",", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"i", "[", "T", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"T", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.964096799873486*^9, 3.964096822082892*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"8d2232be-a512-4493-8383-badf6c30df61"],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox[
+   RowBox[{"2", " ", "\[Pi]"}]], " ", "\[Sigma]", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{3.964096827813397*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"00d94be3-1239-4811-91ea-759d9ee795cd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mn", "=", 
+  RowBox[{"W", "/", "B"}]}]], "Input",
+ CellChangeTimes->{{3.964097289506114*^9, 3.9640973160472116`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"b229827d-67cb-472a-98a6-dbe201d0617c"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"\[Sigma]", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"], " ", 
+        "\[CurlyPhi]"}], 
+       RowBox[{
+        RowBox[{"2", " ", 
+         SuperscriptBox["A", "2"]}], "-", 
+        RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+        SuperscriptBox["\[CurlyPhi]", "2"]}]]}], "-", 
+     FractionBox[
+      RowBox[{"\[Sigma]", " ", "\[CurlyPhi]", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]}], 
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", "2"]}], "+", 
+       RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}]], "+", 
+     FractionBox[
+      RowBox[{"A", " ", 
+       SqrtBox[
+        RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]}], 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "-", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"A", "-", "\[CurlyPhi]"}], "]"}]}]], "+", 
+     FractionBox[
+      RowBox[{"A", " ", 
+       SqrtBox[
+        RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]}], 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "+", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}]]}], ")"}]}], 
+  RowBox[{
+   FractionBox["1", 
+    SqrtBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox["A", "2"]], "+", 
+      FractionBox["1", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+   FractionBox["1", 
+    SqrtBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox["A", "2"]], "+", 
+      FractionBox["1", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}]]], "Output",
+ CellChangeTimes->{{3.964097304721161*^9, 3.964097322215674*^9}},
+ CellLabel->"Out[22]=",ExpressionUUID->"6c3fcdf5-586b-48da-9789-3918f9192c93"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Expand", "[", "Mn", "]"}], "//", "FullSimplify"}]], "Input",
+ CellChangeTimes->{{3.9640973245238457`*^9, 3.964097364766972*^9}, 
+   3.9640974446193438`*^9},
+ CellLabel->"In[25]:=",ExpressionUUID->"3a6a0f74-a723-4ff0-a9d1-3de679d70875"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"2", " ", 
+    SqrtBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox["A", "2"]], "+", 
+      FractionBox["1", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]], " ", 
+    SqrtBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox["A", "2"]], "+", 
+      FractionBox["1", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"A", " ", "w", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"], " ", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "+", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4", " ", 
+          SuperscriptBox["A", "4"]}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}], " ", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}], "+", 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "-", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"A", "-", "\[CurlyPhi]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A", " ", "w", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"4", " ", 
+             SuperscriptBox["A", "4"]}], "+", 
+            SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], "-", 
+         RowBox[{
+          SqrtBox[
+           FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", "\[CurlyPhi]", 
+          " ", 
+          SqrtBox[
+           RowBox[{
+            RowBox[{"2", " ", 
+             SuperscriptBox["A", "2"]}], "+", 
+            RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+            SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"2", " ", 
+             SuperscriptBox["A", "4"]}], "-", 
+            RowBox[{
+             SuperscriptBox["A", "2"], " ", 
+             SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+            SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}], " ", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}]}], ")"}]}]}], ")"}]}], 
+   ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", "2"]}], "-", 
+       RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}], ")"}], 
+     RowBox[{"3", "/", "2"}]], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", "2"]}], "+", 
+       RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}], ")"}], 
+     RowBox[{"3", "/", "2"}]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox[
+       RowBox[{
+        FractionBox["1", 
+         SuperscriptBox["A", "2"]], "+", 
+        FractionBox["1", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]], "+", 
+      SqrtBox[
+       RowBox[{
+        FractionBox["1", 
+         SuperscriptBox["A", "2"]], "+", 
+        FractionBox["1", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]}], ")"}], " ", 
+    RowBox[{"Abs", "[", 
+     RowBox[{
+      SuperscriptBox["A", "2"], "-", 
+      SuperscriptBox["\[CurlyPhi]", "2"]}], "]"}]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.964097338264112*^9, 3.9640974253457403`*^9, 
+  3.964097456677574*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"dbdae559-c82c-4cd5-af40-6473b9f40d19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Mn", "-", 
+   RowBox[{"2", "w"}]}], "//", "FullSimplify"}]], "Input",
+ CellChangeTimes->{{3.964097482044293*^9, 3.964097496332613*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"eb8687ec-a100-43b7-8e47-43446a00700e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "2"}], " ", "w"}], "+", 
+  FractionBox[
+   RowBox[{
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", " ", "\[Sigma]", " ", "\[CurlyPhi]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", " ", 
+            SuperscriptBox["A", "4"]}], "-", 
+           RowBox[{
+            SuperscriptBox["A", "2"], " ", 
+            SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+           SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], 
+        RowBox[{
+         RowBox[{"4", " ", 
+          SuperscriptBox["A", "4"]}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "4"]}]]}], "+", 
+      FractionBox[
+       RowBox[{"A", " ", 
+        SqrtBox[
+         RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+        RowBox[{"(", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], " ", 
+        RowBox[{"Sign", "[", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], "]"}]}], 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "-", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]]], "+", 
+      FractionBox[
+       RowBox[{"A", " ", 
+        SqrtBox[
+         RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+        RowBox[{"(", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], " ", 
+        RowBox[{"Sign", "[", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}], 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "+", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]]]}], ")"}]}], 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}]]}]], "Output",\
+
+ CellChangeTimes->{3.9640974905854177`*^9, 3.9640975649594727`*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"e6476b8e-d238-4bba-89dc-eb01c29c6697"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.964097712530198*^9, 
+  3.964097717065514*^9}},ExpressionUUID->"d932ab99-408e-4057-a539-\
+8256d519b6d4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"b", "=", 
+  RowBox[{"Assuming", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", ">", "0"}], ",", 
+      RowBox[{"\[Sigma]", ">", "0"}], ",", 
+      RowBox[{"\[CurlyPhi]", "\[Element]", "Reals"}], ",", 
+      RowBox[{"w", "\[Element]", "Reals"}]}], "}"}], ",", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"i", "[", "T", "]"}], " ", "*", "2", "w"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"T", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"c", "=", 
+  RowBox[{"b", "/", "B"}]}]}], "Input",
+ CellChangeTimes->{{3.964097725479404*^9, 3.9640977626063223`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"f77b24cd-38b5-4e97-a1bf-d3ea416bf4a7"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  SqrtBox[
+   RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", "\[Sigma]", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{3.964097771203973*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"a97d7cc8-c360-4a03-8e6b-24713a878209"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", "w"}]], "Output",
+ CellChangeTimes->{3.964097771205451*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"e3d48fcb-bd50-48cc-a6f3-61571e66942a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"x", "=", 
+  RowBox[{"Assuming", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", ">", "0"}], ",", 
+      RowBox[{"\[Sigma]", ">", "0"}], ",", 
+      RowBox[{"\[CurlyPhi]", "\[Element]", "Reals"}], ",", 
+      RowBox[{"w", "\[Element]", "Reals"}]}], "}"}], ",", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", " ", "\[CurlyPhi]"}], " ", "*", " ", 
+       RowBox[{"T", " ", "/", " ", 
+        RowBox[{"(", 
+         RowBox[{"2", " ", 
+          RowBox[{"A", "^", "2"}]}], ")"}]}], "*", 
+       RowBox[{"i", "[", "T", "]"}]}], " ", ",", 
+      RowBox[{"{", 
+       RowBox[{"T", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"y", "=", 
+  RowBox[{"x", "/", "B"}]}]}], "Input",
+ CellChangeTimes->{{3.9640977844276114`*^9, 3.964097826469714*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"b008aa91-5afd-40ce-b576-c7a7ad6e7019"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"4", " ", 
+    SuperscriptBox["\[Sigma]", "2"], " ", "\[CurlyPhi]", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       SuperscriptBox["A", "4"]}], "-", 
+      RowBox[{
+       SuperscriptBox["A", "2"], " ", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], 
+   RowBox[{
+    RowBox[{"4", " ", 
+     SuperscriptBox["A", "4"]}], "+", 
+    SuperscriptBox["\[CurlyPhi]", "4"]}]]}]], "Output",
+ CellChangeTimes->{3.9640978424427013`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"1a89b086-2fc5-42a3-9071-527bbd41dd31"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"2", " ", 
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", "\[CurlyPhi]", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       SuperscriptBox["A", "4"]}], "-", 
+      RowBox[{
+       SuperscriptBox["A", "2"], " ", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"4", " ", 
+       SuperscriptBox["A", "4"]}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{
+         FractionBox["1", 
+          SuperscriptBox["A", "2"]], "+", 
+         FractionBox["1", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{
+         FractionBox["1", 
+          SuperscriptBox["A", "2"]], "+", 
+         FractionBox["1", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}], 
+     ")"}]}]]}]], "Output",
+ CellChangeTimes->{3.964097842444007*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"233b517b-d30d-497b-a5f1-d4a2d9956aac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"z", "=", 
+  RowBox[{"c", "+", "y", "-", "Mn"}]}], "\[IndentingNewLine]", 
+ RowBox[{"WolframAlpha", "[", 
+  RowBox[{"ToString", "[", 
+   RowBox[{"y", ",", "InputForm"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.964097877514637*^9, 3.9640979056157703`*^9}, {
+  3.96409813317929*^9, 3.964098133971979*^9}, {3.9640982259951267`*^9, 
+  3.964098229117443*^9}, {3.9640984140449657`*^9, 3.964098453677574*^9}, {
+  3.964098484688092*^9, 3.9640984988460197`*^9}, {3.9640987947467422`*^9, 
+  3.9640987950155497`*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"9d04f4b5-4857-495e-aed5-f2ffe04d74f5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"2", " ", "w"}], "-", 
+  FractionBox[
+   RowBox[{"2", " ", 
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", "\[CurlyPhi]", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       SuperscriptBox["A", "4"]}], "-", 
+      RowBox[{
+       SuperscriptBox["A", "2"], " ", 
+       SuperscriptBox["\[CurlyPhi]", "2"]}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"4", " ", 
+       SuperscriptBox["A", "4"]}], "+", 
+      SuperscriptBox["\[CurlyPhi]", "4"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{
+         FractionBox["1", 
+          SuperscriptBox["A", "2"]], "+", 
+         FractionBox["1", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{
+         FractionBox["1", 
+          SuperscriptBox["A", "2"]], "+", 
+         FractionBox["1", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}], ")"}]}]], 
+  "-", 
+  FractionBox[
+   RowBox[{
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Sigma]", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"], " ", 
+         "\[CurlyPhi]"}], 
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox["A", "2"]}], "-", 
+         RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+         SuperscriptBox["\[CurlyPhi]", "2"]}]]}], "-", 
+      FractionBox[
+       RowBox[{"\[Sigma]", " ", "\[CurlyPhi]", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]}], 
+       RowBox[{
+        RowBox[{"2", " ", 
+         SuperscriptBox["A", "2"]}], "+", 
+        RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+        SuperscriptBox["\[CurlyPhi]", "2"]}]], "+", 
+      FractionBox[
+       RowBox[{"A", " ", 
+        SqrtBox[
+         RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]}], 
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"2", " ", 
+           SuperscriptBox["A", "2"]}], "-", 
+          RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+        RowBox[{"Abs", "[", 
+         RowBox[{"A", "-", "\[CurlyPhi]"}], "]"}]}]], "+", 
+      FractionBox[
+       RowBox[{"A", " ", 
+        SqrtBox[
+         RowBox[{"2", " ", "\[Pi]"}]], " ", "w", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]}], 
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"2", " ", 
+           SuperscriptBox["A", "2"]}], "+", 
+          RowBox[{"2", " ", "A", " ", "\[CurlyPhi]"}], "+", 
+          SuperscriptBox["\[CurlyPhi]", "2"]}]], " ", 
+        RowBox[{"Abs", "[", 
+         RowBox[{"A", "+", "\[CurlyPhi]"}], "]"}]}]]}], ")"}]}], 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", "\[CurlyPhi]"}], ")"}], "2"]]}]]], "+", 
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["1", 
+        SuperscriptBox["A", "2"]], "+", 
+       FractionBox["1", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "+", "\[CurlyPhi]"}], ")"}], "2"]]}]]]}]]}]], "Output",\
+
+ CellChangeTimes->{{3.9640978801639214`*^9, 3.964097910297373*^9}, 
+   3.964098171507595*^9, 3.964098299691073*^9, 3.964098414643402*^9, 
+   3.964098459288063*^9, {3.964098492332304*^9, 3.964098501272352*^9}, 
+   3.964098796220579*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"5e72ef3f-7cfe-4e4e-8062-fbf4631fe97d"],
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryResults",
+  DynamicModuleBox[{Typeset`q$$ = 
+   "(-2*Sqrt[2/Pi]*\[Sigma]*\[CurlyPhi]*(2*A^4 - A^2*\[CurlyPhi]^2 + \
+\[CurlyPhi]^4))/((4*A^4 + \[CurlyPhi]^4)*(1/Sqrt[A^(-2) + (A - \
+\[CurlyPhi])^(-2)] + 1/Sqrt[A^(-2) + (A + \[CurlyPhi])^(-2)]))", 
+   Typeset`opts$$ = {
+   AppearanceElements -> {
+     "Warnings", "Assumptions", "Brand", "Pods", "PodMenus", "Unsuccessful", 
+      "Sources"}}, Typeset`elements$$ = {
+   "Warnings", "Assumptions", "Brand", "Pods", "PodMenus", "Unsuccessful", 
+    "Sources"}, Typeset`pod1$$ = XMLElement[
+   "pod", {"title" -> "Input", "scanner" -> "Identity", "id" -> "Input", 
+     "position" -> "1", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "(-2 Sqrt[2/Pi] \[Sigma] GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4))/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)]))"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             FractionBox[
+              TagBox[
+               RowBox[{
+                 RowBox[{"-", "2"}], " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                 TagBox["\[Phi]", 
+                  Function[{}, GoldenRatio]], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], 
+               PolynomialForm[#, TraditionalOrder -> False]& ], 
+              RowBox[{
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                  ")"}]}]], PolynomialForm[#, TraditionalOrder -> False]& ], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,formuladata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}], 
+     XMLElement["infos", {"count" -> "1"}, {
+       XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+         XMLElement[
+         "link", {
+          "url" -> 
+           "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+           "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+         XMLElement[
+         "link", {
+          "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+           "Definition", "title" -> "MathWorld"}, {}]}]}]}], Typeset`pod2$$ = 
+   XMLElement[
+   "pod", {"title" -> "Exact result", "scanner" -> "Simplification", "id" -> 
+     "Result", "position" -> "2", "error" -> "false", "numsubpods" -> "1", 
+     "primary" -> "true"}, {
+     XMLElement["subpod", {"title" -> "", "primary" -> "true"}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             RowBox[{"-", 
+               FractionBox[
+                RowBox[{"2", " ", 
+                  SqrtBox[
+                   FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                  TagBox["\[Phi]", 
+                   Function[{}, GoldenRatio]], " ", 
+                  RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], 
+                RowBox[{
+                  RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                  RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], Identity], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod3$$ = XMLElement[
+   "pod", {"title" -> "Real roots", "scanner" -> "Reduce", "id" -> "RealRoot",
+      "position" -> "1321", "error" -> "false", "numsubpods" -> "4", 
+     "primary" -> "true"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Reduce[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == 0, {A, \
+\[Sigma]}, Reals]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   TagBox[
+                    RowBox[{
+                    RowBox[{"A", "<", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ",   ", 
+                    RowBox[{"\[Sigma]", "\[LongEqual]", "0"}]}], Row], 
+                   BaselinePosition -> Baseline, ImageSize -> 550]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column",
+                 GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Column"], TraditionalForm], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Reduce[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == 0, {A, \
+\[Sigma]}, Reals]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   TagBox[
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}], "<", "A", "<", "0"}], ",   ", 
+                    RowBox[{"\[Sigma]", "\[LongEqual]", "0"}]}], Row], 
+                   BaselinePosition -> Baseline, ImageSize -> 550]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column",
+                 GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Column"], TraditionalForm], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Reduce[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == 0, {A, \
+\[Sigma]}, Reals]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   TagBox[
+                    RowBox[{
+                    RowBox[{"0", "<", "A", "<", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ",   ", 
+                    RowBox[{"\[Sigma]", "\[LongEqual]", "0"}]}], Row], 
+                   BaselinePosition -> Baseline, ImageSize -> 550]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column",
+                 GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Column"], TraditionalForm], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Reduce[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == 0, {A, \
+\[Sigma]}, Reals]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   TagBox[
+                    RowBox[{
+                    RowBox[{"A", ">", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ",   ", 
+                    RowBox[{"\[Sigma]", "\[LongEqual]", "0"}]}], Row], 
+                   BaselinePosition -> Baseline, ImageSize -> 550]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column",
+                 GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Column"], TraditionalForm], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["expressiontypes", {"count" -> "4"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}], 
+     XMLElement["states", {"count" -> "1"}, {
+       XMLElement[
+       "state", {
+        "name" -> "Approximate forms", "input" -> 
+         "RealRoot__Approximate forms"}, {}]}]}], Typeset`pod4$$ = XMLElement[
+   "pod", {"title" -> "Property as a function", "scanner" -> 
+     "FunctionProperties", "id" -> "PropertyAsAFunction", "position" -> 
+     "1363", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> "Parity"}, {
+       XMLElement[
+       "minput", {}, {
+        "Simplify[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == -((-2 \
+GoldenRatio (2 (-A)^4 - (-A)^2 GoldenRatio^2 + GoldenRatio^4) Sqrt[2/Pi] (-\
+\[Sigma]))/((4 (-A)^4 + GoldenRatio^4) (1/Sqrt[(-A)^(-2) + (-A - \
+GoldenRatio)^(-2)] + 1/Sqrt[(-A)^(-2) + (-A + GoldenRatio)^(-2)])))]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox["\"odd\"", TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod5$$ = XMLElement[
+   "pod", {"title" -> "Root for the variable \[Sigma]", "scanner" -> "Reduce",
+      "id" -> "SolutionForTheVariableV", "position" -> "1371", "error" -> 
+     "false", "numsubpods" -> "1", "primary" -> "true"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Solve[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == 0, \
+\[Sigma]]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   RowBox[{"\[Sigma]", "\[LongEqual]", "0"}], 
+                   BaselinePosition -> Baseline, ImageSize -> 550]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column",
+                 GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Column"], TraditionalForm], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}], 
+     XMLElement["states", {"count" -> "1"}, {
+       XMLElement[
+       "state", {
+        "name" -> "Step-by-step solution", "input" -> 
+         "SolutionForTheVariableV__Step-by-step solution", "stepbystep" -> 
+         "true", "buttonstyle" -> "StepByStepSolution"}, {}]}]}], 
+   Typeset`pod6$$ = XMLElement[
+   "pod", {"title" -> "Series expansion at A = 0", "scanner" -> "Series", 
+     "id" -> "SeriesExpansionAtA=0", "position" -> "1610", "error" -> "false",
+      "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Series[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])), {A, 0, 4}]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", "\[Sigma]"}], 
+                    RowBox[{
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]], " ", "A"}]]}], "+", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", "A", " ", 
+                    "\[Sigma]"}], 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}]], "+", 
+                    FractionBox[
+                    RowBox[{"9", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", 
+                    SuperscriptBox["A", "3"], " ", "\[Sigma]"}], 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "3"]], "-", 
+                    FractionBox[
+                    RowBox[{"62", " ", 
+                    SuperscriptBox["A", "5"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", "\[Sigma]"}], 
+                    ")"}]}], 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "5"]], "+", 
+                    InterpretationBox[
+                    RowBox[{"O", "(", 
+                    SuperscriptBox["A", "6"], ")"}], 
+                    SeriesData[$CellContext`A, 0, {}, -1, 6, 1], Editable -> 
+                    False]}], 
+                  RowBox[{"SeriesData", "[", 
+                    RowBox[{"A", ",", "0", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", "\[Sigma]"}], 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]]}], ",", "0", ",", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]"}], 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}]], ",", "0", ",", 
+                    FractionBox[
+                    RowBox[{"9", " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]"}], 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "3"]], ",", "0", ",", 
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"62", " ", 
+                    SqrtBox[
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]]], " ", "A", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]"}], 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "5"]]}]}], "}"}], ",", 
+                    RowBox[{"-", "1"}], ",", "6", ",", "1"}], "]"}]}, 
+                 "SeriesData", DisplayFunction -> (#& ), 
+                 InterpretationFunction -> (#2& ), SyntaxForm -> Plus]}, {
+                StyleBox[
+                 TagBox[
+                  
+                  RowBox[{
+                   "\"(\"", "\[NoBreak]", "\"Puiseux series\"", "\[NoBreak]", 
+                    "\")\""}], Row], {
+                 FontSize -> 11, FontFamily -> "Roboto", 
+                  GrayLevel[0.5000000000000044], 
+                  LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                  0}]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Column"], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {}, {
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/Big-ONotation.html", 
+             "text" -> "Big\[Hyphen]O notation"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod7$$ = XMLElement[
+   "pod", {"title" -> "Derivative", "scanner" -> "Derivative", "id" -> 
+     "Derivative", "position" -> "1710", "error" -> "false", "numsubpods" -> 
+     "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "D[(-2 Sqrt[2/Pi] \[Sigma] GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4))/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])), A]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{
+              RowBox[{
+                TagBox[
+                 FractionBox["\[PartialD]", 
+                  RowBox[{"\"\[PartialD]\"", "\[InvisibleSpace]", "A"}]], 
+                 $CellContext`TagBoxWrapper[
+                 "StringBoxes" -> RowBox[{"d/d", "\[InvisibleSpace]", "A"}]]],
+                 "\[InvisibleSpace]", 
+                RowBox[{"(", 
+                  TagBox[
+                   TagBox[
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], HoldForm], 
+                   PolynomialForm[#, TraditionalOrder -> False]& ], ")"}]}], 
+              "\[LongEqual]", 
+              RowBox[{
+                FractionBox[
+                 RowBox[{"32", " ", 
+                   SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", 
+                   SuperscriptBox["A", "3"], " ", "\[Sigma]", " ", 
+                   TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], 
+                 RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]]]}], 
+                    ")"}], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TagBox[
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], ")"}], 
+                    "2"]}]], "+", 
+                FractionBox[
+                 RowBox[{"2", " ", 
+                   SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                   TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["2", 
+                    SuperscriptBox["A", "3"]]}], "-", 
+                    RowBox[{
+                    FractionBox["2", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    TagBox[
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], ")"}], 
+                    "3"]]}]}], 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], ")"}], 
+                    RowBox[{"3", "/", "2"}]]}]]}]}], "-", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["2", 
+                    SuperscriptBox["A", "3"]]}], "-", 
+                    RowBox[{
+                    FractionBox["2", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    TagBox[
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], ")"}], 
+                    "3"]]}]}], 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], ")"}], 
+                    RowBox[{"3", "/", "2"}]]}]]}], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]]]}], 
+                    ")"}], "2"], " ", 
+                   RowBox[{"(", 
+                    TagBox[
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], ")"}]}]],
+                 "-", 
+                FractionBox[
+                 RowBox[{"2", " ", 
+                   SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                   TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"8", " ", 
+                    SuperscriptBox["A", "3"]}], "-", 
+                    RowBox[{"2", " ", "A", " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}]}], ")"}]}], 
+                 RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    TagBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]]]}], 
+                    ")"}], " ", 
+                   RowBox[{"(", 
+                    TagBox[
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ], 
+                    ")"}]}]]}]}], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}], 
+     XMLElement["states", {"count" -> "2"}, {
+       XMLElement[
+       "state", {
+        "name" -> "Approximate form", "input" -> 
+         "Derivative__Approximate form"}, {}], 
+       XMLElement[
+       "state", {
+        "name" -> "Step-by-step solution", "input" -> 
+         "Derivative__Step-by-step solution", "stepbystep" -> "true", 
+         "buttonstyle" -> "StepByStepSolution"}, {}]}]}], Typeset`pod8$$ = 
+   XMLElement[
+   "pod", {"title" -> "Limit", "scanner" -> "GlobalExtrema", "id" -> "Limit", 
+     "position" -> "2070", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Limit[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])), {A -> \
+-Infinity, A -> Infinity}]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{
+              TagBox[
+               TemplateBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    RowBox[{"2", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]"}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], "A", 
+                 RowBox[{"\[PlusMinus]", "\[Infinity]"}]}, "Limit2Arg", 
+                SyntaxForm -> Limit, DisplayFunction -> (RowBox[{
+                   TagBox[
+                    UnderscriptBox[
+                    StyleBox["\"lim\"", ShowStringCharacters -> False], 
+                    RowBox[{#2, "\[Rule]", #3}], LimitsPositioning -> True], 
+                    Identity, SyntaxForm -> "\[Limit]", Tooltip -> 
+                    "Limit"], #}]& ), 
+                InterpretationFunction -> (RowBox[{"Limit", "[", 
+                   RowBox[{#, ",", 
+                    RowBox[{#2, "->", #3}]}], "]"}]& )], HoldForm], 
+              "\[LongEqual]", "0"}], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod9$$ = XMLElement[
+   "pod", {"title" -> "Series representation", "scanner" -> 
+     "MathematicalFunctionData", "id" -> 
+     "SeriesRepresentations:MathematicalFunctionIdentityData", "position" -> 
+     "2220", "error" -> "false", "numsubpods" -> "3"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "(-2 Sqrt[2/Pi] \[Sigma] GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4))/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == (-2 \
+GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \[Sigma] \
+Sum[((-1)^(Subscript[k, 1] + Subscript[k, 2] + Subscript[k, 3]) (-1 + A^(-2) \
++ (A - GoldenRatio)^(-2))^Subscript[k, 1] (-1 + A^(-2) + (A + \
+GoldenRatio)^(-2))^Subscript[k, 2] (-1 + 2/Pi)^Subscript[k, 3] \
+Pochhammer[-1/2, Subscript[k, 1]] Pochhammer[-1/2, Subscript[k, 2]] \
+Pochhammer[-1/2, Subscript[k, 3]])/(Subscript[k, 1]! Subscript[k, 2]! \
+Subscript[k, 3]!), {Subscript[k, 1], 0, Infinity}, {Subscript[k, 2], 0, \
+Infinity}, {Subscript[k, 3], 0, Infinity}])/((2 A^2 - 2 A GoldenRatio + \
+GoldenRatio^2) (2 A^2 + 2 A GoldenRatio + GoldenRatio^2) (Sum[((-1)^k (-1 + \
+A^(-2) + (A - GoldenRatio)^(-2))^k Pochhammer[-1/2, k])/k!, {k, 0, Infinity}] \
++ Sum[((-1)^k (-1 + A^(-2) + (A + GoldenRatio)^(-2))^k Pochhammer[-1/2, \
+k])/k!, {k, 0, Infinity}])) /; Abs[-1 + A^(-2) + (A - GoldenRatio)^(-2)] < 1 \
+&& Abs[-1 + A^(-2) + (A + GoldenRatio)^(-2)] < 1 && Abs[-1 + 2/Pi] < 1"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FrameBox[
+             TagBox[
+              RowBox[{
+                TagBox[
+                 RowBox[{
+                   RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], ")"}]}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], "\[LongEqual]", 
+                   RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    "\[Sigma]", " ", 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["k", "1"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["k", "2"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["k", "3"], "=", "0"}], "\[Infinity]"], 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], 
+                    RowBox[{
+                    SubscriptBox["k", "1"], "+", 
+                    SubscriptBox["k", "2"], "+", 
+                    SubscriptBox["k", "3"]}]], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], 
+                    SubscriptBox["k", "1"]], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], 
+                    SubscriptBox["k", "2"]], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["2", "\[Pi]"]}], ")"}], 
+                    SubscriptBox["k", "3"]], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], 
+                    SubscriptBox["k", "1"]}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], 
+                    SubscriptBox["k", "2"]}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], 
+                    SubscriptBox["k", "3"]}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox]}], 
+                    RowBox[{
+                    RowBox[{
+                    SubscriptBox["k", "1"], "!"}], " ", 
+                    RowBox[{
+                    SubscriptBox["k", "2"], "!"}], " ", 
+                    RowBox[{
+                    SubscriptBox["k", "3"], "!"}]}]]}]}]}]}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "2"]}], "-", 
+                    RowBox[{"2", " ", "A", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "2"]}], "+", 
+                    RowBox[{"2", " ", "A", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    UnderoverscriptBox[
+                    StyleBox["\[Sum]", ScriptLevel -> 0], 
+                    RowBox[{"k", "=", "0"}], "\[Infinity]"], 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], "k"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], "k"],
+                     " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "k"}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox]}], 
+                    RowBox[{"k", "!"}]]}], "+", 
+                    RowBox[{
+                    UnderoverscriptBox[
+                    StyleBox["\[Sum]", ScriptLevel -> 0], 
+                    RowBox[{"k", "=", "0"}], "\[Infinity]"], 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], "k"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], "k"],
+                     " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "k"}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox]}], 
+                    RowBox[{"k", "!"}]]}]}], ")"}]}]]}]}], HoldForm], 
+                "\[InvisibleSpace]", 
+                StyleBox[
+                 TagBox[
+                  RowBox[{"\"  for \"", "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"(", "\[NoBreak]", 
+                    TagBox[
+                    RowBox[{
+                    RowBox[{
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]}, "Abs"], 
+                    "<", "1"}], "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\" and \"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", 
+                    RowBox[{
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]}, "Abs"], 
+                    "<", "1"}], "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\" and \"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", 
+                    RowBox[{
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["2", "\[Pi]"]}]}, "Abs"], "<", "1"}]}], Row], 
+                    "\[NoBreak]", ")"}], HoldForm]}], Row], 
+                 GrayLevel[0.6], StripOnInput -> False]}], Row], FrameStyle -> 
+             None, FrameMargins -> {{-1, -1}, {3, 3}}], TraditionalForm]], 
+          "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,formuladata"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "(-2 Sqrt[2/Pi] \[Sigma] GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4))/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])) == (-2 \
+GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \[Sigma] \
+Sqrt[Subscript[z, 0]]^2 Sum[((-1)^(Subscript[k, 1] + Subscript[k, 2] + \
+Subscript[k, 3]) Pochhammer[-1/2, Subscript[k, 1]] Pochhammer[-1/2, \
+Subscript[k, 2]] Pochhammer[-1/2, Subscript[k, 3]] (A^(-2) + (A - \
+GoldenRatio)^(-2) - Subscript[z, 0])^Subscript[k, 1] (A^(-2) + (A + \
+GoldenRatio)^(-2) - Subscript[z, 0])^Subscript[k, 2] (2/Pi - Subscript[z, \
+0])^Subscript[k, 3] Subscript[z, 0]^(-Subscript[k, 1] - Subscript[k, 2] - \
+Subscript[k, 3]))/(Subscript[k, 1]! Subscript[k, 2]! Subscript[k, 3]!), \
+{Subscript[k, 1], 0, Infinity}, {Subscript[k, 2], 0, Infinity}, {Subscript[k, \
+3], 0, Infinity}])/((2 A^2 - 2 A GoldenRatio + GoldenRatio^2) (2 A^2 + 2 A \
+GoldenRatio + GoldenRatio^2) (Sum[((-1)^k Pochhammer[-1/2, k] (A^(-2) + (A - \
+GoldenRatio)^(-2) - Subscript[z, 0])^k)/(k! Subscript[z, 0]^k), {k, 0, \
+Infinity}] + Sum[((-1)^k Pochhammer[-1/2, k] (A^(-2) + (A + GoldenRatio)^(-2) \
+- Subscript[z, 0])^k)/(k! Subscript[z, 0]^k), {k, 0, Infinity}])) /;  \
+!(Element[Subscript[\[ScriptZ], 0], Reals] && -Infinity < \
+Subscript[\[ScriptZ], 0] \[LessEqual] 0)"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FrameBox[
+             TagBox[
+              RowBox[{
+                TagBox[
+                 RowBox[{
+                   RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], ")"}]}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], "\[LongEqual]", 
+                   RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    "\[Sigma]", " ", 
+                    SuperscriptBox[
+                    SqrtBox[
+                    SubscriptBox["z", "0"]], "2"], " ", 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["k", "1"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["k", "2"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["k", "3"], "=", "0"}], "\[Infinity]"], 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], 
+                    RowBox[{
+                    SubscriptBox["k", "1"], "+", 
+                    SubscriptBox["k", "2"], "+", 
+                    SubscriptBox["k", "3"]}]], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], 
+                    SubscriptBox["k", "1"]}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], 
+                    SubscriptBox["k", "2"]}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], 
+                    SubscriptBox["k", "3"]}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]], "-", 
+                    SubscriptBox["z", "0"]}], ")"}], 
+                    SubscriptBox["k", "1"]], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]], "-", 
+                    SubscriptBox["z", "0"]}], ")"}], 
+                    SubscriptBox["k", "2"]], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["2", "\[Pi]"], "-", 
+                    SubscriptBox["z", "0"]}], ")"}], 
+                    SubscriptBox["k", "3"]], " ", 
+                    SubsuperscriptBox["z", "0", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    SubscriptBox["k", "1"]}], "-", 
+                    SubscriptBox["k", "2"], "-", 
+                    SubscriptBox["k", "3"]}]]}], 
+                    RowBox[{
+                    RowBox[{
+                    SubscriptBox["k", "1"], "!"}], " ", 
+                    RowBox[{
+                    SubscriptBox["k", "2"], "!"}], " ", 
+                    RowBox[{
+                    SubscriptBox["k", "3"], "!"}]}]]}]}]}]}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "2"]}], "-", 
+                    RowBox[{"2", " ", "A", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "2"]}], "+", 
+                    RowBox[{"2", " ", "A", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    UnderoverscriptBox[
+                    StyleBox["\[Sum]", ScriptLevel -> 0], 
+                    RowBox[{"k", "=", "0"}], "\[Infinity]"], 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], "k"], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "k"}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]], "-", 
+                    SubscriptBox["z", "0"]}], ")"}], "k"], " ", 
+                    SubsuperscriptBox["z", "0", 
+                    RowBox[{"-", "k"}]]}], 
+                    RowBox[{"k", "!"}]]}], "+", 
+                    RowBox[{
+                    UnderoverscriptBox[
+                    StyleBox["\[Sum]", ScriptLevel -> 0], 
+                    RowBox[{"k", "=", "0"}], "\[Infinity]"], 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], "k"], " ", 
+                    TemplateBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "k"}, "Pochhammer", SyntaxForm -> 
+                    SubscriptBox], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]], "-", 
+                    SubscriptBox["z", "0"]}], ")"}], "k"], " ", 
+                    SubsuperscriptBox["z", "0", 
+                    RowBox[{"-", "k"}]]}], 
+                    RowBox[{"k", "!"}]]}]}], ")"}]}]]}]}], HoldForm], 
+                "\[InvisibleSpace]", 
+                StyleBox[
+                 TagBox[
+                  RowBox[{"\"  for \"", "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"(", "\[NoBreak]", 
+                    StyleBox[
+                    TagBox[
+                    RowBox[{"\"not \"", "\[InvisibleSpace]", 
+                    RowBox[{"(", "\[NoBreak]", 
+                    TagBox[
+                    RowBox[{
+                    RowBox[{
+                    SubscriptBox["\[ScriptZ]", "0"], "\[Element]", 
+                    TemplateBox[{}, "Reals"]}], "\[InvisibleSpace]", 
+                    "\" and \"", "\[InvisibleSpace]", 
+                    RowBox[{"-\[Infinity]", "<", 
+                    SubscriptBox["\[ScriptZ]", "0"], "\[LessEqual]", "0"}]}], 
+                    Row], "\[NoBreak]", ")"}]}], Row], {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[NoBreak]", ")"}], HoldForm]}], Row], 
+                 GrayLevel[0.6], StripOnInput -> False]}], Row], FrameStyle -> 
+             None, FrameMargins -> {{-1, -1}, {3, 3}}], TraditionalForm]], 
+          "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,formuladata"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FrameBox[
+             TagBox[
+              RowBox[{
+                TagBox[
+                 RowBox[{
+                   RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}]}], ")"}]}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], "\[LongEqual]", 
+                   RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    "\[Sigma]", " ", 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["j", "1"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["j", "2"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    UnderoverscriptBox["\[Sum]", 
+                    RowBox[{
+                    SubscriptBox["j", "3"], "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    SubscriptBox["Res", 
+                    RowBox[{"s", "=", 
+                    RowBox[{"-", 
+                    SubscriptBox["j", "1"]}]}]], 
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], 
+                    RowBox[{"-", "s"}]], " ", 
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "-", "s"}]}, "Gamma"], " ", 
+                    TemplateBox[{"s"}, "Gamma"]}]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SubscriptBox["Res", 
+                    RowBox[{"s", "=", 
+                    RowBox[{"-", 
+                    SubscriptBox["j", "2"]}]}]], 
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], 
+                    RowBox[{"-", "s"}]], " ", 
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "-", "s"}]}, "Gamma"], " ", 
+                    TemplateBox[{"s"}, "Gamma"]}]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SubscriptBox["Res", 
+                    RowBox[{"s", "=", 
+                    RowBox[{"-", 
+                    SubscriptBox["j", "3"]}]}]], 
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["2", "\[Pi]"]}], ")"}], 
+                    RowBox[{"-", "s"}]], " ", 
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "-", "s"}]}, "Gamma"], " ", 
+                    TemplateBox[{"s"}, "Gamma"]}]}], ")"}]}]}]}]}]}], 
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "2"]}], "-", 
+                    RowBox[{"2", " ", "A", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "2"]}], "+", 
+                    RowBox[{"2", " ", "A", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], ")"}], " ", 
+                    SuperscriptBox[
+                    SqrtBox["\[Pi]"], "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    UnderoverscriptBox[
+                    StyleBox["\[Sum]", ScriptLevel -> 0], 
+                    RowBox[{"j", "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    SubscriptBox["Res", 
+                    RowBox[{"s", "=", 
+                    RowBox[{"-", "j"}]}]], 
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], 
+                    RowBox[{"-", "s"}]], " ", 
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "-", "s"}]}, "Gamma"], " ", 
+                    TemplateBox[{"s"}, "Gamma"]}]}]}], "+", 
+                    RowBox[{
+                    UnderoverscriptBox[
+                    StyleBox["\[Sum]", ScriptLevel -> 0], 
+                    RowBox[{"j", "=", "0"}], "\[Infinity]"], 
+                    RowBox[{
+                    SubscriptBox["Res", 
+                    RowBox[{"s", "=", 
+                    RowBox[{"-", "j"}]}]], 
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}], ")"}], 
+                    RowBox[{"-", "s"}]], " ", 
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", "2"]}], "-", "s"}]}, "Gamma"], " ", 
+                    TemplateBox[{"s"}, "Gamma"]}]}]}]}], ")"}]}]]}]}], 
+                 HoldForm], "\[InvisibleSpace]", 
+                StyleBox[
+                 TagBox[
+                  RowBox[{"\"  for \"", "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"(", "\[NoBreak]", 
+                    TagBox[
+                    RowBox[{
+                    RowBox[{
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]}, "Abs"], 
+                    "<", "1"}], "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\" and \"", {
+                    FontSize -> 0.9 Inherited, FontFamily -> "Roboto", 
+                    GrayLevel[0.5999999999999911], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\[InvisibleSpace]", 
+                    RowBox[{
+                    TemplateBox[{
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]}, "Abs"], 
+                    "<", "1"}]}], Row], "\[NoBreak]", ")"}], HoldForm]}], 
+                  Row], 
+                 GrayLevel[0.6], StripOnInput -> False]}], Row], FrameStyle -> 
+             None, FrameMargins -> {{-1, -1}, {3, 3}}], TraditionalForm]], 
+          "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "8"}, {
+         XMLElement["info", {"text" -> "n! is the factorial function"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/Factorial.html", 
+             "text" -> "Documentation", "title" -> "Mathematica"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://functions.wolfram.com/GammaBetaErf/Factorial", 
+             "text" -> "Properties", "title" -> 
+             "Wolfram Functions Site"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/Factorial.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement[
+         "info", {
+          "text" -> "(a)_n is the Pochhammer symbol (rising factorial)"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/Pochhammer.html", 
+             "text" -> "Documentation", "title" -> "Mathematica"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://functions.wolfram.com/GammaBetaErf/Pochhammer", 
+             "text" -> "Properties", "title" -> 
+             "Wolfram Functions Site"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/PochhammerSymbol.html", 
+             "text" -> "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement[
+         "info", {"text" -> "abs(z) is the absolute value of z"}, {
+           XMLElement[
+           "link", {
+            "url" -> "http://reference.wolfram.com/language/ref/Abs.html", 
+             "text" -> "Documentation", "title" -> "Mathematica"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://functions.wolfram.com/ComplexComponents/Abs", 
+             "text" -> "Properties", "title" -> 
+             "Wolfram Functions Site"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/AbsoluteValue.html", 
+             "text" -> "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement["info", {"text" -> "R is the set of real numbers"}, {
+           XMLElement[
+           "link", {
+            "url" -> "http://reference.wolfram.com/language/ref/Reals.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/R.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement[
+         "info", {"text" -> "\[CapitalGamma](x) is the gamma function"}, {
+           XMLElement[
+           "link", {
+            "url" -> "http://reference.wolfram.com/language/ref/Gamma.html", 
+             "text" -> "Documentation", "title" -> "Mathematica"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://functions.wolfram.com/GammaBetaErf/Gamma", 
+             "text" -> "Properties", "title" -> 
+             "Wolfram Functions Site"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GammaFunction.html", 
+             "text" -> "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement[
+         "info", {"text" -> "Res_(z=z_0)f is a complex residue"}, {
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/ComplexResidue.html", 
+             "text" -> "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement["info", {}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://functions.wolfram.com/ElementaryFunctions/Sqrt/06/\
+ShowAll.html", "text" -> "More information"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "3"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}], 
+     XMLElement["states", {"count" -> "1"}, {
+       XMLElement[
+       "state", {
+        "name" -> "More", "input" -> 
+         "SeriesRepresentations:MathematicalFunctionIdentityData__More"}, \
+{}]}]}], Typeset`pod10$$ = XMLElement[
+   "pod", {"title" -> "Definite integral over a square of edge length 2 L", 
+     "scanner" -> "InterestingMultiDimensionalDefiniteIntegrals", "id" -> 
+     "DefiniteIntegralOverAHypercube", "position" -> "2420", "error" -> 
+     "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Integrate[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4) Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + \
+(A - GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])), {A, -L, \
+L}, {\[Sigma], -L, L}]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{
+              TagBox[
+               RowBox[{
+                 SubsuperscriptBox["\[Integral]", 
+                  RowBox[{"-", "L"}], "L"], 
+                 RowBox[{
+                   SubsuperscriptBox["\[Integral]", 
+                    RowBox[{"-", "L"}], "L"], 
+                   RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["A", "2"], " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "2"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", "\[Sigma]"}], 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}], Identity], PrecedenceForm[#, 400.]& ], 
+                    RowBox[{"\[DifferentialD]", "\[Sigma]"}], 
+                    RowBox[{"\[DifferentialD]", "A"}]}]}]}], HoldForm], 
+              "\[LongEqual]", "0"}], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod11$$ = XMLElement[
+   "pod", {"title" -> "Series expansion at A = \[Infinity]", "scanner" -> 
+     "Series", "id" -> "SeriesExpansionAtA=Infinity", "position" -> "1610.1", 
+     "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Series[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])), {A, Infinity, \
+4}]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"\[Sigma]", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], 
+                    RowBox[{
+                    SqrtBox["\[Pi]"], " ", "A"}]]}], "+", 
+                    FractionBox[
+                    RowBox[{"\[Sigma]", " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "3"]}], 
+                    RowBox[{"8", " ", 
+                    SqrtBox["\[Pi]"], " ", 
+                    SuperscriptBox["A", "3"]}]], "-", 
+                    FractionBox[
+                    RowBox[{"31", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"\[Sigma]", " ", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "5"]}], ")"}]}], 
+                    RowBox[{"128", " ", 
+                    SqrtBox["\[Pi]"], " ", 
+                    SuperscriptBox["A", "5"]}]], "+", 
+                    InterpretationBox[
+                    RowBox[{"O", "(", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    FractionBox["1", "A"], ")"}], "6"], ")"}], 
+                    SeriesData[$CellContext`A, 
+                    DirectedInfinity[1], {}, 1, 6, 1], Editable -> False]}], 
+                  RowBox[{"SeriesData", "[", 
+                    RowBox[{"A", ",", "\[Infinity]", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"GoldenRatio", " ", "\[Sigma]"}], 
+                    SqrtBox["\[Pi]"]]}], ",", "0", ",", 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox["GoldenRatio", "3"], " ", "\[Sigma]"}], 
+                    RowBox[{"8", " ", 
+                    SqrtBox["\[Pi]"]}]], ",", "0", ",", 
+                    RowBox[{"-", 
+                    FractionBox[
+                    RowBox[{"31", " ", 
+                    SuperscriptBox["GoldenRatio", "5"], " ", "\[Sigma]"}], 
+                    RowBox[{"128", " ", 
+                    SqrtBox["\[Pi]"]}]]}]}], "}"}], ",", "1", ",", "6", ",", 
+                    "1"}], "]"}]}, "SeriesData", DisplayFunction -> (#& ), 
+                 InterpretationFunction -> (#2& ), SyntaxForm -> Plus]}, {
+                StyleBox[
+                 TagBox[
+                  
+                  RowBox[{
+                   "\"(\"", "\[NoBreak]", "\"Laurent series\"", "\[NoBreak]", 
+                    "\")\""}], Row], {
+                 FontSize -> 11, FontFamily -> "Roboto", 
+                  GrayLevel[0.5000000000000044], 
+                  LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                  0}]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Column"], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "2"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}], 
+         XMLElement["info", {}, {
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/Big-ONotation.html", 
+             "text" -> "Big\[Hyphen]O notation"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod12$$ = XMLElement[
+   "pod", {"title" -> "Expanded form", "scanner" -> "Simplification", "id" -> 
+     "ExpandedForm", "position" -> "450.1818181818182", "error" -> "false", 
+     "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Expand[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)]))]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{
+              RowBox[{"-", 
+                RowBox[{
+                  FractionBox[
+                   RowBox[{"2", " ", 
+                    SqrtBox[
+                    FractionBox["10", "\[Pi]"]], " ", 
+                    SuperscriptBox["A", "4"], " ", "\[Sigma]"}], 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}]}], "-", 
+              FractionBox[
+               RowBox[{"2", " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", 
+                 SuperscriptBox["A", "4"], " ", "\[Sigma]"}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], ")"}]}]], 
+              "+", 
+              FractionBox[
+               RowBox[{"2", " ", 
+                 SqrtBox[
+                  FractionBox["10", "\[Pi]"]], " ", 
+                 SuperscriptBox["A", "2"], " ", "\[Sigma]"}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], ")"}]}]], 
+              "+", 
+              FractionBox[
+               RowBox[{"4", " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", 
+                 SuperscriptBox["A", "2"], " ", "\[Sigma]"}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], ")"}]}]], 
+              "-", 
+              FractionBox[
+               RowBox[{"5", " ", 
+                 SqrtBox[
+                  FractionBox["10", "\[Pi]"]], " ", "\[Sigma]"}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], ")"}]}]], 
+              "-", 
+              FractionBox[
+               RowBox[{"11", " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", "\[Sigma]"}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], ")"}]}]]}],
+             TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}], 
+     XMLElement["states", {"count" -> "1"}, {
+       XMLElement[
+       "state", {
+        "name" -> "Step-by-step solution", "input" -> 
+         "ExpandedForm__Step-by-step solution", "stepbystep" -> "true", 
+         "buttonstyle" -> "StepByStepSolution"}, {}]}]}], Typeset`pod13$$ = 
+   XMLElement[
+   "pod", {"title" -> "Alternate form assuming A and \[Sigma] are positive", 
+     "scanner" -> "Simplification", "id" -> 
+     "AlternateFormAssumingAllVariablesAreRealAndPositive", "position" -> 
+     "450.3636363636364", "error" -> "false", "numsubpods" -> "2"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Simplify[PowerExpand[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4) Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + \
+(A - GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)]))]]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FractionBox[
+             RowBox[{
+               RowBox[{"(", 
+                 RowBox[{"1", "+", 
+                   SqrtBox["5"]}], ")"}], " ", 
+               SqrtBox[
+                FractionBox["2", "\[Pi]"]], " ", 
+               RowBox[{"(", 
+                 RowBox[{
+                   RowBox[{"-", 
+                    RowBox[{
+                    RowBox[{"4"}], " ", 
+                    SuperscriptBox["A", "4"]}]}], "+", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"3", "+", 
+                    SqrtBox["5"]}], ")"}], " ", 
+                    SuperscriptBox["A", "2"]}], "-", 
+                   RowBox[{"3", " ", 
+                    SqrtBox["5"]}], "-", "7"}], ")"}], " ", "\[Sigma]", " ", 
+               SqrtBox[
+                RowBox[{
+                  FractionBox["1", 
+                   SuperscriptBox["A", "2"]], "+", 
+                  FractionBox["1", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]], " ", 
+               SqrtBox[
+                RowBox[{
+                  FractionBox["1", 
+                   SuperscriptBox["A", "2"]], "+", 
+                  FractionBox["1", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]}], 
+             RowBox[{
+               RowBox[{"(", 
+                 RowBox[{
+                   RowBox[{"8", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                   RowBox[{"3", " ", 
+                    SqrtBox["5"]}], "+", "7"}], ")"}], " ", 
+               RowBox[{"(", 
+                 RowBox[{
+                   SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]], "+", 
+                   SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]}], ")"}]}]],
+             TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "PowerExpand[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4) Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + \
+(A - GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)])), \
+Assumptions -> {}]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{
+              RowBox[{"-", 
+                RowBox[{
+                  FractionBox[
+                   RowBox[{"4", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]], " ", 
+                    SuperscriptBox["A", "4"], " ", "\[Sigma]", " ", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                    ")"}]}]]}]}], "+", 
+              FractionBox[
+               RowBox[{"2", " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", 
+                 SuperscriptBox["A", "2"], " ", "\[Sigma]", " ", 
+                 SuperscriptBox[
+                  TagBox["\[Phi]", 
+                   Function[{}, GoldenRatio]], "3"]}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                   ")"}]}]], "-", 
+              FractionBox[
+               RowBox[{"2", " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", "\[Sigma]", " ", 
+                 SuperscriptBox[
+                  TagBox["\[Phi]", 
+                   Function[{}, GoldenRatio]], "5"]}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    SuperscriptBox[
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]], "4"]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]]}], 
+                   ")"}]}]]}], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "2"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`pod14$$ = XMLElement[
+   "pod", {"title" -> "Alternate form", "scanner" -> "Simplification", "id" -> 
+     "AlternateForm", "position" -> "450.8181818181818", "error" -> "false", 
+     "numsubpods" -> "2"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "FunctionExpand[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + \
+GoldenRatio^4) Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + \
+(A - GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)]))]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{"-", 
+              FractionBox[
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["A", "4"]}], "-", 
+                    RowBox[{
+                    FractionBox["1", "4"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "2"], " ", 
+                    SuperscriptBox["A", "2"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", "\[Sigma]"}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "4"]}], "+", 
+                    RowBox[{
+                    FractionBox["1", "16"], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], "4"]}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]], "+", 
+                    FractionBox["1", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"1"}]}], "-", 
+                    SqrtBox["5"]}], ")"}]}]}], ")"}], "2"]]}]]]}], ")"}]}]]}],
+             TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Factor[(-2 GoldenRatio (2 A^4 - A^2 GoldenRatio^2 + GoldenRatio^4) \
+Sqrt[2/Pi] \[Sigma])/((4 A^4 + GoldenRatio^4) (1/Sqrt[A^(-2) + (A - \
+GoldenRatio)^(-2)] + 1/Sqrt[A^(-2) + (A + GoldenRatio)^(-2)]))]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{"-", 
+              FractionBox[
+               RowBox[{"2", " ", 
+                 RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SqrtBox["5"]}], ")"}], " ", 
+                 SqrtBox[
+                  FractionBox["2", "\[Pi]"]], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{
+                    RowBox[{"4"}], " ", 
+                    SuperscriptBox["A", "4"]}]}], "+", 
+                    RowBox[{
+                    SqrtBox["5"], " ", 
+                    SuperscriptBox["A", "2"]}], "+", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["A", "2"]}], "-", 
+                    RowBox[{"3", " ", 
+                    SqrtBox["5"]}], "-", "7"}], ")"}], " ", "\[Sigma]", " ", 
+                 SqrtBox[
+                  RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]], " ", 
+                 SqrtBox[
+                  RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]}], 
+               RowBox[{
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{
+                    RowBox[{"4"}], " ", 
+                    SuperscriptBox["A", "2"]}]}], "+", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["5"], " ", "A"}], "+", 
+                    RowBox[{"2", " ", "A"}], "-", 
+                    SqrtBox["5"], "-", "3"}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["A", "2"]}], "+", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["5"], " ", "A"}], "+", 
+                    RowBox[{"2", " ", "A"}], "+", 
+                    SqrtBox["5"], "+", "3"}], ")"}], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "-", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]], "+", 
+                    SqrtBox[
+                    RowBox[{
+                    FractionBox["1", 
+                    SuperscriptBox["A", "2"]], "+", 
+                    FractionBox["1", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"A", "+", 
+                    TagBox["\[Phi]", 
+                    Function[{}, GoldenRatio]]}], ")"}], "2"]]}]]}], 
+                   ")"}]}]]}], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {"Graphics", FontFamily -> "Times"}, 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsTicks"], 
+             DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 11, "GraphicsFrameTicks"], 
+             DefaultFrameStyle -> Directive[
+               GrayLevel[4.440892098500626*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000444`], FontOpacity -> 1, 
+               "GraphicsFrame"], DefaultAxesStyle -> Directive[
+               GrayLevel[6.661338147750939*^-15, 0.35], FontColor -> 
+               GrayLevel[0.25000000000000666`], FontOpacity -> 1, 
+               "GraphicsAxes"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}], 
+       XMLElement["infos", {"count" -> "1"}, {
+         XMLElement["info", {"text" -> "\[Phi] is the golden ratio"}, {
+           XMLElement[
+           "link", {
+            "url" -> 
+             "http://reference.wolfram.com/language/ref/GoldenRatio.html", 
+             "text" -> "Documentation", "title" -> "Documentation"}, {}], 
+           XMLElement[
+           "link", {
+            "url" -> "http://mathworld.wolfram.com/GoldenRatio.html", "text" -> 
+             "Definition", "title" -> "MathWorld"}, {}]}]}]}], 
+     XMLElement["expressiontypes", {"count" -> "2"}, {
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}]}]}], 
+   Typeset`aux1$$ = {True, False, {False}, True}, Typeset`aux2$$ = {
+   True, False, {False}, True}, Typeset`aux3$$ = {
+   True, False, {False, False, False, False}, True}, Typeset`aux4$$ = {
+   True, False, {False}, True}, Typeset`aux5$$ = {True, False, {False}, True},
+    Typeset`aux6$$ = {True, False, {False}, True}, Typeset`aux7$$ = {
+   True, False, {False}, True}, Typeset`aux8$$ = {True, False, {False}, True},
+    Typeset`aux9$$ = {True, False, {False, False, False}, True}, 
+   Typeset`aux10$$ = {True, False, {False}, True}, Typeset`aux11$$ = {
+   True, False, {False}, True}, Typeset`aux12$$ = {
+   True, False, {False}, True}, Typeset`aux13$$ = {
+   True, False, {False, False}, True}, Typeset`aux14$$ = {
+   True, False, {False, False}, True}, Typeset`asyncpods$$ = {}, 
+   Typeset`nonpods$$ = {
+    XMLElement["relatedqueries", {"count" -> "5", "timing" -> "1.30342"}, {
+      XMLElement[
+      "relatedquery", {}, {
+       "analyze \
+http://calendar.wincalendar.net/when_is/international-left-handers-day.jpg"}], 
+      XMLElement[
+      "relatedquery", {}, {
+       "manipulate c in -(2 sqrt(2/pi) sigma phi (2 A^4 - A^2 phi^2 + \
+phi^4))/((4 A^4 + phi^4) (1/sqrt(1/A^2 + 1/(A - phi)^2) + 1/sqrt(1/A^2 + 1/(A \
++ phi)^2))) = c"}], 
+      XMLElement[
+      "relatedquery", {}, {
+       "-(2 sqrt(2/pi) sigma phi (2 A^4 - A^2 phi^2 + phi^4))/((4 A^4 + \
+phi^4) (1/sqrt(1/A^2 + 1/(A - phi)^2) + 1/sqrt(1/A^2 + 1/(A + phi)^2))) > \
+0"}], 
+      XMLElement[
+      "relatedquery", {}, {
+       "solve -(2 sqrt(2/pi) sigma phi (2 A^4 - A^2 phi^2 + phi^4))/((4 A^4 + \
+phi^4) (1/sqrt(1/A^2 + 1/(A - phi)^2) + 1/sqrt(1/A^2 + 1/(A + phi)^2))) = \
+0"}], 
+      XMLElement[
+      "relatedquery", {}, {
+       "-(2 sqrt(2/pi) sigma phi (2 A^4 - A^2 phi^2 + phi^4))/((4 A^4 + \
+phi^4) (1/sqrt(1/A^2 + 1/(A - phi)^2) + 1/sqrt(1/A^2 + 1/(A + phi)^2))) < \
+0"}]}]}, Typeset`initdone$$ = FrontEnd`SuppressEvaluationHash[True], 
+   Typeset`queryinfo$$ = {
+   "success" -> "true", "error" -> "false", "numpods" -> "10", "datatypes" -> 
+    "Math", "parsetiming" -> "1.715", "parsetimedout" -> "false", "id" -> 
+    "OFSztIpdzDc=6:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4rkAjJzE0tTmNF4Wb++///\
+P0JDcGFRCZqGTBAXIRaQX55aVAziBmRmAvX+\
+L2YDsmOsDIydjYu5gUx3oJ2peUGJJZn5acwwcwNySouJMRfkEMdMkA6IXoRqkFXYVWMzB80hRKlhwV\
+SDHnZM+PyDRT+yf4i2HZf5jFjchyXiMLUjO+\
+UfZjCiaoOoQ7cbHNHoTgaZhRYv9HcpbleBCQAj8Lym", "kernelId" -> "114", "processId" -> 
+    "1253273", "version" -> "2.6", "inputstring" -> 
+    "(-2*Sqrt[2/Pi]*\[Sigma]*\[CurlyPhi]*(2*A^4 - A^2*\[CurlyPhi]^2 + \
+\[CurlyPhi]^4))/((4*A^4 + \[CurlyPhi]^4)*(1/Sqrt[A^(-2) + (A - \
+\[CurlyPhi])^(-2)] + 1/Sqrt[A^(-2) + (A + \[CurlyPhi])^(-2)]))", "sbsallowed" -> 
+    "true", "parentId" -> "7133a4a6-4a03-4602-8bf9-efad8b8f90e2", "requestId" -> 
+    "7133a4a6-4a03-4602-8bf9-efad8b8f90e2", "timing" -> "4.922", "timedout" -> 
+    "Simplification", "timedoutpods" -> "", "recalculated" -> 
+    "https://gateway.wolframalpha.com/calculate/recalc?id=\
+NjpjMmQwMzM2My1lZWMzLTRhYmMtODlhYS1hNDcwMmY0ZWQyNjU="}, 
+   Typeset`sessioninfo$$ = {
+   "TimeZone" -> -4., 
+    "Date" -> {2025, 8, 13, 14, 33, 28.119622`8.201584459875722}, "Line" -> 
+    49, "SessionID" -> 16775953729285253236}, Typeset`showpods$$ = {1, 2, 3, 
+   4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}, Typeset`failedpods$$ = {}, 
+   Typeset`chosen$$ = {}, Typeset`open$$ = False, Typeset`newq$$ = 
+   "(-2*Sqrt[2/Pi]*\[Sigma]*\[CurlyPhi]*(2*A^4 - A^2*\[CurlyPhi]^2 + \
+\[CurlyPhi]^4))/((4*A^4 + \[CurlyPhi]^4)*(1/Sqrt[A^(-2) + (A - \
+\[CurlyPhi])^(-2)] + 1/Sqrt[A^(-2) + (A + \[CurlyPhi])^(-2)]))"}, 
+   DynamicBox[ToBoxes[
+     AlphaIntegration`FormatAlphaResults[
+      Dynamic[{
+       1, {Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$, Typeset`pod4$$, 
+         Typeset`pod5$$, Typeset`pod6$$, Typeset`pod7$$, Typeset`pod8$$, 
+         Typeset`pod9$$, Typeset`pod10$$, Typeset`pod11$$, Typeset`pod12$$, 
+         Typeset`pod13$$, Typeset`pod14$$}, {
+        Typeset`aux1$$, Typeset`aux2$$, Typeset`aux3$$, Typeset`aux4$$, 
+         Typeset`aux5$$, Typeset`aux6$$, Typeset`aux7$$, Typeset`aux8$$, 
+         Typeset`aux9$$, Typeset`aux10$$, Typeset`aux11$$, Typeset`aux12$$, 
+         Typeset`aux13$$, Typeset`aux14$$}, Typeset`chosen$$, Typeset`open$$, 
+        Typeset`elements$$, Typeset`q$$, Typeset`opts$$, Typeset`nonpods$$, 
+        Typeset`queryinfo$$, Typeset`sessioninfo$$, Typeset`showpods$$, 
+        Typeset`failedpods$$, Typeset`newq$$}]], StandardForm],
+    ImageSizeCache->{1327., {1401., 1406.}},
+    TrackedSymbols:>{Typeset`showpods$$, Typeset`failedpods$$}],
+   DynamicModuleValues:>{},
+   Initialization:>If[
+     And[
+      Not[Typeset`initdone$$ === True], 
+      Not[Typeset`initdone$$ === FrontEnd`SuppressEvaluationHash[True]]], 
+     Null; WolframAlphaClient`Private`doAsyncUpdates[
+       Hold[{
+        Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$, Typeset`pod4$$, 
+         Typeset`pod5$$, Typeset`pod6$$, Typeset`pod7$$, Typeset`pod8$$, 
+         Typeset`pod9$$, Typeset`pod10$$, Typeset`pod11$$, Typeset`pod12$$, 
+         Typeset`pod13$$, Typeset`pod14$$}], Typeset`asyncpods$$, 
+       Dynamic[Typeset`failedpods$$]]; Typeset`asyncpods$$ = {}; 
+     Typeset`initdone$$ = FrontEnd`SuppressEvaluationHash[True]],
+   SynchronousInitialization->False],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{{3.9640978801639214`*^9, 3.964097910297373*^9}, 
+   3.964098171507595*^9, 3.964098299691073*^9, 3.964098414643402*^9, 
+   3.964098459288063*^9, {3.964098492332304*^9, 3.964098501272352*^9}, 
+   3.964098808171166*^9},
+ CellLabel->"Out[49]=",ExpressionUUID->"60c8df69-52a6-479b-8748-08fe6ed9c422"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c", "+", "y", "-", "Mn"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"A", "->", "200"}], ",", 
+    RowBox[{"\[CurlyPhi]", "->", 
+     RowBox[{"-", "25"}]}], ",", 
+    RowBox[{"\[Sigma]", "->", "1"}], ",", 
+    RowBox[{"w", "->", "2.35"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "+", "y"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"A", "->", "200"}], ",", 
+    RowBox[{"\[CurlyPhi]", "->", 
+     RowBox[{"-", "25"}]}], ",", 
+    RowBox[{"\[Sigma]", "->", "1"}], ",", 
+    RowBox[{"w", "->", "2.35"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Mn", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"A", "->", "200"}], ",", 
+    RowBox[{"\[CurlyPhi]", "->", 
+     RowBox[{"-", "25"}]}], ",", 
+    RowBox[{"\[Sigma]", "->", "1"}], ",", 
+    RowBox[{"w", "->", "2.35"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.9640981934763536`*^9, 3.964098279330306*^9}, {
+  3.9640983302491627`*^9, 3.964098371862608*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"11ea9c87-829e-4b49-8ed7-d7f676483069"],
+
+Cell[BoxData["1.970645868709653`*^-15"], "Output",
+ CellChangeTimes->{
+  3.96409830718394*^9, {3.964098343891114*^9, 3.964098373110549*^9}},
+ CellLabel->"Out[39]=",ExpressionUUID->"33ae1caa-44cf-4f36-a846-bb5e6899fbe5"],
+
+Cell[BoxData["4.770390170158531`"], "Output",
+ CellChangeTimes->{
+  3.96409830718394*^9, {3.964098343891114*^9, 3.964098373112095*^9}},
+ CellLabel->"Out[40]=",ExpressionUUID->"c435ef6e-3182-4fe1-9648-b24e8df0e688"],
+
+Cell[BoxData["4.770390170158529`"], "Output",
+ CellChangeTimes->{
+  3.96409830718394*^9, {3.964098343891114*^9, 3.964098373113037*^9}},
+ CellLabel->"Out[41]=",ExpressionUUID->"227ae9dd-81b7-46f1-ace7-cd5c9bc7b104"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"y", "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.9641005209307823`*^9, 3.964100524063047*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"7128476a-62f5-4c61-8270-70bff77b6c98"],
+
+Cell["\<\
+(-2*Sqrt[2/Pi]*\[Sigma]*\[CurlyPhi]*(2*A^4 - A^2*\[CurlyPhi]^2 + \
+\[CurlyPhi]^4))/((4*A^4 + \[CurlyPhi]^4)*(1/Sqrt[A^(-2) + (A - \
+\[CurlyPhi])^(-2)] + 1/Sqrt[A^(-2) + (A + \[CurlyPhi])^(-2)]))\
+\>", "Output",
+ CellChangeTimes->{3.964100524833741*^9},
+ CellLabel->
+  "Out[50]//InputForm=",ExpressionUUID->"6b79c6b9-4062-48c5-b959-\
+b7f73569f70f"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{-1574, Automatic}, {-30, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5d3071a8-2489-4db2-a20b-0bcceeafdde8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1887, 58, 52, "Input",ExpressionUUID->"9b7ab269-8624-45ad-a5d2-a4586ea2e090"],
+Cell[CellGroupData[{
+Cell[2470, 82, 871, 21, 30, "Input",ExpressionUUID->"be76532d-c63a-4d6e-b3d5-94e7ebe0d483"],
+Cell[3344, 105, 2053, 59, 60, "Output",ExpressionUUID->"40df18eb-85fe-464a-ac4c-016f38144f89"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5434, 169, 248, 4, 30, "Input",ExpressionUUID->"a5f7edcc-e380-4510-bcf8-44a10771a9aa"],
+Cell[5685, 175, 2675, 76, 72, "Output",ExpressionUUID->"06ca6af3-be66-4daf-8c7e-d8ece0894afe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8397, 256, 208, 3, 30, "Input",ExpressionUUID->"7d215d25-7254-4099-9179-8b7447c34e9f"],
+Cell[8608, 261, 1675, 48, 61, "Output",ExpressionUUID->"2f4147ba-1fa3-4796-8ce8-685b2e233d70"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10320, 314, 650, 17, 30, "Input",ExpressionUUID->"8d2232be-a512-4493-8383-badf6c30df61"],
+Cell[10973, 333, 775, 26, 78, "Output",ExpressionUUID->"00d94be3-1239-4811-91ea-759d9ee795cd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11785, 364, 220, 4, 30, "Input",ExpressionUUID->"b229827d-67cb-472a-98a6-dbe201d0617c"],
+Cell[12008, 370, 2640, 81, 95, "Output",ExpressionUUID->"6c3fcdf5-586b-48da-9789-3918f9192c93"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14685, 456, 270, 5, 30, "Input",ExpressionUUID->"3a6a0f74-a723-4ff0-a9d1-3de679d70875"],
+Cell[14958, 463, 4078, 122, 114, "Output",ExpressionUUID->"dbdae559-c82c-4cd5-af40-6473b9f40d19"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19073, 590, 249, 5, 30, "Input",ExpressionUUID->"eb8687ec-a100-43b7-8e47-43446a00700e"],
+Cell[19325, 597, 2425, 74, 100, "Output",ExpressionUUID->"e6476b8e-d238-4bba-89dc-eb01c29c6697"]
+}, Open  ]],
+Cell[21765, 674, 152, 3, 30, "Input",ExpressionUUID->"d932ab99-408e-4057-a539-8256d519b6d4"],
+Cell[CellGroupData[{
+Cell[21942, 681, 765, 20, 52, "Input",ExpressionUUID->"f77b24cd-38b5-4e97-a1bf-d3ea416bf4a7"],
+Cell[22710, 703, 795, 26, 78, "Output",ExpressionUUID->"a97d7cc8-c360-4a03-8e6b-24713a878209"],
+Cell[23508, 731, 171, 3, 34, "Output",ExpressionUUID->"e3d48fcb-bd50-48cc-a6f3-61571e66942a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23716, 739, 946, 25, 52, "Input",ExpressionUUID->"b008aa91-5afd-40ce-b576-c7a7ad6e7019"],
+Cell[24665, 766, 638, 18, 57, "Output",ExpressionUUID->"1a89b086-2fc5-42a3-9071-527bbd41dd31"],
+Cell[25306, 786, 1308, 42, 109, "Output",ExpressionUUID->"233b517b-d30d-497b-a5f1-d4a2d9956aac"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26651, 833, 616, 11, 52, "Input",ExpressionUUID->"9d04f4b5-4857-495e-aed5-f2ffe04d74f5"],
+Cell[27270, 846, 4085, 126, 113, "Output",ExpressionUUID->"5e72ef3f-7cfe-4e4e-8062-fbf4631fe97d"],
+Cell[31358, 974, 156062, 3514, 2826, "Output",ExpressionUUID->"60c8df69-52a6-479b-8748-08fe6ed9c422"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[187457, 4493, 1055, 29, 73, "Input",ExpressionUUID->"11ea9c87-829e-4b49-8ed7-d7f676483069"],
+Cell[188515, 4524, 219, 3, 34, "Output",ExpressionUUID->"33ae1caa-44cf-4f36-a846-bb5e6899fbe5"],
+Cell[188737, 4529, 214, 3, 34, "Output",ExpressionUUID->"c435ef6e-3182-4fe1-9648-b24e8df0e688"],
+Cell[188954, 4534, 214, 3, 34, "Output",ExpressionUUID->"227ae9dd-81b7-46f1-ace7-cd5c9bc7b104"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[189205, 4542, 205, 3, 30, "Input",ExpressionUUID->"7128476a-62f5-4c61-8270-70bff77b6c98"],
+Cell[189413, 4547, 357, 8, 48, "Output",ExpressionUUID->"6b79c6b9-4062-48c5-b959-b7f73569f70f"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

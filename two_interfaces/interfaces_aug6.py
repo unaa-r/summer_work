@@ -347,6 +347,16 @@ def k_deriv_BK7(w0):
     return k_deriv
 
 
+def phi_quad_BK7(w, D, w0):
+    """Quadratic BK7 dispersion (I think)"""
+
+
+    alpha = 0.0446476 #fs^2/um; from supreme leader mathematica
+
+    return 1/2 * alpha * D * (w-w0)**2
+
+
+
 
 #the vectorized function
 n_BK7 = np.vectorize(n_BK7_float)
@@ -421,7 +431,18 @@ def dispy_transfer_gen(transfer_generator: Callable, params: tuple, n_bulk: Call
     
     return H
 
+def dispy_transfer_gen_quad(transfer_generator: Callable, params: tuple, phi: Callable, D: float, w0: float):
+    """Returns the transfer function for a system consisting of a thin slab of dispersive material, shielded by some other dispersive material 
+    with some dispersion function phi (in particular, use this when dispersion is quadratic). phi takes as its parameters (w, D, w0)"""
 
+    c = 0.2998 #um/fs
+
+    h = transfer_generator(*params)
+
+    def H(w):
+        return np.exp(1j*phi(w, D, w0)) * h(w) * np.exp(1j*phi(w, D, w0))
+    
+    return H
 
 
 # ---------------------- L Range Setup ------------------------
@@ -447,16 +468,16 @@ Lvals = np.array([1,2,3,4,5,10,15,20])
 hotLvals = Lvals # for heatmaps
 coldLvals = Lvals
 
-Dvals = np.arange(0,6001,500)
-hotDvals = Dvals
-coldDvals = hotDvals
+Dvals = np.arange(0,10001,100)
+hotDvals = np.arange(0,10001,500)
+coldDvals = Dvals
 
 
-# Lvals = np.array([1])
-# hotLvals = Lvals # for heatmaps
-# coldLvals = Lvals
+Lvals = np.array([10])
+hotLvals = Lvals # for heatmaps
+coldLvals = Lvals
 
-# Dvals = np.array([100])
+# Dvals = np.array([4000,8000])
 # hotDvals = Dvals
 # coldDvals = hotDvals
 
@@ -598,6 +619,27 @@ def barc_lin_centre_median(D, params):
     wcent = 2*w0 - dw
 
     return 2 * np.pi * c / wcent * 1e-6
+
+
+def barc_lin_centre_mean_refined(D, params):
+    """params = A, w0, sigmat"""
+
+    A, w0, sigmat = params
+
+    eps = 2 * D * 0.0223238
+
+    s = np.sqrt(np.log(4)) / sigmat
+
+    dw = (-2 * np.sqrt(2 / np.pi) * s * eps * (2 * A**4 - A**2 * eps**2 + eps**4)) / (
+        (4 * A**4 + eps**4) *
+        (1 / np.sqrt(A**(-2) + (A - eps)**(-2)) + 1 / np.sqrt(A**(-2) + (A + eps)**(-2)))
+    )
+
+    wcent = 2*w0 + dw
+
+    return 2 * np.pi * c / wcent * 1e-6
+
+
 
 
 def barc_lin_centre_paper(D, params):
@@ -1067,6 +1109,10 @@ def interfere_dispy(rules: dict, filenamedips, filenamewidths, filenamechisqs, p
 
                 #For the multiple interfaces, disp_shared is just the transfer function
                 H = dispy_transfer_gen(transfer_generator, (n_air,n_BK7,L), n_BK7, D, w0, k_deriv_BK7)
+
+                #I'm inserting a line here for quadratic dispersion; comment out as needed
+                H = dispy_transfer_gen_quad(transfer_generator, (n_air,n_BK7,L), phi_quad_BK7, D, w0) #COMMENT OUT LATER!!!!!
+
                 disp_shared[:] = H(freqList)[:]
 
                 # print('disp entry', L, disp_shared[40])
@@ -1218,12 +1264,13 @@ def main():
     tlist, dt, freqList, Elw, eList, tauList = init_pulse()
 
     #"Ordinary" params:
-    # b1 = 8300
-    # b2 = 8300 * 10/11
-    # b3 = 8300 * 10/12
-    # s1 = 10.0
-    # s2 = 11.0
-    # s3 = 12.0
+    A = 180337
+    b1 = 8300
+    b2 = 8300 * 10/11
+    b3 = 8300 * 10/12
+    s1 = 10.0
+    s2 = 11.0
+    s3 = 12.0
 
     #I'm going to try now with an order of magnitude less chirp
     # b1 = 830
@@ -1231,13 +1278,13 @@ def main():
     # b3 = 830 * 10/12
 
     #Mazurek params:
-    A = 2500/2
-    b1 = 8300 * A/180337
-    b2 = 8300 * 10/11 * A/180337
-    b3 = 8300 * 10/12 * A/180337
-    s1 = 10.0
-    s2 = 11.0
-    s3 = 12.0
+    # A = 2500/2
+    # b1 = 8300 * A/180337
+    # b2 = 8300 * 10/11 * A/180337
+    # b3 = 8300 * 10/12 * A/180337
+    # s1 = 10.0
+    # s2 = 11.0
+    # s3 = 12.0
 
     dband = args.dband
     pband = args.pband
@@ -1284,16 +1331,16 @@ def main():
              filenameBarcLinRealistic, filenameBarcErf1Realistic, filenameBarcErf2Realistic, filenameBarcErf3Realistic]
 
 
-    paramsLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, lin_ch, (A, w0)
+    paramsLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, lin_ch, (args.A, w0)
     paramsErf1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, erf_ch, (b1, s1, w0)
     paramsErf2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, erf_ch, (b2, s2, w0)
     paramsErf3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, erf_ch, (b3, s3, w0)
     paramsVphLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, step_ch, (50000, w0)
     
     paramsBarcLinLossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_lin_ch, (args.A, w0)
-    paramsBarcErf1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b1, s1, w0)
-    paramsBarcErf2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b2, s2, w0)
-    paramsBarcErf3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (2*b3, s3, w0)
+    paramsBarcErf1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (b1, s1, w0) #I could multiply by 2 here
+    paramsBarcErf2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (b2, s2, w0)
+    paramsBarcErf3Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_ch, (b3, s3, w0)
     
     paramsBarcErfSh1Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b1, s1, w0)
     paramsBarcErfSh2Lossless = tlist, dt, freqList, Elw, eList, tauList, dband, pband, slab_lossless, barc_erf_sh_ch, (2*b2, s2, w0)
@@ -1341,7 +1388,7 @@ def main():
         if k in []:
             interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc')
         if k in []:
-            interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', band_cent_func=barc_lin_centre_paper, band_cent_params=(A,w0,sigma))
+            interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', band_cent_func=barc_lin_centre_median, band_cent_params=(args.A/2,w0,sigma))
         if k in [5]:
             interfere_dispy(rules, names[k]+"cc_", filenamewidths, filenamechisqs, params, fit=False, setup='cc', manual_cent=True)
 
