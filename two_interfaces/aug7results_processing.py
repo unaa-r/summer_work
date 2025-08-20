@@ -235,9 +235,12 @@ def do_fits(folders, case, target_Ls, target_Ds, tauList=np.arange(-200,200,1)):
 def main():
 
     path = '/Users/noah.costa/Local Documents/Research 3/CPI_Project/two_interfaces/results/'
-    folders = [path+f"testaug12{c}_lossless_barc_lin_cc_" for c in ('a','b','c','d','e','f')]
-    Ls = np.array([5,10,20])
-    Ds = np.arange(0,3001,500)
+    folders = [path+f"interfaces_aug19{c}" for c in 
+               [f"a_lossless_barc_erf_s{s}_cc_" for s in ['10.0','11.0','12.0']]+
+               [f"b_lossless_erf_s{s}_pp_" for s in ['10.0','11.0','12.0']]+
+               ["a_lossless_barc_lin_cc_","b_lossless_lin_pp_"]]
+    Ls = np.array([10])
+    Ds = np.arange(0,10001,100)
     
     do_fits(folders,'barc',Ls,Ds)
 

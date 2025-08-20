@@ -1264,13 +1264,13 @@ def main():
     tlist, dt, freqList, Elw, eList, tauList = init_pulse()
 
     #"Ordinary" params:
-    A = 180337
-    b1 = 8300
-    b2 = 8300 * 10/11
-    b3 = 8300 * 10/12
-    s1 = 10.0
-    s2 = 11.0
-    s3 = 12.0
+    # A = 180337
+    # b1 = 8300
+    # b2 = 8300 * 10/11
+    # b3 = 8300 * 10/12
+    # s1 = 10.0
+    # s2 = 11.0
+    # s3 = 12.0
 
     #I'm going to try now with an order of magnitude less chirp
     # b1 = 830
@@ -1285,6 +1285,17 @@ def main():
     # s1 = 10.0
     # s2 = 11.0
     # s3 = 12.0
+
+    #10 fs parameters
+    A = 18033.7
+    b1 = 830
+    b2 = 830 * 10/11
+    b3 = 830 * 10/12
+    s1 = 10.0
+    s2 = 11.0
+    s3 = 12.0
+
+
 
     dband = args.dband
     pband = args.pband
