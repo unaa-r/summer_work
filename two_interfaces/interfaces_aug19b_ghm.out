@@ -1,0 +1,1881 @@
+Top-level running in PID 227541 (name=__main__)
+MID-level running in PID 227541 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+no function?
+400
+starting: L: 10, D: 0
+finishing: L: 10, D: 0
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 100
+finishing: L: 10, D: 100
+no function?
+400
+starting: L: 10, D: 200
+finishing: L: 10, D: 200
+no function?
+400
+starting: L: 10, D: 300
+finishing: L: 10, D: 300
+no function?
+400
+starting: L: 10, D: 400
+finishing: L: 10, D: 400
+no function?
+400
+starting: L: 10, D: 500
+finishing: L: 10, D: 500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 600
+finishing: L: 10, D: 600
+no function?
+400
+starting: L: 10, D: 700
+finishing: L: 10, D: 700
+no function?
+400
+starting: L: 10, D: 800
+finishing: L: 10, D: 800
+no function?
+400
+starting: L: 10, D: 900
+finishing: L: 10, D: 900
+no function?
+400
+starting: L: 10, D: 1000
+finishing: L: 10, D: 1000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1100
+finishing: L: 10, D: 1100
+no function?
+400
+starting: L: 10, D: 1200
+finishing: L: 10, D: 1200
+no function?
+400
+starting: L: 10, D: 1300
+finishing: L: 10, D: 1300
+no function?
+400
+starting: L: 10, D: 1400
+finishing: L: 10, D: 1400
+no function?
+400
+starting: L: 10, D: 1500
+finishing: L: 10, D: 1500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1600
+finishing: L: 10, D: 1600
+no function?
+400
+starting: L: 10, D: 1700
+finishing: L: 10, D: 1700
+no function?
+400
+starting: L: 10, D: 1800
+finishing: L: 10, D: 1800
+no function?
+400
+starting: L: 10, D: 1900
+finishing: L: 10, D: 1900
+no function?
+400
+starting: L: 10, D: 2000
+finishing: L: 10, D: 2000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2100
+finishing: L: 10, D: 2100
+no function?
+400
+starting: L: 10, D: 2200
+finishing: L: 10, D: 2200
+no function?
+400
+starting: L: 10, D: 2300
+finishing: L: 10, D: 2300
+no function?
+400
+starting: L: 10, D: 2400
+finishing: L: 10, D: 2400
+no function?
+400
+starting: L: 10, D: 2500
+finishing: L: 10, D: 2500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2600
+finishing: L: 10, D: 2600
+no function?
+400
+starting: L: 10, D: 2700
+finishing: L: 10, D: 2700
+no function?
+400
+starting: L: 10, D: 2800
+finishing: L: 10, D: 2800
+no function?
+400
+starting: L: 10, D: 2900
+finishing: L: 10, D: 2900
+no function?
+400
+starting: L: 10, D: 3000
+finishing: L: 10, D: 3000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3100
+finishing: L: 10, D: 3100
+no function?
+400
+starting: L: 10, D: 3200
+finishing: L: 10, D: 3200
+no function?
+400
+starting: L: 10, D: 3300
+finishing: L: 10, D: 3300
+no function?
+400
+starting: L: 10, D: 3400
+finishing: L: 10, D: 3400
+no function?
+400
+starting: L: 10, D: 3500
+finishing: L: 10, D: 3500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3600
+finishing: L: 10, D: 3600
+no function?
+400
+starting: L: 10, D: 3700
+finishing: L: 10, D: 3700
+no function?
+400
+starting: L: 10, D: 3800
+finishing: L: 10, D: 3800
+no function?
+400
+starting: L: 10, D: 3900
+finishing: L: 10, D: 3900
+no function?
+400
+starting: L: 10, D: 4000
+finishing: L: 10, D: 4000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4100
+finishing: L: 10, D: 4100
+no function?
+400
+starting: L: 10, D: 4200
+finishing: L: 10, D: 4200
+no function?
+400
+starting: L: 10, D: 4300
+finishing: L: 10, D: 4300
+no function?
+400
+starting: L: 10, D: 4400
+finishing: L: 10, D: 4400
+no function?
+400
+starting: L: 10, D: 4500
+finishing: L: 10, D: 4500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4600
+finishing: L: 10, D: 4600
+no function?
+400
+starting: L: 10, D: 4700
+finishing: L: 10, D: 4700
+no function?
+400
+starting: L: 10, D: 4800
+finishing: L: 10, D: 4800
+no function?
+400
+starting: L: 10, D: 4900
+finishing: L: 10, D: 4900
+no function?
+400
+starting: L: 10, D: 5000
+finishing: L: 10, D: 5000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5100
+finishing: L: 10, D: 5100
+no function?
+400
+starting: L: 10, D: 5200
+finishing: L: 10, D: 5200
+no function?
+400
+starting: L: 10, D: 5300
+finishing: L: 10, D: 5300
+no function?
+400
+starting: L: 10, D: 5400
+finishing: L: 10, D: 5400
+no function?
+400
+starting: L: 10, D: 5500
+finishing: L: 10, D: 5500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5600
+finishing: L: 10, D: 5600
+no function?
+400
+starting: L: 10, D: 5700
+finishing: L: 10, D: 5700
+no function?
+400
+starting: L: 10, D: 5800
+finishing: L: 10, D: 5800
+no function?
+400
+starting: L: 10, D: 5900
+finishing: L: 10, D: 5900
+no function?
+400
+starting: L: 10, D: 6000
+finishing: L: 10, D: 6000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6100
+finishing: L: 10, D: 6100
+no function?
+400
+starting: L: 10, D: 6200
+finishing: L: 10, D: 6200
+no function?
+400
+starting: L: 10, D: 6300
+finishing: L: 10, D: 6300
+no function?
+400
+starting: L: 10, D: 6400
+finishing: L: 10, D: 6400
+no function?
+400
+starting: L: 10, D: 6500
+finishing: L: 10, D: 6500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6600
+finishing: L: 10, D: 6600
+no function?
+400
+starting: L: 10, D: 6700
+finishing: L: 10, D: 6700
+no function?
+400
+starting: L: 10, D: 6800
+finishing: L: 10, D: 6800
+no function?
+400
+starting: L: 10, D: 6900
+finishing: L: 10, D: 6900
+no function?
+400
+starting: L: 10, D: 7000
+finishing: L: 10, D: 7000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7100
+finishing: L: 10, D: 7100
+no function?
+400
+starting: L: 10, D: 7200
+finishing: L: 10, D: 7200
+no function?
+400
+starting: L: 10, D: 7300
+finishing: L: 10, D: 7300
+no function?
+400
+starting: L: 10, D: 7400
+finishing: L: 10, D: 7400
+no function?
+400
+starting: L: 10, D: 7500
+finishing: L: 10, D: 7500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7600
+finishing: L: 10, D: 7600
+no function?
+400
+starting: L: 10, D: 7700
+finishing: L: 10, D: 7700
+no function?
+400
+starting: L: 10, D: 7800
+finishing: L: 10, D: 7800
+no function?
+400
+starting: L: 10, D: 7900
+finishing: L: 10, D: 7900
+no function?
+400
+starting: L: 10, D: 8000
+finishing: L: 10, D: 8000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8100
+finishing: L: 10, D: 8100
+no function?
+400
+starting: L: 10, D: 8200
+finishing: L: 10, D: 8200
+no function?
+400
+starting: L: 10, D: 8300
+finishing: L: 10, D: 8300
+no function?
+400
+starting: L: 10, D: 8400
+finishing: L: 10, D: 8400
+no function?
+400
+starting: L: 10, D: 8500
+finishing: L: 10, D: 8500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8600
+finishing: L: 10, D: 8600
+no function?
+400
+starting: L: 10, D: 8700
+finishing: L: 10, D: 8700
+no function?
+400
+starting: L: 10, D: 8800
+finishing: L: 10, D: 8800
+no function?
+400
+starting: L: 10, D: 8900
+finishing: L: 10, D: 8900
+no function?
+400
+starting: L: 10, D: 9000
+finishing: L: 10, D: 9000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9100
+finishing: L: 10, D: 9100
+no function?
+400
+starting: L: 10, D: 9200
+finishing: L: 10, D: 9200
+no function?
+400
+starting: L: 10, D: 9300
+finishing: L: 10, D: 9300
+no function?
+400
+starting: L: 10, D: 9400
+finishing: L: 10, D: 9400
+no function?
+400
+starting: L: 10, D: 9500
+finishing: L: 10, D: 9500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9600
+finishing: L: 10, D: 9600
+no function?
+400
+starting: L: 10, D: 9700
+finishing: L: 10, D: 9700
+no function?
+400
+starting: L: 10, D: 9800
+finishing: L: 10, D: 9800
+no function?
+400
+starting: L: 10, D: 9900
+finishing: L: 10, D: 9900
+no function?
+400
+starting: L: 10, D: 10000
+finishing: L: 10, D: 10000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+MID-level running in PID 227541 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+no function?
+400
+starting: L: 10, D: 0
+finishing: L: 10, D: 0
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 100
+finishing: L: 10, D: 100
+no function?
+400
+starting: L: 10, D: 200
+finishing: L: 10, D: 200
+no function?
+400
+starting: L: 10, D: 300
+finishing: L: 10, D: 300
+no function?
+400
+starting: L: 10, D: 400
+finishing: L: 10, D: 400
+no function?
+400
+starting: L: 10, D: 500
+finishing: L: 10, D: 500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 600
+finishing: L: 10, D: 600
+no function?
+400
+starting: L: 10, D: 700
+finishing: L: 10, D: 700
+no function?
+400
+starting: L: 10, D: 800
+finishing: L: 10, D: 800
+no function?
+400
+starting: L: 10, D: 900
+finishing: L: 10, D: 900
+no function?
+400
+starting: L: 10, D: 1000
+finishing: L: 10, D: 1000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1100
+finishing: L: 10, D: 1100
+no function?
+400
+starting: L: 10, D: 1200
+finishing: L: 10, D: 1200
+no function?
+400
+starting: L: 10, D: 1300
+finishing: L: 10, D: 1300
+no function?
+400
+starting: L: 10, D: 1400
+finishing: L: 10, D: 1400
+no function?
+400
+starting: L: 10, D: 1500
+finishing: L: 10, D: 1500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1600
+finishing: L: 10, D: 1600
+no function?
+400
+starting: L: 10, D: 1700
+finishing: L: 10, D: 1700
+no function?
+400
+starting: L: 10, D: 1800
+finishing: L: 10, D: 1800
+no function?
+400
+starting: L: 10, D: 1900
+finishing: L: 10, D: 1900
+no function?
+400
+starting: L: 10, D: 2000
+finishing: L: 10, D: 2000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2100
+finishing: L: 10, D: 2100
+no function?
+400
+starting: L: 10, D: 2200
+finishing: L: 10, D: 2200
+no function?
+400
+starting: L: 10, D: 2300
+finishing: L: 10, D: 2300
+no function?
+400
+starting: L: 10, D: 2400
+finishing: L: 10, D: 2400
+no function?
+400
+starting: L: 10, D: 2500
+finishing: L: 10, D: 2500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2600
+finishing: L: 10, D: 2600
+no function?
+400
+starting: L: 10, D: 2700
+finishing: L: 10, D: 2700
+no function?
+400
+starting: L: 10, D: 2800
+finishing: L: 10, D: 2800
+no function?
+400
+starting: L: 10, D: 2900
+finishing: L: 10, D: 2900
+no function?
+400
+starting: L: 10, D: 3000
+finishing: L: 10, D: 3000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3100
+finishing: L: 10, D: 3100
+no function?
+400
+starting: L: 10, D: 3200
+finishing: L: 10, D: 3200
+no function?
+400
+starting: L: 10, D: 3300
+finishing: L: 10, D: 3300
+no function?
+400
+starting: L: 10, D: 3400
+finishing: L: 10, D: 3400
+no function?
+400
+starting: L: 10, D: 3500
+finishing: L: 10, D: 3500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3600
+finishing: L: 10, D: 3600
+no function?
+400
+starting: L: 10, D: 3700
+finishing: L: 10, D: 3700
+no function?
+400
+starting: L: 10, D: 3800
+finishing: L: 10, D: 3800
+no function?
+400
+starting: L: 10, D: 3900
+finishing: L: 10, D: 3900
+no function?
+400
+starting: L: 10, D: 4000
+finishing: L: 10, D: 4000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4100
+finishing: L: 10, D: 4100
+no function?
+400
+starting: L: 10, D: 4200
+finishing: L: 10, D: 4200
+no function?
+400
+starting: L: 10, D: 4300
+finishing: L: 10, D: 4300
+no function?
+400
+starting: L: 10, D: 4400
+finishing: L: 10, D: 4400
+no function?
+400
+starting: L: 10, D: 4500
+finishing: L: 10, D: 4500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4600
+finishing: L: 10, D: 4600
+no function?
+400
+starting: L: 10, D: 4700
+finishing: L: 10, D: 4700
+no function?
+400
+starting: L: 10, D: 4800
+finishing: L: 10, D: 4800
+no function?
+400
+starting: L: 10, D: 4900
+finishing: L: 10, D: 4900
+no function?
+400
+starting: L: 10, D: 5000
+finishing: L: 10, D: 5000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5100
+finishing: L: 10, D: 5100
+no function?
+400
+starting: L: 10, D: 5200
+finishing: L: 10, D: 5200
+no function?
+400
+starting: L: 10, D: 5300
+finishing: L: 10, D: 5300
+no function?
+400
+starting: L: 10, D: 5400
+finishing: L: 10, D: 5400
+no function?
+400
+starting: L: 10, D: 5500
+finishing: L: 10, D: 5500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5600
+finishing: L: 10, D: 5600
+no function?
+400
+starting: L: 10, D: 5700
+finishing: L: 10, D: 5700
+no function?
+400
+starting: L: 10, D: 5800
+finishing: L: 10, D: 5800
+no function?
+400
+starting: L: 10, D: 5900
+finishing: L: 10, D: 5900
+no function?
+400
+starting: L: 10, D: 6000
+finishing: L: 10, D: 6000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6100
+finishing: L: 10, D: 6100
+no function?
+400
+starting: L: 10, D: 6200
+finishing: L: 10, D: 6200
+no function?
+400
+starting: L: 10, D: 6300
+finishing: L: 10, D: 6300
+no function?
+400
+starting: L: 10, D: 6400
+finishing: L: 10, D: 6400
+no function?
+400
+starting: L: 10, D: 6500
+finishing: L: 10, D: 6500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6600
+finishing: L: 10, D: 6600
+no function?
+400
+starting: L: 10, D: 6700
+finishing: L: 10, D: 6700
+no function?
+400
+starting: L: 10, D: 6800
+finishing: L: 10, D: 6800
+no function?
+400
+starting: L: 10, D: 6900
+finishing: L: 10, D: 6900
+no function?
+400
+starting: L: 10, D: 7000
+finishing: L: 10, D: 7000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7100
+finishing: L: 10, D: 7100
+no function?
+400
+starting: L: 10, D: 7200
+finishing: L: 10, D: 7200
+no function?
+400
+starting: L: 10, D: 7300
+finishing: L: 10, D: 7300
+no function?
+400
+starting: L: 10, D: 7400
+finishing: L: 10, D: 7400
+no function?
+400
+starting: L: 10, D: 7500
+finishing: L: 10, D: 7500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7600
+finishing: L: 10, D: 7600
+no function?
+400
+starting: L: 10, D: 7700
+finishing: L: 10, D: 7700
+no function?
+400
+starting: L: 10, D: 7800
+finishing: L: 10, D: 7800
+no function?
+400
+starting: L: 10, D: 7900
+finishing: L: 10, D: 7900
+no function?
+400
+starting: L: 10, D: 8000
+finishing: L: 10, D: 8000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8100
+finishing: L: 10, D: 8100
+no function?
+400
+starting: L: 10, D: 8200
+finishing: L: 10, D: 8200
+no function?
+400
+starting: L: 10, D: 8300
+finishing: L: 10, D: 8300
+no function?
+400
+starting: L: 10, D: 8400
+finishing: L: 10, D: 8400
+no function?
+400
+starting: L: 10, D: 8500
+finishing: L: 10, D: 8500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8600
+finishing: L: 10, D: 8600
+no function?
+400
+starting: L: 10, D: 8700
+finishing: L: 10, D: 8700
+no function?
+400
+starting: L: 10, D: 8800
+finishing: L: 10, D: 8800
+no function?
+400
+starting: L: 10, D: 8900
+finishing: L: 10, D: 8900
+no function?
+400
+starting: L: 10, D: 9000
+finishing: L: 10, D: 9000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9100
+finishing: L: 10, D: 9100
+no function?
+400
+starting: L: 10, D: 9200
+finishing: L: 10, D: 9200
+no function?
+400
+starting: L: 10, D: 9300
+finishing: L: 10, D: 9300
+no function?
+400
+starting: L: 10, D: 9400
+finishing: L: 10, D: 9400
+no function?
+400
+starting: L: 10, D: 9500
+finishing: L: 10, D: 9500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9600
+finishing: L: 10, D: 9600
+no function?
+400
+starting: L: 10, D: 9700
+finishing: L: 10, D: 9700
+no function?
+400
+starting: L: 10, D: 9800
+finishing: L: 10, D: 9800
+no function?
+400
+starting: L: 10, D: 9900
+finishing: L: 10, D: 9900
+no function?
+400
+starting: L: 10, D: 10000
+finishing: L: 10, D: 10000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+MID-level running in PID 227541 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+no function?
+400
+starting: L: 10, D: 0
+finishing: L: 10, D: 0
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 100
+finishing: L: 10, D: 100
+no function?
+400
+starting: L: 10, D: 200
+finishing: L: 10, D: 200
+no function?
+400
+starting: L: 10, D: 300
+finishing: L: 10, D: 300
+no function?
+400
+starting: L: 10, D: 400
+finishing: L: 10, D: 400
+no function?
+400
+starting: L: 10, D: 500
+finishing: L: 10, D: 500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 600
+finishing: L: 10, D: 600
+no function?
+400
+starting: L: 10, D: 700
+finishing: L: 10, D: 700
+no function?
+400
+starting: L: 10, D: 800
+finishing: L: 10, D: 800
+no function?
+400
+starting: L: 10, D: 900
+finishing: L: 10, D: 900
+no function?
+400
+starting: L: 10, D: 1000
+finishing: L: 10, D: 1000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1100
+finishing: L: 10, D: 1100
+no function?
+400
+starting: L: 10, D: 1200
+finishing: L: 10, D: 1200
+no function?
+400
+starting: L: 10, D: 1300
+finishing: L: 10, D: 1300
+no function?
+400
+starting: L: 10, D: 1400
+finishing: L: 10, D: 1400
+no function?
+400
+starting: L: 10, D: 1500
+finishing: L: 10, D: 1500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1600
+finishing: L: 10, D: 1600
+no function?
+400
+starting: L: 10, D: 1700
+finishing: L: 10, D: 1700
+no function?
+400
+starting: L: 10, D: 1800
+finishing: L: 10, D: 1800
+no function?
+400
+starting: L: 10, D: 1900
+finishing: L: 10, D: 1900
+no function?
+400
+starting: L: 10, D: 2000
+finishing: L: 10, D: 2000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2100
+finishing: L: 10, D: 2100
+no function?
+400
+starting: L: 10, D: 2200
+finishing: L: 10, D: 2200
+no function?
+400
+starting: L: 10, D: 2300
+finishing: L: 10, D: 2300
+no function?
+400
+starting: L: 10, D: 2400
+finishing: L: 10, D: 2400
+no function?
+400
+starting: L: 10, D: 2500
+finishing: L: 10, D: 2500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2600
+finishing: L: 10, D: 2600
+no function?
+400
+starting: L: 10, D: 2700
+finishing: L: 10, D: 2700
+no function?
+400
+starting: L: 10, D: 2800
+finishing: L: 10, D: 2800
+no function?
+400
+starting: L: 10, D: 2900
+finishing: L: 10, D: 2900
+no function?
+400
+starting: L: 10, D: 3000
+finishing: L: 10, D: 3000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3100
+finishing: L: 10, D: 3100
+no function?
+400
+starting: L: 10, D: 3200
+finishing: L: 10, D: 3200
+no function?
+400
+starting: L: 10, D: 3300
+finishing: L: 10, D: 3300
+no function?
+400
+starting: L: 10, D: 3400
+finishing: L: 10, D: 3400
+no function?
+400
+starting: L: 10, D: 3500
+finishing: L: 10, D: 3500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3600
+finishing: L: 10, D: 3600
+no function?
+400
+starting: L: 10, D: 3700
+finishing: L: 10, D: 3700
+no function?
+400
+starting: L: 10, D: 3800
+finishing: L: 10, D: 3800
+no function?
+400
+starting: L: 10, D: 3900
+finishing: L: 10, D: 3900
+no function?
+400
+starting: L: 10, D: 4000
+finishing: L: 10, D: 4000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4100
+finishing: L: 10, D: 4100
+no function?
+400
+starting: L: 10, D: 4200
+finishing: L: 10, D: 4200
+no function?
+400
+starting: L: 10, D: 4300
+finishing: L: 10, D: 4300
+no function?
+400
+starting: L: 10, D: 4400
+finishing: L: 10, D: 4400
+no function?
+400
+starting: L: 10, D: 4500
+finishing: L: 10, D: 4500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4600
+finishing: L: 10, D: 4600
+no function?
+400
+starting: L: 10, D: 4700
+finishing: L: 10, D: 4700
+no function?
+400
+starting: L: 10, D: 4800
+finishing: L: 10, D: 4800
+no function?
+400
+starting: L: 10, D: 4900
+finishing: L: 10, D: 4900
+no function?
+400
+starting: L: 10, D: 5000
+finishing: L: 10, D: 5000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5100
+finishing: L: 10, D: 5100
+no function?
+400
+starting: L: 10, D: 5200
+finishing: L: 10, D: 5200
+no function?
+400
+starting: L: 10, D: 5300
+finishing: L: 10, D: 5300
+no function?
+400
+starting: L: 10, D: 5400
+finishing: L: 10, D: 5400
+no function?
+400
+starting: L: 10, D: 5500
+finishing: L: 10, D: 5500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5600
+finishing: L: 10, D: 5600
+no function?
+400
+starting: L: 10, D: 5700
+finishing: L: 10, D: 5700
+no function?
+400
+starting: L: 10, D: 5800
+finishing: L: 10, D: 5800
+no function?
+400
+starting: L: 10, D: 5900
+finishing: L: 10, D: 5900
+no function?
+400
+starting: L: 10, D: 6000
+finishing: L: 10, D: 6000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6100
+finishing: L: 10, D: 6100
+no function?
+400
+starting: L: 10, D: 6200
+finishing: L: 10, D: 6200
+no function?
+400
+starting: L: 10, D: 6300
+finishing: L: 10, D: 6300
+no function?
+400
+starting: L: 10, D: 6400
+finishing: L: 10, D: 6400
+no function?
+400
+starting: L: 10, D: 6500
+finishing: L: 10, D: 6500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6600
+finishing: L: 10, D: 6600
+no function?
+400
+starting: L: 10, D: 6700
+finishing: L: 10, D: 6700
+no function?
+400
+starting: L: 10, D: 6800
+finishing: L: 10, D: 6800
+no function?
+400
+starting: L: 10, D: 6900
+finishing: L: 10, D: 6900
+no function?
+400
+starting: L: 10, D: 7000
+finishing: L: 10, D: 7000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7100
+finishing: L: 10, D: 7100
+no function?
+400
+starting: L: 10, D: 7200
+finishing: L: 10, D: 7200
+no function?
+400
+starting: L: 10, D: 7300
+finishing: L: 10, D: 7300
+no function?
+400
+starting: L: 10, D: 7400
+finishing: L: 10, D: 7400
+no function?
+400
+starting: L: 10, D: 7500
+finishing: L: 10, D: 7500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7600
+finishing: L: 10, D: 7600
+no function?
+400
+starting: L: 10, D: 7700
+finishing: L: 10, D: 7700
+no function?
+400
+starting: L: 10, D: 7800
+finishing: L: 10, D: 7800
+no function?
+400
+starting: L: 10, D: 7900
+finishing: L: 10, D: 7900
+no function?
+400
+starting: L: 10, D: 8000
+finishing: L: 10, D: 8000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8100
+finishing: L: 10, D: 8100
+no function?
+400
+starting: L: 10, D: 8200
+finishing: L: 10, D: 8200
+no function?
+400
+starting: L: 10, D: 8300
+finishing: L: 10, D: 8300
+no function?
+400
+starting: L: 10, D: 8400
+finishing: L: 10, D: 8400
+no function?
+400
+starting: L: 10, D: 8500
+finishing: L: 10, D: 8500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8600
+finishing: L: 10, D: 8600
+no function?
+400
+starting: L: 10, D: 8700
+finishing: L: 10, D: 8700
+no function?
+400
+starting: L: 10, D: 8800
+finishing: L: 10, D: 8800
+no function?
+400
+starting: L: 10, D: 8900
+finishing: L: 10, D: 8900
+no function?
+400
+starting: L: 10, D: 9000
+finishing: L: 10, D: 9000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9100
+finishing: L: 10, D: 9100
+no function?
+400
+starting: L: 10, D: 9200
+finishing: L: 10, D: 9200
+no function?
+400
+starting: L: 10, D: 9300
+finishing: L: 10, D: 9300
+no function?
+400
+starting: L: 10, D: 9400
+finishing: L: 10, D: 9400
+no function?
+400
+starting: L: 10, D: 9500
+finishing: L: 10, D: 9500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9600
+finishing: L: 10, D: 9600
+no function?
+400
+starting: L: 10, D: 9700
+finishing: L: 10, D: 9700
+no function?
+400
+starting: L: 10, D: 9800
+finishing: L: 10, D: 9800
+no function?
+400
+starting: L: 10, D: 9900
+finishing: L: 10, D: 9900
+no function?
+400
+starting: L: 10, D: 10000
+finishing: L: 10, D: 10000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+MID-level running in PID 227541 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+no function?
+400
+starting: L: 10, D: 0
+finishing: L: 10, D: 0
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 100
+finishing: L: 10, D: 100
+no function?
+400
+starting: L: 10, D: 200
+finishing: L: 10, D: 200
+no function?
+400
+starting: L: 10, D: 300
+finishing: L: 10, D: 300
+no function?
+400
+starting: L: 10, D: 400
+finishing: L: 10, D: 400
+no function?
+400
+starting: L: 10, D: 500
+finishing: L: 10, D: 500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 600
+finishing: L: 10, D: 600
+no function?
+400
+starting: L: 10, D: 700
+finishing: L: 10, D: 700
+no function?
+400
+starting: L: 10, D: 800
+finishing: L: 10, D: 800
+no function?
+400
+starting: L: 10, D: 900
+finishing: L: 10, D: 900
+no function?
+400
+starting: L: 10, D: 1000
+finishing: L: 10, D: 1000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1100
+finishing: L: 10, D: 1100
+no function?
+400
+starting: L: 10, D: 1200
+finishing: L: 10, D: 1200
+no function?
+400
+starting: L: 10, D: 1300
+finishing: L: 10, D: 1300
+no function?
+400
+starting: L: 10, D: 1400
+finishing: L: 10, D: 1400
+no function?
+400
+starting: L: 10, D: 1500
+finishing: L: 10, D: 1500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 1600
+finishing: L: 10, D: 1600
+no function?
+400
+starting: L: 10, D: 1700
+finishing: L: 10, D: 1700
+no function?
+400
+starting: L: 10, D: 1800
+finishing: L: 10, D: 1800
+no function?
+400
+starting: L: 10, D: 1900
+finishing: L: 10, D: 1900
+no function?
+400
+starting: L: 10, D: 2000
+finishing: L: 10, D: 2000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2100
+finishing: L: 10, D: 2100
+no function?
+400
+starting: L: 10, D: 2200
+finishing: L: 10, D: 2200
+no function?
+400
+starting: L: 10, D: 2300
+finishing: L: 10, D: 2300
+no function?
+400
+starting: L: 10, D: 2400
+finishing: L: 10, D: 2400
+no function?
+400
+starting: L: 10, D: 2500
+finishing: L: 10, D: 2500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 2600
+finishing: L: 10, D: 2600
+no function?
+400
+starting: L: 10, D: 2700
+finishing: L: 10, D: 2700
+no function?
+400
+starting: L: 10, D: 2800
+finishing: L: 10, D: 2800
+no function?
+400
+starting: L: 10, D: 2900
+finishing: L: 10, D: 2900
+no function?
+400
+starting: L: 10, D: 3000
+finishing: L: 10, D: 3000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3100
+finishing: L: 10, D: 3100
+no function?
+400
+starting: L: 10, D: 3200
+finishing: L: 10, D: 3200
+no function?
+400
+starting: L: 10, D: 3300
+finishing: L: 10, D: 3300
+no function?
+400
+starting: L: 10, D: 3400
+finishing: L: 10, D: 3400
+no function?
+400
+starting: L: 10, D: 3500
+finishing: L: 10, D: 3500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 3600
+finishing: L: 10, D: 3600
+no function?
+400
+starting: L: 10, D: 3700
+finishing: L: 10, D: 3700
+no function?
+400
+starting: L: 10, D: 3800
+finishing: L: 10, D: 3800
+no function?
+400
+starting: L: 10, D: 3900
+finishing: L: 10, D: 3900
+no function?
+400
+starting: L: 10, D: 4000
+finishing: L: 10, D: 4000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4100
+finishing: L: 10, D: 4100
+no function?
+400
+starting: L: 10, D: 4200
+finishing: L: 10, D: 4200
+no function?
+400
+starting: L: 10, D: 4300
+finishing: L: 10, D: 4300
+no function?
+400
+starting: L: 10, D: 4400
+finishing: L: 10, D: 4400
+no function?
+400
+starting: L: 10, D: 4500
+finishing: L: 10, D: 4500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 4600
+finishing: L: 10, D: 4600
+no function?
+400
+starting: L: 10, D: 4700
+finishing: L: 10, D: 4700
+no function?
+400
+starting: L: 10, D: 4800
+finishing: L: 10, D: 4800
+no function?
+400
+starting: L: 10, D: 4900
+finishing: L: 10, D: 4900
+no function?
+400
+starting: L: 10, D: 5000
+finishing: L: 10, D: 5000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5100
+finishing: L: 10, D: 5100
+no function?
+400
+starting: L: 10, D: 5200
+finishing: L: 10, D: 5200
+no function?
+400
+starting: L: 10, D: 5300
+finishing: L: 10, D: 5300
+no function?
+400
+starting: L: 10, D: 5400
+finishing: L: 10, D: 5400
+no function?
+400
+starting: L: 10, D: 5500
+finishing: L: 10, D: 5500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 5600
+finishing: L: 10, D: 5600
+no function?
+400
+starting: L: 10, D: 5700
+finishing: L: 10, D: 5700
+no function?
+400
+starting: L: 10, D: 5800
+finishing: L: 10, D: 5800
+no function?
+400
+starting: L: 10, D: 5900
+finishing: L: 10, D: 5900
+no function?
+400
+starting: L: 10, D: 6000
+finishing: L: 10, D: 6000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6100
+finishing: L: 10, D: 6100
+no function?
+400
+starting: L: 10, D: 6200
+finishing: L: 10, D: 6200
+no function?
+400
+starting: L: 10, D: 6300
+finishing: L: 10, D: 6300
+no function?
+400
+starting: L: 10, D: 6400
+finishing: L: 10, D: 6400
+no function?
+400
+starting: L: 10, D: 6500
+finishing: L: 10, D: 6500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 6600
+finishing: L: 10, D: 6600
+no function?
+400
+starting: L: 10, D: 6700
+finishing: L: 10, D: 6700
+no function?
+400
+starting: L: 10, D: 6800
+finishing: L: 10, D: 6800
+no function?
+400
+starting: L: 10, D: 6900
+finishing: L: 10, D: 6900
+no function?
+400
+starting: L: 10, D: 7000
+finishing: L: 10, D: 7000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7100
+finishing: L: 10, D: 7100
+no function?
+400
+starting: L: 10, D: 7200
+finishing: L: 10, D: 7200
+no function?
+400
+starting: L: 10, D: 7300
+finishing: L: 10, D: 7300
+no function?
+400
+starting: L: 10, D: 7400
+finishing: L: 10, D: 7400
+no function?
+400
+starting: L: 10, D: 7500
+finishing: L: 10, D: 7500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 7600
+finishing: L: 10, D: 7600
+no function?
+400
+starting: L: 10, D: 7700
+finishing: L: 10, D: 7700
+no function?
+400
+starting: L: 10, D: 7800
+finishing: L: 10, D: 7800
+no function?
+400
+starting: L: 10, D: 7900
+finishing: L: 10, D: 7900
+no function?
+400
+starting: L: 10, D: 8000
+finishing: L: 10, D: 8000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8100
+finishing: L: 10, D: 8100
+no function?
+400
+starting: L: 10, D: 8200
+finishing: L: 10, D: 8200
+no function?
+400
+starting: L: 10, D: 8300
+finishing: L: 10, D: 8300
+no function?
+400
+starting: L: 10, D: 8400
+finishing: L: 10, D: 8400
+no function?
+400
+starting: L: 10, D: 8500
+finishing: L: 10, D: 8500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 8600
+finishing: L: 10, D: 8600
+no function?
+400
+starting: L: 10, D: 8700
+finishing: L: 10, D: 8700
+no function?
+400
+starting: L: 10, D: 8800
+finishing: L: 10, D: 8800
+no function?
+400
+starting: L: 10, D: 8900
+finishing: L: 10, D: 8900
+no function?
+400
+starting: L: 10, D: 9000
+finishing: L: 10, D: 9000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9100
+finishing: L: 10, D: 9100
+no function?
+400
+starting: L: 10, D: 9200
+finishing: L: 10, D: 9200
+no function?
+400
+starting: L: 10, D: 9300
+finishing: L: 10, D: 9300
+no function?
+400
+starting: L: 10, D: 9400
+finishing: L: 10, D: 9400
+no function?
+400
+starting: L: 10, D: 9500
+finishing: L: 10, D: 9500
+line? 400.0025
+0.5269698639135599
+0.5269698639135599
+no function?
+400
+starting: L: 10, D: 9600
+finishing: L: 10, D: 9600
+no function?
+400
+starting: L: 10, D: 9700
+finishing: L: 10, D: 9700
+no function?
+400
+starting: L: 10, D: 9800
+finishing: L: 10, D: 9800
+no function?
+400
+starting: L: 10, D: 9900
+finishing: L: 10, D: 9900
+no function?
+400
+starting: L: 10, D: 10000
+finishing: L: 10, D: 10000
+line? 400.0025
+0.5269698639135599
+0.5269698639135599

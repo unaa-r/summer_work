@@ -1,14 +1,15 @@
-Top-level running in PID 3142181 (name=__main__)
-MID-level running in PID 3142181 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+srun: lua: Submitted: 961249.0 component: 0
+Top-level running in PID 2111323 (name=__main__)
+MID-level running in PID 2111323 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 no function?
 400
 starting: L: 10, D: 0
 finishing: L: 10, D: 0
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 100
@@ -29,9 +30,9 @@ no function?
 400
 starting: L: 10, D: 500
 finishing: L: 10, D: 500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 600
@@ -52,9 +53,9 @@ no function?
 400
 starting: L: 10, D: 1000
 finishing: L: 10, D: 1000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1100
@@ -75,9 +76,9 @@ no function?
 400
 starting: L: 10, D: 1500
 finishing: L: 10, D: 1500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1600
@@ -98,9 +99,9 @@ no function?
 400
 starting: L: 10, D: 2000
 finishing: L: 10, D: 2000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2100
@@ -121,9 +122,9 @@ no function?
 400
 starting: L: 10, D: 2500
 finishing: L: 10, D: 2500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2600
@@ -144,9 +145,9 @@ no function?
 400
 starting: L: 10, D: 3000
 finishing: L: 10, D: 3000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3100
@@ -167,9 +168,9 @@ no function?
 400
 starting: L: 10, D: 3500
 finishing: L: 10, D: 3500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3600
@@ -190,9 +191,9 @@ no function?
 400
 starting: L: 10, D: 4000
 finishing: L: 10, D: 4000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4100
@@ -213,9 +214,9 @@ no function?
 400
 starting: L: 10, D: 4500
 finishing: L: 10, D: 4500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4600
@@ -236,9 +237,9 @@ no function?
 400
 starting: L: 10, D: 5000
 finishing: L: 10, D: 5000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5100
@@ -259,9 +260,9 @@ no function?
 400
 starting: L: 10, D: 5500
 finishing: L: 10, D: 5500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5600
@@ -282,9 +283,9 @@ no function?
 400
 starting: L: 10, D: 6000
 finishing: L: 10, D: 6000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6100
@@ -305,9 +306,9 @@ no function?
 400
 starting: L: 10, D: 6500
 finishing: L: 10, D: 6500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6600
@@ -328,9 +329,9 @@ no function?
 400
 starting: L: 10, D: 7000
 finishing: L: 10, D: 7000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7100
@@ -351,9 +352,9 @@ no function?
 400
 starting: L: 10, D: 7500
 finishing: L: 10, D: 7500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7600
@@ -374,9 +375,9 @@ no function?
 400
 starting: L: 10, D: 8000
 finishing: L: 10, D: 8000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8100
@@ -397,9 +398,9 @@ no function?
 400
 starting: L: 10, D: 8500
 finishing: L: 10, D: 8500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8600
@@ -420,9 +421,9 @@ no function?
 400
 starting: L: 10, D: 9000
 finishing: L: 10, D: 9000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9100
@@ -443,9 +444,9 @@ no function?
 400
 starting: L: 10, D: 9500
 finishing: L: 10, D: 9500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9600
@@ -466,19 +467,19 @@ no function?
 400
 starting: L: 10, D: 10000
 finishing: L: 10, D: 10000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
-MID-level running in PID 3142181 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+line? 400.025
+0.525688448570821
+0.525688448570821
+MID-level running in PID 2111323 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 no function?
 400
 starting: L: 10, D: 0
 finishing: L: 10, D: 0
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 100
@@ -499,9 +500,9 @@ no function?
 400
 starting: L: 10, D: 500
 finishing: L: 10, D: 500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 600
@@ -522,9 +523,9 @@ no function?
 400
 starting: L: 10, D: 1000
 finishing: L: 10, D: 1000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1100
@@ -545,9 +546,9 @@ no function?
 400
 starting: L: 10, D: 1500
 finishing: L: 10, D: 1500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1600
@@ -568,9 +569,9 @@ no function?
 400
 starting: L: 10, D: 2000
 finishing: L: 10, D: 2000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2100
@@ -591,9 +592,9 @@ no function?
 400
 starting: L: 10, D: 2500
 finishing: L: 10, D: 2500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2600
@@ -614,9 +615,9 @@ no function?
 400
 starting: L: 10, D: 3000
 finishing: L: 10, D: 3000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3100
@@ -637,9 +638,9 @@ no function?
 400
 starting: L: 10, D: 3500
 finishing: L: 10, D: 3500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3600
@@ -660,9 +661,9 @@ no function?
 400
 starting: L: 10, D: 4000
 finishing: L: 10, D: 4000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4100
@@ -683,9 +684,9 @@ no function?
 400
 starting: L: 10, D: 4500
 finishing: L: 10, D: 4500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4600
@@ -706,9 +707,9 @@ no function?
 400
 starting: L: 10, D: 5000
 finishing: L: 10, D: 5000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5100
@@ -729,9 +730,9 @@ no function?
 400
 starting: L: 10, D: 5500
 finishing: L: 10, D: 5500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5600
@@ -752,9 +753,9 @@ no function?
 400
 starting: L: 10, D: 6000
 finishing: L: 10, D: 6000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6100
@@ -775,9 +776,9 @@ no function?
 400
 starting: L: 10, D: 6500
 finishing: L: 10, D: 6500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6600
@@ -798,9 +799,9 @@ no function?
 400
 starting: L: 10, D: 7000
 finishing: L: 10, D: 7000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7100
@@ -821,9 +822,9 @@ no function?
 400
 starting: L: 10, D: 7500
 finishing: L: 10, D: 7500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7600
@@ -844,9 +845,9 @@ no function?
 400
 starting: L: 10, D: 8000
 finishing: L: 10, D: 8000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8100
@@ -867,9 +868,9 @@ no function?
 400
 starting: L: 10, D: 8500
 finishing: L: 10, D: 8500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8600
@@ -890,9 +891,9 @@ no function?
 400
 starting: L: 10, D: 9000
 finishing: L: 10, D: 9000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9100
@@ -913,9 +914,9 @@ no function?
 400
 starting: L: 10, D: 9500
 finishing: L: 10, D: 9500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9600
@@ -936,19 +937,19 @@ no function?
 400
 starting: L: 10, D: 10000
 finishing: L: 10, D: 10000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
-MID-level running in PID 3142181 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+line? 400.025
+0.525688448570821
+0.525688448570821
+MID-level running in PID 2111323 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 no function?
 400
 starting: L: 10, D: 0
 finishing: L: 10, D: 0
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 100
@@ -969,9 +970,9 @@ no function?
 400
 starting: L: 10, D: 500
 finishing: L: 10, D: 500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 600
@@ -992,9 +993,9 @@ no function?
 400
 starting: L: 10, D: 1000
 finishing: L: 10, D: 1000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1100
@@ -1015,9 +1016,9 @@ no function?
 400
 starting: L: 10, D: 1500
 finishing: L: 10, D: 1500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1600
@@ -1038,9 +1039,9 @@ no function?
 400
 starting: L: 10, D: 2000
 finishing: L: 10, D: 2000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2100
@@ -1061,9 +1062,9 @@ no function?
 400
 starting: L: 10, D: 2500
 finishing: L: 10, D: 2500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2600
@@ -1084,9 +1085,9 @@ no function?
 400
 starting: L: 10, D: 3000
 finishing: L: 10, D: 3000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3100
@@ -1107,9 +1108,9 @@ no function?
 400
 starting: L: 10, D: 3500
 finishing: L: 10, D: 3500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3600
@@ -1130,9 +1131,9 @@ no function?
 400
 starting: L: 10, D: 4000
 finishing: L: 10, D: 4000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4100
@@ -1153,9 +1154,9 @@ no function?
 400
 starting: L: 10, D: 4500
 finishing: L: 10, D: 4500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4600
@@ -1176,9 +1177,9 @@ no function?
 400
 starting: L: 10, D: 5000
 finishing: L: 10, D: 5000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5100
@@ -1199,9 +1200,9 @@ no function?
 400
 starting: L: 10, D: 5500
 finishing: L: 10, D: 5500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5600
@@ -1222,9 +1223,9 @@ no function?
 400
 starting: L: 10, D: 6000
 finishing: L: 10, D: 6000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6100
@@ -1245,9 +1246,9 @@ no function?
 400
 starting: L: 10, D: 6500
 finishing: L: 10, D: 6500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6600
@@ -1268,9 +1269,9 @@ no function?
 400
 starting: L: 10, D: 7000
 finishing: L: 10, D: 7000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7100
@@ -1291,9 +1292,9 @@ no function?
 400
 starting: L: 10, D: 7500
 finishing: L: 10, D: 7500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7600
@@ -1314,9 +1315,9 @@ no function?
 400
 starting: L: 10, D: 8000
 finishing: L: 10, D: 8000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8100
@@ -1337,9 +1338,9 @@ no function?
 400
 starting: L: 10, D: 8500
 finishing: L: 10, D: 8500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8600
@@ -1360,9 +1361,9 @@ no function?
 400
 starting: L: 10, D: 9000
 finishing: L: 10, D: 9000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9100
@@ -1383,9 +1384,9 @@ no function?
 400
 starting: L: 10, D: 9500
 finishing: L: 10, D: 9500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9600
@@ -1406,19 +1407,19 @@ no function?
 400
 starting: L: 10, D: 10000
 finishing: L: 10, D: 10000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
-MID-level running in PID 3142181 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
+line? 400.025
+0.525688448570821
+0.525688448570821
+MID-level running in PID 2111323 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runb.py:582: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 no function?
 400
 starting: L: 10, D: 0
 finishing: L: 10, D: 0
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 100
@@ -1439,9 +1440,9 @@ no function?
 400
 starting: L: 10, D: 500
 finishing: L: 10, D: 500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 600
@@ -1462,9 +1463,9 @@ no function?
 400
 starting: L: 10, D: 1000
 finishing: L: 10, D: 1000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1100
@@ -1485,9 +1486,9 @@ no function?
 400
 starting: L: 10, D: 1500
 finishing: L: 10, D: 1500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 1600
@@ -1508,9 +1509,9 @@ no function?
 400
 starting: L: 10, D: 2000
 finishing: L: 10, D: 2000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2100
@@ -1531,9 +1532,9 @@ no function?
 400
 starting: L: 10, D: 2500
 finishing: L: 10, D: 2500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 2600
@@ -1554,9 +1555,9 @@ no function?
 400
 starting: L: 10, D: 3000
 finishing: L: 10, D: 3000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3100
@@ -1577,9 +1578,9 @@ no function?
 400
 starting: L: 10, D: 3500
 finishing: L: 10, D: 3500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 3600
@@ -1600,9 +1601,9 @@ no function?
 400
 starting: L: 10, D: 4000
 finishing: L: 10, D: 4000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4100
@@ -1623,9 +1624,9 @@ no function?
 400
 starting: L: 10, D: 4500
 finishing: L: 10, D: 4500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 4600
@@ -1646,9 +1647,9 @@ no function?
 400
 starting: L: 10, D: 5000
 finishing: L: 10, D: 5000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5100
@@ -1669,9 +1670,9 @@ no function?
 400
 starting: L: 10, D: 5500
 finishing: L: 10, D: 5500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 5600
@@ -1692,9 +1693,9 @@ no function?
 400
 starting: L: 10, D: 6000
 finishing: L: 10, D: 6000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6100
@@ -1715,9 +1716,9 @@ no function?
 400
 starting: L: 10, D: 6500
 finishing: L: 10, D: 6500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 6600
@@ -1738,9 +1739,9 @@ no function?
 400
 starting: L: 10, D: 7000
 finishing: L: 10, D: 7000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7100
@@ -1761,9 +1762,9 @@ no function?
 400
 starting: L: 10, D: 7500
 finishing: L: 10, D: 7500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 7600
@@ -1784,9 +1785,9 @@ no function?
 400
 starting: L: 10, D: 8000
 finishing: L: 10, D: 8000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8100
@@ -1807,9 +1808,9 @@ no function?
 400
 starting: L: 10, D: 8500
 finishing: L: 10, D: 8500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 8600
@@ -1830,9 +1831,9 @@ no function?
 400
 starting: L: 10, D: 9000
 finishing: L: 10, D: 9000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9100
@@ -1853,9 +1854,9 @@ no function?
 400
 starting: L: 10, D: 9500
 finishing: L: 10, D: 9500
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821
 no function?
 400
 starting: L: 10, D: 9600
@@ -1876,6 +1877,6 @@ no function?
 400
 starting: L: 10, D: 10000
 finishing: L: 10, D: 10000
-line? 400.0025
-0.5269698639135599
-0.5269698639135599
+line? 400.025
+0.525688448570821
+0.525688448570821

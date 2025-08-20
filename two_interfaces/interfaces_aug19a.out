@@ -1,1637 +1,1638 @@
-Top-level running in PID 222550 (name=__main__)
-MID-level running in PID 222550 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+srun: lua: Submitted: 961248.0 component: 0
+Top-level running in PID 445721 (name=__main__)
+MID-level running in PID 445721 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 starting: L: 10, D: 0
-manual centre 399.9998011322847
+manual centre 399.99946756895844
 finishing: L: 10, D: 0
-line? 400.0023011322847
-0.5269698639135599
-0.5249825854462918
+line? 400.0244675689584
+0.525688448570821
+0.52515627401693
 starting: L: 10, D: 100
-manual centre 400.0001346961674
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.00213609114604
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 100
 starting: L: 10, D: 200
-manual centre 400.00046826060634
+manual centre 400.0048046489389
 finishing: L: 10, D: 200
 starting: L: 10, D: 300
-manual centre 400.0008018256016
+manual centre 400.0074732423379
 finishing: L: 10, D: 300
 starting: L: 10, D: 400
-manual centre 400.0011353911531
+manual centre 400.0101418713436
 finishing: L: 10, D: 400
 starting: L: 10, D: 500
-manual centre 400.0011353911531
+manual centre 400.0128105359568
 finishing: L: 10, D: 500
-line? 400.0036353911531
-0.5269698639135599
-0.5383157521136402
+line? 400.0378105359568
+0.525688448570821
+0.5384923862360445
 starting: L: 10, D: 600
-manual centre 400.0014689572612
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.01547923617824
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 600
 starting: L: 10, D: 700
-manual centre 400.0018025239254
+manual centre 400.0178143780824
 finishing: L: 10, D: 700
 starting: L: 10, D: 800
-manual centre 400.00213609114604
+manual centre 400.02014954725
 finishing: L: 10, D: 800
 starting: L: 10, D: 900
-manual centre 400.00213609114604
+manual centre 400.02281834539764
 finishing: L: 10, D: 900
 starting: L: 10, D: 1000
-manual centre 400.0024696589229
+manual centre 400.0251535729888
 finishing: L: 10, D: 1000
-line? 400.0049696589229
-0.5269698639135599
-0.5516489187832505
+line? 400.0501535729888
+0.525688448570821
+0.5508282900883699
 starting: L: 10, D: 1100
-manual centre 400.0028032272562
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.02715521833915
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1100
 starting: L: 10, D: 1200
-manual centre 400.0028032272562
+manual centre 400.02949049656576
 finishing: L: 10, D: 1200
 starting: L: 10, D: 1300
-manual centre 400.00313679614584
+manual centre 400.0318258020583
 finishing: L: 10, D: 1300
 starting: L: 10, D: 1400
-manual centre 400.0034703655918
+manual centre 400.03382751418224
 finishing: L: 10, D: 1400
 starting: L: 10, D: 1500
-manual centre 400.0034703655918
+manual centre 400.03582924633906
 finishing: L: 10, D: 1500
-line? 400.0059703655918
-0.5269698639135599
-0.5616487937856466
+line? 400.06082924633904
+0.525688448570821
+0.5614971799449902
 starting: L: 10, D: 1600
-manual centre 400.003803935594
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0378309985289
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1600
 starting: L: 10, D: 1700
-manual centre 400.0041375061527
+manual centre 400.0398327707521
 finishing: L: 10, D: 1700
 starting: L: 10, D: 1800
-manual centre 400.0041375061527
+manual centre 400.04183456300893
 finishing: L: 10, D: 1800
 starting: L: 10, D: 1900
-manual centre 400.0044710772676
+manual centre 400.04383637529975
 finishing: L: 10, D: 1900
 starting: L: 10, D: 2000
-manual centre 400.0044710772676
+manual centre 400.04550456751275
 finishing: L: 10, D: 2000
-line? 400.0069710772676
-0.5269698639135599
-0.5716486687887966
+line? 400.0705045675127
+0.525688448570821
+0.571165861408275
 starting: L: 10, D: 2100
-manual centre 400.0048046489389
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0475064165332
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2100
 starting: L: 10, D: 2200
-manual centre 400.0048046489389
+manual centre 400.04917463935476
 finishing: L: 10, D: 2200
 starting: L: 10, D: 2300
-manual centre 400.00513822116653
+manual centre 400.05084287608946
 finishing: L: 10, D: 2300
 starting: L: 10, D: 2400
-manual centre 400.00513822116653
+manual centre 400.05284477853684
 finishing: L: 10, D: 2400
 starting: L: 10, D: 2500
-manual centre 400.0054717939506
+manual centre 400.05451304588127
 finishing: L: 10, D: 2500
-line? 400.0079717939506
-0.5269698639135599
-0.5816485437911927
+line? 400.07951304588124
+0.525688448570821
+0.5801677372795221
 starting: L: 10, D: 2600
-manual centre 400.0054717939506
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0561813271396
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2600
 starting: L: 10, D: 2700
-manual centre 400.005805367291
+manual centre 400.0578496223119
 finishing: L: 10, D: 2700
 starting: L: 10, D: 2800
-manual centre 400.005805367291
+manual centre 400.05918426846785
 finishing: L: 10, D: 2800
 starting: L: 10, D: 2900
-manual centre 400.0061389411876
+manual centre 400.06085258868563
 finishing: L: 10, D: 2900
 starting: L: 10, D: 3000
-manual centre 400.0061389411876
+manual centre 400.06252092281795
 finishing: L: 10, D: 3000
-line? 400.0086389411876
-0.5269698639135599
-0.5883151271263748
+line? 400.08752092281793
+0.525688448570821
+0.5881694047420489
 starting: L: 10, D: 3100
-manual centre 400.0064725156407
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.06418927086486
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3100
 starting: L: 10, D: 3200
-manual centre 400.0064725156407
+manual centre 400.06585763282663
 finishing: L: 10, D: 3200
 starting: L: 10, D: 3300
-manual centre 400.00680609065006
+manual centre 400.06752600870334
 finishing: L: 10, D: 3300
 starting: L: 10, D: 3400
-manual centre 400.00680609065006
+manual centre 400.06919439849526
 finishing: L: 10, D: 3400
 starting: L: 10, D: 3500
-manual centre 400.00713966621583
+manual centre 400.0708628022024
 finishing: L: 10, D: 3500
-line? 400.00963966621583
-0.5269698639135599
-0.5983150021295248
+line? 400.09586280220236
+0.525688448570821
+0.5965044750366434
 starting: L: 10, D: 3600
-manual centre 400.00713966621583
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07219753518734
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3600
 starting: L: 10, D: 3700
-manual centre 400.0074732423379
+manual centre 400.07319859077063
 finishing: L: 10, D: 3700
 starting: L: 10, D: 3800
-manual centre 400.0074732423379
+manual centre 400.07386596394264
 finishing: L: 10, D: 3800
 starting: L: 10, D: 3900
-manual centre 400.0074732423379
+manual centre 400.0745333393411
 finishing: L: 10, D: 3900
 starting: L: 10, D: 4000
-manual centre 400.0074732423379
+manual centre 400.0752007169662
 finishing: L: 10, D: 4000
-line? 400.0099732423379
-0.5269698639135599
-0.6016482937974927
+line? 400.1002007169662
+0.525688448570821
+0.6008387115985415
 starting: L: 10, D: 4100
-manual centre 400.0074732423379
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07586809681777
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4100
 starting: L: 10, D: 4200
-manual centre 400.00780681901637
+manual centre 400.0772028632007
 finishing: L: 10, D: 4200
 starting: L: 10, D: 4300
-manual centre 400.00780681901637
+manual centre 400.078871333704
 finishing: L: 10, D: 4300
 starting: L: 10, D: 4400
-manual centre 400.0081403962512
+manual centre 400.0808735166774
 finishing: L: 10, D: 4400
 starting: L: 10, D: 4500
-manual centre 400.0084739740424
+manual centre 400.08287571969066
 finishing: L: 10, D: 4500
-line? 400.0109739740424
-0.5269698639135599
-0.6116481688013967
+line? 400.10787571969064
+0.525688448570821
+0.6085069762991376
 starting: L: 10, D: 4600
-manual centre 400.0084739740424
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.08521164853477
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4600
 starting: L: 10, D: 4700
-manual centre 400.00880755238984
+manual centre 400.0875476046561
 finishing: L: 10, D: 4700
 starting: L: 10, D: 4800
-manual centre 400.00914113129375
+manual centre 400.0898835880552
 finishing: L: 10, D: 4800
 starting: L: 10, D: 4900
-manual centre 400.00914113129375
+manual centre 400.0922195987327
 finishing: L: 10, D: 4900
 starting: L: 10, D: 5000
-manual centre 400.0094747107541
+manual centre 400.0948893586238
 finishing: L: 10, D: 5000
-line? 400.0119747107541
-0.5269698639135599
-0.6216480438053006
+line? 400.11988935862377
+0.525688448570821
+0.6205094776068061
 starting: L: 10, D: 5100
-manual centre 400.0098082907707
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0972254277563
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5100
 starting: L: 10, D: 5200
-manual centre 400.0101418713436
+manual centre 400.0995615241685
 finishing: L: 10, D: 5200
 starting: L: 10, D: 5300
-manual centre 400.0101418713436
+manual centre 400.1022313820442
 finishing: L: 10, D: 5300
 starting: L: 10, D: 5400
-manual centre 400.010475452473
+manual centre 400.1045675369148
 finishing: L: 10, D: 5400
 starting: L: 10, D: 5500
-manual centre 400.01080903415874
+manual centre 400.1069037190666
 finishing: L: 10, D: 5500
-line? 400.01330903415874
-0.5269698639135599
-0.6349812104771725
+line? 400.1319037190666
+0.525688448570821
+0.6325119789593471
 starting: L: 10, D: 5600
-manual centre 400.01080903415874
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.10923992850024
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5600
 starting: L: 10, D: 5700
-manual centre 400.0111426164008
+manual centre 400.11157616521615
 finishing: L: 10, D: 5700
 starting: L: 10, D: 5800
-manual centre 400.01147619919925
+manual centre 400.11357867554455
 finishing: L: 10, D: 5800
 starting: L: 10, D: 5900
-manual centre 400.0074732423379
+manual centre 400.07386596394264
 finishing: L: 10, D: 5900
 starting: L: 10, D: 6000
-manual centre 400.0074732423379
+manual centre 400.07586809681777
 finishing: L: 10, D: 6000
-line? 400.0099732423379
-0.5269698639135599
-0.6016482937974927
+line? 400.10086809681775
+0.525688448570821
+0.6015055172239885
 starting: L: 10, D: 6100
-manual centre 400.00780681901637
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07820394383276
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6100
 starting: L: 10, D: 6200
-manual centre 400.0081403962512
+manual centre 400.08020612012626
 finishing: L: 10, D: 6200
 starting: L: 10, D: 6300
-manual centre 400.0081403962512
+manual centre 400.08254201779687
 finishing: L: 10, D: 6300
 starting: L: 10, D: 6400
-manual centre 400.0084739740424
+manual centre 400.08487794274413
 finishing: L: 10, D: 6400
 starting: L: 10, D: 6500
-manual centre 400.00880755238984
+manual centre 400.08721389496867
 finishing: L: 10, D: 6500
-line? 400.01130755238984
-0.5269698639135599
-0.6149814604678568
+line? 400.11221389496865
+0.525688448570821
+0.6128412128773256
 starting: L: 10, D: 6600
-manual centre 400.00880755238984
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.08954987447106
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6600
 starting: L: 10, D: 6700
-manual centre 400.00914113129375
+manual centre 400.09188588125147
 finishing: L: 10, D: 6700
 starting: L: 10, D: 6800
-manual centre 400.0094747107541
+manual centre 400.09422191531064
 finishing: L: 10, D: 6800
 starting: L: 10, D: 6900
-manual centre 400.0098082907707
+manual centre 400.0965579766491
 finishing: L: 10, D: 6900
 starting: L: 10, D: 7000
-manual centre 400.0098082907707
+manual centre 400.09889406526713
 finishing: L: 10, D: 7000
-line? 400.0123082907707
-0.5269698639135599
-0.6249813354732686
+line? 400.1238940652671
+0.525688448570821
+0.6245103113860341
 starting: L: 10, D: 7100
-manual centre 400.0101418713436
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.10123018116525
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7100
 starting: L: 10, D: 7200
-manual centre 400.010475452473
+manual centre 400.10356632434394
 finishing: L: 10, D: 7200
 starting: L: 10, D: 7300
-manual centre 400.010475452473
+manual centre 400.106236235668
 finishing: L: 10, D: 7300
 starting: L: 10, D: 7400
-manual centre 400.01080903415874
+manual centre 400.10857243730675
 finishing: L: 10, D: 7400
 starting: L: 10, D: 7500
-manual centre 400.0111426164008
+manual centre 400.1109086662276
 finishing: L: 10, D: 7500
-line? 400.0136426164008
-0.5269698639135599
-0.6383145021451405
+line? 400.1359086662276
+0.525688448570821
+0.6365128127535076
 starting: L: 10, D: 7600
-manual centre 400.01147619919925
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1132449224311
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7600
 starting: L: 10, D: 7700
-manual centre 400.01147619919925
+manual centre 400.11558120591764
 finishing: L: 10, D: 7700
 starting: L: 10, D: 7800
-manual centre 400.0118097825541
+manual centre 400.1182512775964
 finishing: L: 10, D: 7800
 starting: L: 10, D: 7900
-manual centre 400.0121433664653
+manual centre 400.12058761954825
 finishing: L: 10, D: 7900
 starting: L: 10, D: 8000
-manual centre 400.0121433664653
+manual centre 400.1229239887847
 finishing: L: 10, D: 8000
-line? 400.0146433664653
-0.5269698639135599
-0.6483143771497983
+line? 400.14792398878467
+0.525688448570821
+0.648515314166306
 starting: L: 10, D: 8100
-manual centre 400.01247695093286
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.12526038530604
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 8100
 starting: L: 10, D: 8200
-manual centre 400.0128105359568
+manual centre 400.127596809113
 finishing: L: 10, D: 8200
 starting: L: 10, D: 8300
-manual centre 400.0131441215372
+manual centre 400.130267041161
 finishing: L: 10, D: 8300
 starting: L: 10, D: 8400
-manual centre 400.0131441215372
+manual centre 400.13260352343855
 finishing: L: 10, D: 8400
 starting: L: 10, D: 8500
-manual centre 400.0134777076739
+manual centre 400.13494003300315
 finishing: L: 10, D: 8500
-line? 400.0159777076739
-0.5269698639135599
-0.661647543823932
+line? 400.1599400330031
+0.525688448570821
+0.6605178156239772
 starting: L: 10, D: 8600
-manual centre 400.013811294367
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1372765698552
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 8600
 starting: L: 10, D: 8700
-manual centre 400.013811294367
+manual centre 400.1399469311
 finishing: L: 10, D: 8700
 starting: L: 10, D: 8800
-manual centre 400.01414488161646
+manual centre 400.14228352642687
 finishing: L: 10, D: 8800
 starting: L: 10, D: 8900
-manual centre 400.0144784694224
+manual centre 400.1446201490427
 finishing: L: 10, D: 8900
 starting: L: 10, D: 9000
-manual centre 400.01481205778464
+manual centre 400.1469567989481
 finishing: L: 10, D: 9000
-line? 400.01731205778464
-0.5269698639135599
-0.6749807104980656
+line? 400.1719567989481
+0.525688448570821
+0.6725203171266717
 starting: L: 10, D: 9100
-manual centre 400.01481205778464
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.14962728939906
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 9100
 starting: L: 10, D: 9200
-manual centre 400.0151456467032
+manual centre 400.15196399778347
 finishing: L: 10, D: 9200
 starting: L: 10, D: 9300
-manual centre 400.01547923617824
+manual centre 400.15430073345885
 finishing: L: 10, D: 9300
 starting: L: 10, D: 9400
-manual centre 400.0158128262097
+manual centre 400.15697132193463
 finishing: L: 10, D: 9400
 starting: L: 10, D: 9500
-manual centre 400.0158128262097
+manual centre 400.1593081160923
 finishing: L: 10, D: 9500
-line? 400.0183128262097
-0.5269698639135599
-0.6849805855042314
+line? 400.18430811609227
+0.525688448570821
+0.6848562214957482
 starting: L: 10, D: 9600
-manual centre 400.0161464167974
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1619787714062
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 9600
 starting: L: 10, D: 9700
-manual centre 400.01648000794165
+manual centre 400.16431562404836
 finishing: L: 10, D: 9700
 starting: L: 10, D: 9800
-manual centre 400.01681359964226
+manual centre 400.1669863462029
 finishing: L: 10, D: 9800
 starting: L: 10, D: 9900
-manual centre 400.01681359964226
+manual centre 400.1693232573317
 finishing: L: 10, D: 9900
 starting: L: 10, D: 10000
-manual centre 400.01714719189926
+manual centre 400.1719940463295
 finishing: L: 10, D: 10000
-line? 400.01964719189925
-0.5269698639135599
-0.6983137521798728
-MID-level running in PID 222550 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+line? 400.19699404632945
+0.525688448570821
+0.6975255287352793
+MID-level running in PID 445721 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 starting: L: 10, D: 0
-manual centre 399.9998011322847
+manual centre 399.99880044397486
 finishing: L: 10, D: 0
-line? 400.0023011322847
-0.5269698639135599
-0.5249825854462918
+line? 400.02380044397484
+0.525688448570821
+0.5244894684074712
 starting: L: 10, D: 100
-manual centre 400.0001346961674
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0028032272562
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 100
 starting: L: 10, D: 200
-manual centre 400.0008018256016
+manual centre 400.00680609065006
 finishing: L: 10, D: 200
 starting: L: 10, D: 300
-manual centre 400.0011353911531
+manual centre 400.010475452473
 finishing: L: 10, D: 300
 starting: L: 10, D: 400
-manual centre 400.0014689572612
+manual centre 400.01414488161646
 finishing: L: 10, D: 400
 starting: L: 10, D: 500
-manual centre 400.0018025239254
+manual centre 400.0178143780824
 finishing: L: 10, D: 500
-line? 400.0043025239254
-0.5269698639135599
-0.5449823354488224
+line? 400.04281437808237
+0.525688448570821
+0.543493428332664
 starting: L: 10, D: 600
-manual centre 400.00213609114604
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.02115034238227
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 600
 starting: L: 10, D: 700
-manual centre 400.0024696589229
+manual centre 400.0244863623235
 finishing: L: 10, D: 700
 starting: L: 10, D: 800
-manual centre 400.0028032272562
+manual centre 400.02748882784493
 finishing: L: 10, D: 800
 starting: L: 10, D: 900
-manual centre 400.00313679614584
+manual centre 400.0301577239242
 finishing: L: 10, D: 900
 starting: L: 10, D: 1000
-manual centre 400.00313679614584
+manual centre 400.0328266556162
 finishing: L: 10, D: 1000
-line? 400.00563679614584
-0.5269698639135599
-0.5583155021184325
+line? 400.05782665561617
+0.525688448570821
+0.5584965546692051
 starting: L: 10, D: 1100
-manual centre 400.0034703655918
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.03549562292176
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1100
 starting: L: 10, D: 1200
-manual centre 400.003803935594
+manual centre 400.0378309985289
 finishing: L: 10, D: 1200
 starting: L: 10, D: 1300
-manual centre 400.0041375061527
+manual centre 400.0405000326117
 finishing: L: 10, D: 1300
 starting: L: 10, D: 1400
-manual centre 400.0041375061527
+manual centre 400.04283546665005
 finishing: L: 10, D: 1400
 starting: L: 10, D: 1500
-manual centre 400.0044710772676
+manual centre 400.04483728895804
 finishing: L: 10, D: 1500
-line? 400.0069710772676
-0.5269698639135599
-0.5716486687887966
+line? 400.069837288958
+0.525688448570821
+0.5704990557891629
 starting: L: 10, D: 1600
-manual centre 400.0048046489389
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.04717277363847
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1600
 starting: L: 10, D: 1700
-manual centre 400.0048046489389
+manual centre 400.04917463935476
 finishing: L: 10, D: 1700
 starting: L: 10, D: 1800
-manual centre 400.00513822116653
+manual centre 400.05117652510603
 finishing: L: 10, D: 1800
 starting: L: 10, D: 1900
-manual centre 400.0054717939506
+manual centre 400.0531784308927
 finishing: L: 10, D: 1900
 starting: L: 10, D: 2000
-manual centre 400.0054717939506
+manual centre 400.05518035671497
 finishing: L: 10, D: 2000
-line? 400.0079717939506
-0.5269698639135599
-0.5816485437911927
+line? 400.08018035671495
+0.525688448570821
+0.5808345429006703
 starting: L: 10, D: 2100
-manual centre 400.005805367291
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.05684864353884
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2100
 starting: L: 10, D: 2200
-manual centre 400.005805367291
+manual centre 400.058850606094
 finishing: L: 10, D: 2200
 starting: L: 10, D: 2300
-manual centre 400.0061389411876
+manual centre 400.06051892352895
 finishing: L: 10, D: 2300
 starting: L: 10, D: 2400
-manual centre 400.0061389411876
+manual centre 400.06218725487827
 finishing: L: 10, D: 2400
 starting: L: 10, D: 2500
-manual centre 400.0064725156407
+manual centre 400.0638556001423
 finishing: L: 10, D: 2500
-line? 400.0089725156407
-0.5269698639135599
-0.5916484187943427
+line? 400.08885560014227
+0.525688448570821
+0.589503015987739
 starting: L: 10, D: 2600
-manual centre 400.0064725156407
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0655239593211
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2600
 starting: L: 10, D: 2700
-manual centre 400.00680609065006
+manual centre 400.0668586566829
 finishing: L: 10, D: 2700
 starting: L: 10, D: 2800
-manual centre 400.00680609065006
+manual centre 400.06852704090863
 finishing: L: 10, D: 2800
 starting: L: 10, D: 2900
-manual centre 400.00713966621583
+manual centre 400.0701954390497
 finishing: L: 10, D: 2900
 starting: L: 10, D: 3000
-manual centre 400.00713966621583
+manual centre 400.07219753518734
 finishing: L: 10, D: 3000
-line? 400.00963966621583
-0.5269698639135599
-0.5983150021295248
+line? 400.0971975351873
+0.525688448570821
+0.5978380862858781
 starting: L: 10, D: 3100
-manual centre 400.0074732423379
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0745333393411
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3100
 starting: L: 10, D: 3200
-manual centre 400.00780681901637
+manual centre 400.07686917077007
 finishing: L: 10, D: 3200
 starting: L: 10, D: 3300
-manual centre 400.0081403962512
+manual centre 400.07920502947456
 finishing: L: 10, D: 3300
 starting: L: 10, D: 3400
-manual centre 400.0081403962512
+manual centre 400.0818746156791
 finishing: L: 10, D: 3400
 starting: L: 10, D: 3500
-manual centre 400.0084739740424
+manual centre 400.0842105328329
 finishing: L: 10, D: 3500
-line? 400.0109739740424
-0.5269698639135599
-0.6116481688013967
+line? 400.1092105328329
+0.525688448570821
+0.6098405875533498
 starting: L: 10, D: 3600
-manual centre 400.00880755238984
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.085879061786
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3600
 starting: L: 10, D: 3700
-manual centre 400.00880755238984
+manual centre 400.08721389496867
 finishing: L: 10, D: 3700
 starting: L: 10, D: 3800
-manual centre 400.00880755238984
+manual centre 400.0875476046561
 finishing: L: 10, D: 3800
 starting: L: 10, D: 3900
-manual centre 400.00880755238984
+manual centre 400.086546477264
 finishing: L: 10, D: 3900
 starting: L: 10, D: 4000
-manual centre 400.0084739740424
+manual centre 400.0838768287124
 finishing: L: 10, D: 4000
-line? 400.0109739740424
-0.5269698639135599
-0.6116481688013967
+line? 400.10887682871237
+0.525688448570821
+0.6095071847398345
 starting: L: 10, D: 4100
-manual centre 400.0081403962512
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.08020612012626
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4100
 starting: L: 10, D: 4200
-manual centre 400.00780681901637
+manual centre 400.07686917077007
 finishing: L: 10, D: 4200
 starting: L: 10, D: 4300
-manual centre 400.0074732423379
+manual centre 400.0752007169662
 finishing: L: 10, D: 4300
 starting: L: 10, D: 4400
-manual centre 400.0074732423379
+manual centre 400.0752007169662
 finishing: L: 10, D: 4400
 starting: L: 10, D: 4500
-manual centre 400.00780681901637
+manual centre 400.07620178757855
 finishing: L: 10, D: 4500
-line? 400.01030681901636
-0.5269698639135599
-0.6049815854654608
+line? 400.10120178757853
+0.525688448570821
+0.6018389200367497
 starting: L: 10, D: 4600
-manual centre 400.00780681901637
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.077870249732
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4600
 starting: L: 10, D: 4700
-manual centre 400.0081403962512
+manual centre 400.08020612012626
 finishing: L: 10, D: 4700
 starting: L: 10, D: 4800
-manual centre 400.0084739740424
+manual centre 400.08287571969066
 finishing: L: 10, D: 4800
 starting: L: 10, D: 4900
-manual centre 400.0084739740424
+manual centre 400.08554535488196
 finishing: L: 10, D: 4900
 starting: L: 10, D: 5000
-manual centre 400.00880755238984
+manual centre 400.08888244897264
 finishing: L: 10, D: 5000
-line? 400.01130755238984
-0.5269698639135599
-0.6149814604678568
+line? 400.1138824489726
+0.525688448570821
+0.6145082269474664
 starting: L: 10, D: 5100
-manual centre 400.00914113129375
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.09188588125147
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5100
 starting: L: 10, D: 5200
-manual centre 400.0094747107541
+manual centre 400.0952230811154
 finishing: L: 10, D: 5200
 starting: L: 10, D: 5300
-manual centre 400.0098082907707
+manual centre 400.0985603366515
 finishing: L: 10, D: 5300
 starting: L: 10, D: 5400
-manual centre 400.0101418713436
+manual centre 400.1018976478611
 finishing: L: 10, D: 5400
 starting: L: 10, D: 5500
-manual centre 400.010475452473
+manual centre 400.1055687544964
 finishing: L: 10, D: 5500
-line? 400.012975452473
-0.5269698639135599
-0.6316479188092046
+line? 400.1305687544964
+0.525688448570821
+0.6311783676957834
 starting: L: 10, D: 5600
-manual centre 400.01080903415874
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.10890618262516
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5600
 starting: L: 10, D: 5700
-manual centre 400.0111426164008
+manual centre 400.11224366643177
 finishing: L: 10, D: 5700
 starting: L: 10, D: 5800
-manual centre 400.0118097825541
+manual centre 400.1159149629286
 finishing: L: 10, D: 5800
 starting: L: 10, D: 5900
-manual centre 400.0121433664653
+manual centre 400.1192525636634
 finishing: L: 10, D: 5900
 starting: L: 10, D: 6000
-manual centre 400.01247695093286
+manual centre 400.1229239887847
 finishing: L: 10, D: 6000
-line? 400.01497695093286
-0.5269698639135599
-0.6516476688185202
+line? 400.14792398878467
+0.525688448570821
+0.648515314166306
 starting: L: 10, D: 6100
-manual centre 400.0128105359568
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.12626170645365
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6100
 starting: L: 10, D: 6200
-manual centre 400.0131441215372
+manual centre 400.12959947980784
 finishing: L: 10, D: 6200
 starting: L: 10, D: 6300
-manual centre 400.0134777076739
+manual centre 400.1332710948155
 finishing: L: 10, D: 6300
 starting: L: 10, D: 6400
-manual centre 400.013811294367
+manual centre 400.13660898511296
 finishing: L: 10, D: 6400
 starting: L: 10, D: 6500
-manual centre 400.01414488161646
+manual centre 400.1402807287616
 finishing: L: 10, D: 6500
-line? 400.01664488161646
-0.5269698639135599
-0.6683141271606219
+line? 400.16528072876156
+0.525688448570821
+0.6658522607306464
 starting: L: 10, D: 6600
-manual centre 400.0144784694224
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1436187360087
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6600
 starting: L: 10, D: 6700
-manual centre 400.01481205778464
+manual centre 400.1472906083052
 finishing: L: 10, D: 6700
 starting: L: 10, D: 6800
-manual centre 400.0151456467032
+manual centre 400.1506287325078
 finishing: L: 10, D: 6800
 starting: L: 10, D: 6900
-manual centre 400.01547923617824
+manual centre 400.15430073345885
 finishing: L: 10, D: 6900
 starting: L: 10, D: 7000
-manual centre 400.0158128262097
+manual centre 400.1576389746233
 finishing: L: 10, D: 7000
-line? 400.0183128262097
-0.5269698639135599
-0.6849805855042314
+line? 400.1826389746233
+0.525688448570821
+0.6831892073890306
 starting: L: 10, D: 7100
-manual centre 400.0161464167974
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.16131110423584
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7100
 starting: L: 10, D: 7200
-manual centre 400.01648000794165
+manual centre 400.16498330124494
 finishing: L: 10, D: 7200
 starting: L: 10, D: 7300
-manual centre 400.01681359964226
+manual centre 400.1686555656526
 finishing: L: 10, D: 7300
 starting: L: 10, D: 7400
-manual centre 400.0174807847126
+manual centre 400.1723278974608
 finishing: L: 10, D: 7400
 starting: L: 10, D: 7500
-manual centre 400.0178143780824
+manual centre 400.17633415448734
 finishing: L: 10, D: 7500
-line? 400.0203143780824
-0.5269698639135599
-0.7049803355173165
+line? 400.2013341544873
+0.525688448570821
+0.7018597654339822
 starting: L: 10, D: 7600
-manual centre 400.0181479720086
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.18034049173053
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7600
 starting: L: 10, D: 7700
-manual centre 400.0184815664912
+manual centre 400.184346909193
 finishing: L: 10, D: 7700
 starting: L: 10, D: 7800
-manual centre 400.01881516153014
+manual centre 400.188687285305
 finishing: L: 10, D: 7800
 starting: L: 10, D: 7900
-manual centre 400.0194823532773
+manual centre 400.193027755569
 finishing: L: 10, D: 7900
 starting: L: 10, D: 8000
+manual centre 400.0415009295749
+finishing: L: 10, D: 8000
+line? 400.0665009295749
+0.525688448570821
+0.5671650276957901
+starting: L: 10, D: 8100
+manual centre 400.04383637529975
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+finishing: L: 10, D: 8100
+starting: L: 10, D: 8200
+manual centre 400.0465054895186
+finishing: L: 10, D: 8200
+starting: L: 10, D: 8300
+manual centre 400.04884099367735
+finishing: L: 10, D: 8300
+starting: L: 10, D: 8400
+manual centre 400.0515101746791
+finishing: L: 10, D: 8400
+starting: L: 10, D: 8500
+manual centre 400.05384573727383
+finishing: L: 10, D: 8500
+line? 400.0788457372738
+0.525688448570821
+0.5795009316585247
+starting: L: 10, D: 8600
+manual centre 400.0565149850609
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+finishing: L: 10, D: 8600
+starting: L: 10, D: 8700
+manual centre 400.058850606094
+finishing: L: 10, D: 8700
+starting: L: 10, D: 8800
+manual centre 400.06118625439893
+finishing: L: 10, D: 8800
+starting: L: 10, D: 8900
+manual centre 400.06352192997633
+finishing: L: 10, D: 8900
+starting: L: 10, D: 9000
+manual centre 400.06585763282663
+finishing: L: 10, D: 9000
+line? 400.0908576328266
+0.525688448570821
+0.5915034328572923
+starting: L: 10, D: 9100
+manual centre 400.0681933629503
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+finishing: L: 10, D: 9100
+starting: L: 10, D: 9200
+manual centre 400.07052912034777
+finishing: L: 10, D: 9200
+starting: L: 10, D: 9300
+manual centre 400.0728649050195
+finishing: L: 10, D: 9300
+starting: L: 10, D: 9400
+manual centre 400.0752007169662
+finishing: L: 10, D: 9400
+starting: L: 10, D: 9500
+manual centre 400.0772028632007
+finishing: L: 10, D: 9500
+line? 400.10220286320066
+0.525688448570821
+0.6028391284751086
+starting: L: 10, D: 9600
+manual centre 400.0795387258018
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+finishing: L: 10, D: 9600
+starting: L: 10, D: 9700
+manual centre 400.0818746156791
+finishing: L: 10, D: 9700
+starting: L: 10, D: 9800
+manual centre 400.0838768287124
+finishing: L: 10, D: 9800
+starting: L: 10, D: 9900
+manual centre 400.08621276924663
+finishing: L: 10, D: 9900
+starting: L: 10, D: 10000
+manual centre 400.0882150257009
+finishing: L: 10, D: 10000
+line? 400.11321502570087
+0.525688448570821
+0.6138414213191538
+MID-level running in PID 445721 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+starting: L: 10, D: 0
+manual centre 399.99880044397486
+finishing: L: 10, D: 0
+line? 400.02380044397484
+0.525688448570821
+0.5244894684074712
+starting: L: 10, D: 100
+manual centre 400.0024696589229
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+  waveList = 2 * np.pi * c / freqList * 1e-6
+finishing: L: 10, D: 100
+starting: L: 10, D: 200
+manual centre 400.0064725156407
+finishing: L: 10, D: 200
+starting: L: 10, D: 300
+manual centre 400.0098082907707
+finishing: L: 10, D: 300
+starting: L: 10, D: 400
+manual centre 400.0134777076739
+finishing: L: 10, D: 400
+starting: L: 10, D: 500
+manual centre 400.01681359964226
+finishing: L: 10, D: 500
+line? 400.04181359964224
+0.525688448570821
+0.5424932199127066
+starting: L: 10, D: 600
 manual centre 400.0198159499855
-finishing: L: 10, D: 8000
-line? 400.0223159499855
-0.5269698639135599
-0.7249800855311557
-starting: L: 10, D: 8100
-manual centre 400.0044710772676
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
-  waveList = 2 * np.pi * c / freqList * 1e-6
-finishing: L: 10, D: 8100
-starting: L: 10, D: 8200
-manual centre 400.0048046489389
-finishing: L: 10, D: 8200
-starting: L: 10, D: 8300
-manual centre 400.0048046489389
-finishing: L: 10, D: 8300
-starting: L: 10, D: 8400
-manual centre 400.00513822116653
-finishing: L: 10, D: 8400
-starting: L: 10, D: 8500
-manual centre 400.0054717939506
-finishing: L: 10, D: 8500
-line? 400.0079717939506
-0.5269698639135599
-0.5816485437911927
-starting: L: 10, D: 8600
-manual centre 400.0054717939506
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
-  waveList = 2 * np.pi * c / freqList * 1e-6
-finishing: L: 10, D: 8600
-starting: L: 10, D: 8700
-manual centre 400.005805367291
-finishing: L: 10, D: 8700
-starting: L: 10, D: 8800
-manual centre 400.0061389411876
-finishing: L: 10, D: 8800
-starting: L: 10, D: 8900
-manual centre 400.0064725156407
-finishing: L: 10, D: 8900
-starting: L: 10, D: 9000
-manual centre 400.0064725156407
-finishing: L: 10, D: 9000
-line? 400.0089725156407
-0.5269698639135599
-0.5916484187943427
-starting: L: 10, D: 9100
-manual centre 400.00680609065006
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
-  waveList = 2 * np.pi * c / freqList * 1e-6
-finishing: L: 10, D: 9100
-starting: L: 10, D: 9200
-manual centre 400.00713966621583
-finishing: L: 10, D: 9200
-starting: L: 10, D: 9300
-manual centre 400.00713966621583
-finishing: L: 10, D: 9300
-starting: L: 10, D: 9400
-manual centre 400.0074732423379
-finishing: L: 10, D: 9400
-starting: L: 10, D: 9500
-manual centre 400.00780681901637
-finishing: L: 10, D: 9500
-line? 400.01030681901636
-0.5269698639135599
-0.6049815854654608
-starting: L: 10, D: 9600
-manual centre 400.00780681901637
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
-  waveList = 2 * np.pi * c / freqList * 1e-6
-finishing: L: 10, D: 9600
-starting: L: 10, D: 9700
-manual centre 400.0081403962512
-finishing: L: 10, D: 9700
-starting: L: 10, D: 9800
-manual centre 400.0084739740424
-finishing: L: 10, D: 9800
-starting: L: 10, D: 9900
-manual centre 400.0084739740424
-finishing: L: 10, D: 9900
-starting: L: 10, D: 10000
-manual centre 400.00880755238984
-finishing: L: 10, D: 10000
-line? 400.01130755238984
-0.5269698639135599
-0.6149814604678568
-MID-level running in PID 222550 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
-  waveList = 2 * np.pi * c / freqList * 1e-6
-starting: L: 10, D: 0
-manual centre 399.9998011322847
-finishing: L: 10, D: 0
-line? 400.0023011322847
-0.5269698639135599
-0.5249825854462918
-starting: L: 10, D: 100
-manual centre 400.0001346961674
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
-  waveList = 2 * np.pi * c / freqList * 1e-6
-finishing: L: 10, D: 100
-starting: L: 10, D: 200
-manual centre 400.00046826060634
-finishing: L: 10, D: 200
-starting: L: 10, D: 300
-manual centre 400.0011353911531
-finishing: L: 10, D: 300
-starting: L: 10, D: 400
-manual centre 400.0014689572612
-finishing: L: 10, D: 400
-starting: L: 10, D: 500
-manual centre 400.0018025239254
-finishing: L: 10, D: 500
-line? 400.0043025239254
-0.5269698639135599
-0.5449823354488224
-starting: L: 10, D: 600
-manual centre 400.00213609114604
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 600
 starting: L: 10, D: 700
-manual centre 400.00213609114604
+manual centre 400.02281834539764
 finishing: L: 10, D: 700
 starting: L: 10, D: 800
-manual centre 400.0024696589229
+manual centre 400.02548717915613
 finishing: L: 10, D: 800
 starting: L: 10, D: 900
-manual centre 400.0028032272562
+manual centre 400.02815604852617
 finishing: L: 10, D: 900
 starting: L: 10, D: 1000
-manual centre 400.00313679614584
+manual centre 400.0308249535085
 finishing: L: 10, D: 1000
-line? 400.00563679614584
-0.5269698639135599
-0.5583155021184325
+line? 400.0558249535085
+0.525688448570821
+0.5564961378203158
 starting: L: 10, D: 1100
-manual centre 400.0034703655918
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0331602745817
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1100
 starting: L: 10, D: 1200
-manual centre 400.0034703655918
+manual centre 400.03549562292176
 finishing: L: 10, D: 1200
 starting: L: 10, D: 1300
-manual centre 400.003803935594
+manual centre 400.0374973717727
 finishing: L: 10, D: 1300
 starting: L: 10, D: 1400
-manual centre 400.0041375061527
+manual centre 400.0398327707521
 finishing: L: 10, D: 1400
 starting: L: 10, D: 1500
-manual centre 400.0041375061527
+manual centre 400.04183456300893
 finishing: L: 10, D: 1500
-line? 400.0066375061527
-0.5269698639135599
-0.5683153771208286
+line? 400.0668345630089
+0.525688448570821
+0.5674984305048559
 starting: L: 10, D: 1600
-manual centre 400.0044710772676
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.04383637529975
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1600
 starting: L: 10, D: 1700
-manual centre 400.0044710772676
+manual centre 400.04550456751275
 finishing: L: 10, D: 1700
 starting: L: 10, D: 1800
-manual centre 400.0048046489389
+manual centre 400.0475064165332
 finishing: L: 10, D: 1800
 starting: L: 10, D: 1900
-manual centre 400.0048046489389
+manual centre 400.04917463935476
 finishing: L: 10, D: 1900
 starting: L: 10, D: 2000
-manual centre 400.00513822116653
+manual centre 400.05117652510603
 finishing: L: 10, D: 2000
-line? 400.00763822116653
-0.5269698639135599
-0.5783152521224708
+line? 400.076176525106
+0.525688448570821
+0.576833709176119
 starting: L: 10, D: 2100
-manual centre 400.00513822116653
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.05284477853684
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2100
 starting: L: 10, D: 2200
-manual centre 400.0054717939506
+manual centre 400.05451304588127
 finishing: L: 10, D: 2200
 starting: L: 10, D: 2300
-manual centre 400.0054717939506
+manual centre 400.0561813271396
 finishing: L: 10, D: 2300
 starting: L: 10, D: 2400
-manual centre 400.005805367291
+manual centre 400.05751596216425
 finishing: L: 10, D: 2400
 starting: L: 10, D: 2500
-manual centre 400.005805367291
+manual centre 400.058850606094
 finishing: L: 10, D: 2500
-line? 400.008305367291
-0.5269698639135599
-0.5849818354584068
+line? 400.08385060609396
+0.525688448570821
+0.584501973819248
 starting: L: 10, D: 2600
-manual centre 400.0061389411876
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.06051892352895
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2600
 starting: L: 10, D: 2700
-manual centre 400.0061389411876
+manual centre 400.0618535874953
 finishing: L: 10, D: 2700
 starting: L: 10, D: 2800
-manual centre 400.0064725156407
+manual centre 400.063188260367
 finishing: L: 10, D: 2800
 starting: L: 10, D: 2900
-manual centre 400.0064725156407
+manual centre 400.0648566139797
 finishing: L: 10, D: 2900
 starting: L: 10, D: 3000
-manual centre 400.00680609065006
+manual centre 400.0668586566829
 finishing: L: 10, D: 3000
-line? 400.00930609065006
-0.5269698639135599
-0.5949817104615568
+line? 400.09185865668286
+0.525688448570821
+0.5925036412926347
 starting: L: 10, D: 3100
-manual centre 400.00680609065006
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.06886071942364
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3100
 starting: L: 10, D: 3200
-manual centre 400.00713966621583
+manual centre 400.0711964846137
 finishing: L: 10, D: 3200
 starting: L: 10, D: 3300
-manual centre 400.0074732423379
+manual centre 400.07319859077063
 finishing: L: 10, D: 3300
 starting: L: 10, D: 3400
-manual centre 400.0074732423379
+manual centre 400.0752007169662
 finishing: L: 10, D: 3400
 starting: L: 10, D: 3500
-manual centre 400.00780681901637
+manual centre 400.07686917077007
 finishing: L: 10, D: 3500
-line? 400.01030681901636
-0.5269698639135599
-0.6049815854654608
+line? 400.10186917077004
+0.525688448570821
+0.6025057256623474
 starting: L: 10, D: 3600
-manual centre 400.00780681901637
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.077870249732
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3600
 starting: L: 10, D: 3700
-manual centre 400.00780681901637
+manual centre 400.077870249732
 finishing: L: 10, D: 3700
 starting: L: 10, D: 3800
-manual centre 400.00780681901637
+manual centre 400.07686917077007
 finishing: L: 10, D: 3800
 starting: L: 10, D: 3900
-manual centre 400.0074732423379
+manual centre 400.07486702787537
 finishing: L: 10, D: 3900
 starting: L: 10, D: 4000
-manual centre 400.0074732423379
+manual centre 400.07219753518734
 finishing: L: 10, D: 4000
-line? 400.0099732423379
-0.5269698639135599
-0.6016482937974927
+line? 400.0971975351873
+0.525688448570821
+0.5978380862858781
 starting: L: 10, D: 4100
-manual centre 400.00713966621583
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0701954390497
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4100
 starting: L: 10, D: 4200
-manual centre 400.00680609065006
+manual centre 400.06886071942364
 finishing: L: 10, D: 4200
 starting: L: 10, D: 4300
-manual centre 400.00680609065006
+manual centre 400.06919439849526
 finishing: L: 10, D: 4300
 starting: L: 10, D: 4400
-manual centre 400.00713966621583
+manual centre 400.0701954390497
 finishing: L: 10, D: 4400
 starting: L: 10, D: 4500
-manual centre 400.00713966621583
+manual centre 400.07186385110623
 finishing: L: 10, D: 4500
-line? 400.00963966621583
-0.5269698639135599
-0.5983150021295248
+line? 400.0968638511062
+0.525688448570821
+0.5975046834735693
 starting: L: 10, D: 4600
-manual centre 400.0074732423379
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07386596394264
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4600
 starting: L: 10, D: 4700
-manual centre 400.00780681901637
+manual centre 400.07653547889595
 finishing: L: 10, D: 4700
 starting: L: 10, D: 4800
-manual centre 400.00780681901637
+manual centre 400.07920502947456
 finishing: L: 10, D: 4800
 starting: L: 10, D: 4900
-manual centre 400.0081403962512
+manual centre 400.08220831645957
 finishing: L: 10, D: 4900
 starting: L: 10, D: 5000
-manual centre 400.0084739740424
+manual centre 400.08521164853477
 finishing: L: 10, D: 5000
-line? 400.0109739740424
-0.5269698639135599
-0.6116481688013967
+line? 400.11021164853474
+0.525688448570821
+0.6108407959944236
 starting: L: 10, D: 5100
-manual centre 400.00880755238984
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.08854873705843
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5100
 starting: L: 10, D: 5200
-manual centre 400.00914113129375
+manual centre 400.0915521643271
 finishing: L: 10, D: 5200
 starting: L: 10, D: 5300
-manual centre 400.0094747107541
+manual centre 400.0948893586238
 finishing: L: 10, D: 5300
 starting: L: 10, D: 5400
-manual centre 400.0098082907707
+manual centre 400.09822660859254
 finishing: L: 10, D: 5400
 starting: L: 10, D: 5500
-manual centre 400.0101418713436
+manual centre 400.1015639142349
 finishing: L: 10, D: 5500
-line? 400.0126418713436
-0.5269698639135599
-0.6283146271404827
+line? 400.12656391423485
+0.525688448570821
+0.6271775339082596
 starting: L: 10, D: 5600
-manual centre 400.010475452473
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1049012755519
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5600
 starting: L: 10, D: 5700
-manual centre 400.01080903415874
+manual centre 400.10823869254517
 finishing: L: 10, D: 5700
 starting: L: 10, D: 5800
-manual centre 400.0111426164008
+manual centre 400.11157616521615
 finishing: L: 10, D: 5800
 starting: L: 10, D: 5900
-manual centre 400.01147619919925
+manual centre 400.11491369356605
 finishing: L: 10, D: 5900
 starting: L: 10, D: 6000
-manual centre 400.0118097825541
+manual centre 400.1182512775964
 finishing: L: 10, D: 6000
-line? 400.0143097825541
-0.5269698639135599
-0.6449810854825843
+line? 400.1432512775964
+0.525688448570821
+0.643847674722641
 starting: L: 10, D: 6100
-manual centre 400.0121433664653
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1215889173086
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6100
 starting: L: 10, D: 6200
-manual centre 400.01247695093286
+manual centre 400.12526038530604
 finishing: L: 10, D: 6200
 starting: L: 10, D: 6300
-manual centre 400.0128105359568
+manual centre 400.12859814195457
 finishing: L: 10, D: 6300
 starting: L: 10, D: 6400
-manual centre 400.0131441215372
+manual centre 400.1319359542892
 finishing: L: 10, D: 6400
 starting: L: 10, D: 6500
-manual centre 400.0134777076739
+manual centre 400.13527382231126
 finishing: L: 10, D: 6500
-line? 400.0159777076739
-0.5269698639135599
-0.661647543823932
+line? 400.16027382231124
+0.525688448570821
+0.6608512184426962
 starting: L: 10, D: 6600
-manual centre 400.013811294367
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1386117460224
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6600
 starting: L: 10, D: 6700
-manual centre 400.01414488161646
+manual centre 400.1419497254237
 finishing: L: 10, D: 6700
 starting: L: 10, D: 6800
-manual centre 400.01481205778464
+manual centre 400.1456215670891
 finishing: L: 10, D: 6800
 starting: L: 10, D: 6900
-manual centre 400.0151456467032
+manual centre 400.1489596634446
 finishing: L: 10, D: 6900
 starting: L: 10, D: 7000
-manual centre 400.01547923617824
+manual centre 400.15263163376306
 finishing: L: 10, D: 7000
-line? 400.01797923617823
-0.5269698639135599
-0.6816472938347555
+line? 400.17763163376304
+0.525688448570821
+0.6781881650741569
 starting: L: 10, D: 7100
-manual centre 400.0158128262097
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1563036714739
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7100
 starting: L: 10, D: 7200
-manual centre 400.0161464167974
+manual centre 400.15997577657885
 finishing: L: 10, D: 7200
 starting: L: 10, D: 7300
-manual centre 400.01648000794165
+manual centre 400.16398178628555
 finishing: L: 10, D: 7300
 starting: L: 10, D: 7400
-manual centre 400.01681359964226
+manual centre 400.16798787620166
 finishing: L: 10, D: 7400
 starting: L: 10, D: 7500
-manual centre 400.01714719189926
+manual centre 400.1723278974608
 finishing: L: 10, D: 7500
-line? 400.01964719189925
-0.5269698639135599
-0.6983137521798728
+line? 400.19732789746075
+0.525688448570821
+0.6978589315579954
 starting: L: 10, D: 7600
-manual centre 400.0178143780824
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1770018717906
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7600
 starting: L: 10, D: 7700
-manual centre 400.0181479720086
+manual centre 400.0331602745817
 finishing: L: 10, D: 7700
 starting: L: 10, D: 7800
-manual centre 400.0034703655918
+manual centre 400.03549562292176
 finishing: L: 10, D: 7800
 starting: L: 10, D: 7900
-manual centre 400.003803935594
+manual centre 400.0381646258415
 finishing: L: 10, D: 7900
 starting: L: 10, D: 8000
-manual centre 400.0041375061527
+manual centre 400.0405000326117
 finishing: L: 10, D: 8000
-line? 400.0066375061527
-0.5269698639135599
-0.5683153771208286
+line? 400.0655000326117
+0.525688448570821
+0.566164819268442
 starting: L: 10, D: 8100
-manual centre 400.0041375061527
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.04283546665005
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 8100
 starting: L: 10, D: 8200
-manual centre 400.0044710772676
+manual centre 400.0451709279571
 finishing: L: 10, D: 8200
 starting: L: 10, D: 8300
-manual centre 400.0048046489389
+manual centre 400.0475064165332
 finishing: L: 10, D: 8300
 starting: L: 10, D: 8400
-manual centre 400.00513822116653
+manual centre 400.04984193237897
 finishing: L: 10, D: 8400
 starting: L: 10, D: 8500
-manual centre 400.00513822116653
+manual centre 400.05217747549483
 finishing: L: 10, D: 8500
-line? 400.00763822116653
-0.5269698639135599
-0.5783152521224708
+line? 400.0771774754948
+0.525688448570821
+0.5778339176066346
 starting: L: 10, D: 8600
-manual centre 400.0054717939506
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.05451304588127
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 8600
 starting: L: 10, D: 8700
-manual centre 400.005805367291
+manual centre 400.05684864353884
 finishing: L: 10, D: 8700
 starting: L: 10, D: 8800
-manual centre 400.005805367291
+manual centre 400.058850606094
 finishing: L: 10, D: 8800
 starting: L: 10, D: 8900
-manual centre 400.0061389411876
+manual centre 400.06118625439893
 finishing: L: 10, D: 8900
 starting: L: 10, D: 9000
-manual centre 400.0064725156407
+manual centre 400.06352192997633
 finishing: L: 10, D: 9000
-line? 400.0089725156407
-0.5269698639135599
-0.5916484187943427
+line? 400.0885219299763
+0.525688448570821
+0.5891696131761845
 starting: L: 10, D: 9100
-manual centre 400.0064725156407
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0655239593211
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 9100
 starting: L: 10, D: 9200
-manual centre 400.00680609065006
+manual centre 400.06752600870334
 finishing: L: 10, D: 9200
 starting: L: 10, D: 9300
-manual centre 400.00713966621583
+manual centre 400.06986175830826
 finishing: L: 10, D: 9300
 starting: L: 10, D: 9400
-manual centre 400.00713966621583
+manual centre 400.07186385110623
 finishing: L: 10, D: 9400
 starting: L: 10, D: 9500
-manual centre 400.0074732423379
+manual centre 400.07386596394264
 finishing: L: 10, D: 9500
-line? 400.0099732423379
-0.5269698639135599
-0.6016482937974927
+line? 400.0988659639426
+0.525688448570821
+0.5995051003481756
 starting: L: 10, D: 9600
-manual centre 400.0074732423379
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07586809681777
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 9600
 starting: L: 10, D: 9700
-manual centre 400.00780681901637
+manual centre 400.07820394383276
 finishing: L: 10, D: 9700
 starting: L: 10, D: 9800
-manual centre 400.0081403962512
+manual centre 400.08020612012626
 finishing: L: 10, D: 9800
 starting: L: 10, D: 9900
-manual centre 400.0081403962512
+manual centre 400.08220831645957
 finishing: L: 10, D: 9900
 starting: L: 10, D: 10000
-manual centre 400.0084739740424
+manual centre 400.0842105328329
 finishing: L: 10, D: 10000
-line? 400.0109739740424
-0.5269698639135599
-0.6116481688013967
-MID-level running in PID 222550 (name=__main__)
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+line? 400.1092105328329
+0.525688448570821
+0.6098405875533498
+MID-level running in PID 445721 (name=__main__)
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 starting: L: 10, D: 0
-manual centre 399.9998011322847
+manual centre 399.99880044397486
 finishing: L: 10, D: 0
-line? 400.0023011322847
-0.5269698639135599
-0.5249825854462918
+line? 400.02380044397484
+0.525688448570821
+0.5244894684074712
 starting: L: 10, D: 100
-manual centre 400.0001346961674
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0024696589229
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 100
 starting: L: 10, D: 200
-manual centre 400.00046826060634
+manual centre 400.005805367291
 finishing: L: 10, D: 200
 starting: L: 10, D: 300
-manual centre 400.0008018256016
+manual centre 400.0094747107541
 finishing: L: 10, D: 300
 starting: L: 10, D: 400
-manual centre 400.0011353911531
+manual centre 400.0128105359568
 finishing: L: 10, D: 400
 starting: L: 10, D: 500
-manual centre 400.0014689572612
+manual centre 400.0158128262097
 finishing: L: 10, D: 500
-line? 400.0039689572612
-0.5269698639135599
-0.5416490437823621
+line? 400.0408128262097
+0.525688448570821
+0.5414930114931262
 starting: L: 10, D: 600
-manual centre 400.0018025239254
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.01881516153014
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 600
 starting: L: 10, D: 700
-manual centre 400.00213609114604
+manual centre 400.02148394187253
 finishing: L: 10, D: 700
 starting: L: 10, D: 800
-manual centre 400.0024696589229
+manual centre 400.02415275782545
 finishing: L: 10, D: 800
 starting: L: 10, D: 900
-manual centre 400.0028032272562
+manual centre 400.02682160938963
 finishing: L: 10, D: 900
 starting: L: 10, D: 1000
-manual centre 400.0028032272562
+manual centre 400.02915688372116
 finishing: L: 10, D: 1000
-line? 400.0053032272562
-0.5269698639135599
-0.5549822104504645
+line? 400.05415688372113
+0.525688448570821
+0.5548291237804168
 starting: L: 10, D: 1100
-manual centre 400.00313679614584
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.03115856913524
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1100
 starting: L: 10, D: 1200
-manual centre 400.0034703655918
+manual centre 400.0334938941038
 finishing: L: 10, D: 1200
 starting: L: 10, D: 1300
-manual centre 400.0034703655918
+manual centre 400.03549562292176
 finishing: L: 10, D: 1300
 starting: L: 10, D: 1400
-manual centre 400.003803935594
+manual centre 400.0374973717727
 finishing: L: 10, D: 1400
 starting: L: 10, D: 1500
-manual centre 400.003803935594
+manual centre 400.03916551111837
 finishing: L: 10, D: 1500
-line? 400.006303935594
-0.5269698639135599
-0.5649820854528607
+line? 400.06416551111835
+0.525688448570821
+0.564831208032405
 starting: L: 10, D: 1600
-manual centre 400.0041375061527
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0411672966973
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 1600
 starting: L: 10, D: 1700
-manual centre 400.0041375061527
+manual centre 400.04283546665005
 finishing: L: 10, D: 1700
 starting: L: 10, D: 1800
-manual centre 400.0044710772676
+manual centre 400.04450365051537
 finishing: L: 10, D: 1800
 starting: L: 10, D: 1900
-manual centre 400.0044710772676
+manual centre 400.0461718482935
 finishing: L: 10, D: 1900
 starting: L: 10, D: 2000
-manual centre 400.0048046489389
+manual centre 400.0478400599845
 finishing: L: 10, D: 2000
-line? 400.0073046489389
-0.5269698639135599
-0.5749819604552567
+line? 400.07284005998446
+0.525688448570821
+0.5734996810761095
 starting: L: 10, D: 2100
-manual centre 400.0048046489389
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.04917463935476
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2100
 starting: L: 10, D: 2200
-manual centre 400.00513822116653
+manual centre 400.05084287608946
 finishing: L: 10, D: 2200
 starting: L: 10, D: 2300
-manual centre 400.00513822116653
+manual centre 400.05217747549483
 finishing: L: 10, D: 2300
 starting: L: 10, D: 2400
-manual centre 400.0054717939506
+manual centre 400.05351208380495
 finishing: L: 10, D: 2400
 starting: L: 10, D: 2500
-manual centre 400.0054717939506
+manual centre 400.05484670101987
 finishing: L: 10, D: 2500
-line? 400.0079717939506
-0.5269698639135599
-0.5816485437911927
+line? 400.07984670101985
+0.525688448570821
+0.5805011400900962
 starting: L: 10, D: 2600
-manual centre 400.005805367291
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0561813271396
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 2600
 starting: L: 10, D: 2700
-manual centre 400.005805367291
+manual centre 400.05751596216425
 finishing: L: 10, D: 2700
 starting: L: 10, D: 2800
-manual centre 400.005805367291
+manual centre 400.05918426846785
 finishing: L: 10, D: 2800
 starting: L: 10, D: 2900
-manual centre 400.0061389411876
+manual centre 400.06085258868563
 finishing: L: 10, D: 2900
 starting: L: 10, D: 3000
-manual centre 400.0061389411876
+manual centre 400.06252092281795
 finishing: L: 10, D: 3000
-line? 400.0086389411876
-0.5269698639135599
-0.5883151271263748
+line? 400.08752092281793
+0.525688448570821
+0.5881694047420489
 starting: L: 10, D: 3100
-manual centre 400.0064725156407
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.06452294214404
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3100
 starting: L: 10, D: 3200
-manual centre 400.00680609065006
+manual centre 400.06619130688875
 finishing: L: 10, D: 3200
 starting: L: 10, D: 3300
-manual centre 400.00680609065006
+manual centre 400.0681933629503
 finishing: L: 10, D: 3300
 starting: L: 10, D: 3400
-manual centre 400.00713966621583
+manual centre 400.06952807812337
 finishing: L: 10, D: 3400
 starting: L: 10, D: 3500
-manual centre 400.00713966621583
+manual centre 400.07052912034777
 finishing: L: 10, D: 3500
-line? 400.00963966621583
-0.5269698639135599
-0.5983150021295248
+line? 400.09552912034775
+0.525688448570821
+0.5961710722245609
 starting: L: 10, D: 3600
-manual centre 400.00713966621583
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07052912034777
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 3600
 starting: L: 10, D: 3700
-manual centre 400.00713966621583
+manual centre 400.06986175830826
 finishing: L: 10, D: 3700
 starting: L: 10, D: 3800
-manual centre 400.00680609065006
+manual centre 400.06852704090863
 finishing: L: 10, D: 3800
 starting: L: 10, D: 3900
-manual centre 400.00680609065006
+manual centre 400.06652498150754
 finishing: L: 10, D: 3900
 starting: L: 10, D: 4000
-manual centre 400.0064725156407
+manual centre 400.0648566139797
 finishing: L: 10, D: 4000
-line? 400.0089725156407
-0.5269698639135599
-0.5916484187943427
+line? 400.0898566139797
+0.525688448570821
+0.5905032244222518
 starting: L: 10, D: 4100
-manual centre 400.0064725156407
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.06418927086486
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4100
 starting: L: 10, D: 4200
-manual centre 400.0064725156407
+manual centre 400.06418927086486
 finishing: L: 10, D: 4200
 starting: L: 10, D: 4300
-manual centre 400.0064725156407
+manual centre 400.0651902863721
 finishing: L: 10, D: 4300
 starting: L: 10, D: 4400
-manual centre 400.00680609065006
+manual centre 400.06652498150754
 finishing: L: 10, D: 4400
 starting: L: 10, D: 4500
-manual centre 400.00680609065006
+manual centre 400.06852704090863
 finishing: L: 10, D: 4500
-line? 400.00930609065006
-0.5269698639135599
-0.5949817104615568
+line? 400.0935270409086
+0.525688448570821
+0.5941706553520664
 starting: L: 10, D: 4600
-manual centre 400.00713966621583
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0708628022024
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 4600
 starting: L: 10, D: 4700
-manual centre 400.0074732423379
+manual centre 400.0735322770783
 finishing: L: 10, D: 4700
 starting: L: 10, D: 4800
-manual centre 400.00780681901637
+manual centre 400.07653547889595
 finishing: L: 10, D: 4800
 starting: L: 10, D: 4900
-manual centre 400.0081403962512
+manual centre 400.0795387258018
 finishing: L: 10, D: 4900
 starting: L: 10, D: 5000
-manual centre 400.0081403962512
+manual centre 400.08254201779687
 finishing: L: 10, D: 5000
-line? 400.0106403962512
-0.5269698639135599
-0.6083148771326748
+line? 400.10754201779685
+0.525688448570821
+0.6081735734857731
 starting: L: 10, D: 5100
-manual centre 400.0084739740424
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.085879061786
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5100
 starting: L: 10, D: 5200
-manual centre 400.00880755238984
+manual centre 400.08888244897264
 finishing: L: 10, D: 5200
 starting: L: 10, D: 5300
-manual centre 400.00914113129375
+manual centre 400.0922195987327
 finishing: L: 10, D: 5300
 starting: L: 10, D: 5400
-manual centre 400.0094747107541
+manual centre 400.0952230811154
 finishing: L: 10, D: 5400
 starting: L: 10, D: 5500
-manual centre 400.0098082907707
+manual centre 400.0985603366515
 finishing: L: 10, D: 5500
-line? 400.0123082907707
-0.5269698639135599
-0.6249813354732686
+line? 400.12356033665145
+0.525688448570821
+0.6241769085708596
 starting: L: 10, D: 5600
-manual centre 400.0101418713436
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1018976478611
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 5600
 starting: L: 10, D: 5700
-manual centre 400.010475452473
+manual centre 400.1052350147458
 finishing: L: 10, D: 5700
 starting: L: 10, D: 5800
-manual centre 400.01080903415874
+manual centre 400.10857243730675
 finishing: L: 10, D: 5800
 starting: L: 10, D: 5900
-manual centre 400.0111426164008
+manual centre 400.11157616521615
 finishing: L: 10, D: 5900
 starting: L: 10, D: 6000
-manual centre 400.01147619919925
+manual centre 400.11491369356605
 finishing: L: 10, D: 6000
-line? 400.01397619919925
-0.5269698639135599
-0.6416477938131085
+line? 400.13991369356603
+0.525688448570821
+0.6405136465527963
 starting: L: 10, D: 6100
-manual centre 400.0118097825541
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1182512775964
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6100
 starting: L: 10, D: 6200
-manual centre 400.0121433664653
+manual centre 400.1215889173086
 finishing: L: 10, D: 6200
 starting: L: 10, D: 6300
-manual centre 400.01247695093286
+manual centre 400.124926612704
 finishing: L: 10, D: 6300
 starting: L: 10, D: 6400
-manual centre 400.0128105359568
+manual centre 400.1282643637839
 finishing: L: 10, D: 6400
 starting: L: 10, D: 6500
-manual centre 400.0131441215372
+manual centre 400.1316021705498
 finishing: L: 10, D: 6500
-line? 400.0156441215372
-0.5269698639135599
-0.6583142521559641
+line? 400.1566021705498
+0.525688448570821
+0.6571837874367114
 starting: L: 10, D: 6600
-manual centre 400.0134777076739
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.13494003300315
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 6600
 starting: L: 10, D: 6700
-manual centre 400.013811294367
+manual centre 400.1386117460224
 finishing: L: 10, D: 6700
 starting: L: 10, D: 6800
-manual centre 400.0144784694224
+manual centre 400.14228352642687
 finishing: L: 10, D: 6800
 starting: L: 10, D: 6900
-manual centre 400.01481205778464
+manual centre 400.1459553742185
 finishing: L: 10, D: 6900
 starting: L: 10, D: 7000
-manual centre 400.0151456467032
+manual centre 400.14962728939906
 finishing: L: 10, D: 7000
-line? 400.0176456467032
-0.5269698639135599
-0.6783140021667875
+line? 400.17462728939904
+0.525688448570821
+0.6751875396889431
 starting: L: 10, D: 7100
-manual centre 400.01547923617824
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.1536330919097
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7100
 starting: L: 10, D: 7200
-manual centre 400.0158128262097
+manual centre 400.15797280180317
 finishing: L: 10, D: 7200
 starting: L: 10, D: 7300
-manual centre 400.01648000794165
+manual centre 400.1629802763394
 finishing: L: 10, D: 7300
 starting: L: 10, D: 7400
-manual centre 400.01681359964226
+manual centre 400.0258207858799
 finishing: L: 10, D: 7400
 starting: L: 10, D: 7500
-manual centre 400.0028032272562
+manual centre 400.02815604852617
 finishing: L: 10, D: 7500
-line? 400.0053032272562
-0.5269698639135599
-0.5549822104504645
+line? 400.05315604852615
+0.525688448570821
+0.5538289153569903
 starting: L: 10, D: 7600
-manual centre 400.00313679614584
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0308249535085
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 7600
 starting: L: 10, D: 7700
-manual centre 400.0034703655918
+manual centre 400.0331602745817
 finishing: L: 10, D: 7700
 starting: L: 10, D: 7800
-manual centre 400.0034703655918
+manual centre 400.03549562292176
 finishing: L: 10, D: 7800
 starting: L: 10, D: 7900
-manual centre 400.003803935594
+manual centre 400.0378309985289
 finishing: L: 10, D: 7900
 starting: L: 10, D: 8000
-manual centre 400.0041375061527
+manual centre 400.04016640140367
 finishing: L: 10, D: 8000
-line? 400.0066375061527
-0.5269698639135599
-0.5683153771208286
+line? 400.06516640140364
+0.525688448570821
+0.5658314164593762
 starting: L: 10, D: 8100
-manual centre 400.0041375061527
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0421681969994
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 8100
 starting: L: 10, D: 8200
-manual centre 400.0044710772676
+manual centre 400.04450365051537
 finishing: L: 10, D: 8200
 starting: L: 10, D: 8300
-manual centre 400.0048046489389
+manual centre 400.0468391313003
 finishing: L: 10, D: 8300
 starting: L: 10, D: 8400
-manual centre 400.0048046489389
+manual centre 400.04884099367735
 finishing: L: 10, D: 8400
 starting: L: 10, D: 8500
-manual centre 400.00513822116653
+manual centre 400.05117652510603
 finishing: L: 10, D: 8500
-line? 400.00763822116653
-0.5269698639135599
-0.5783152521224708
+line? 400.076176525106
+0.525688448570821
+0.576833709176119
 starting: L: 10, D: 8600
-manual centre 400.0054717939506
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.0531784308927
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 8600
 starting: L: 10, D: 8700
-manual centre 400.0054717939506
+manual centre 400.05518035671497
 finishing: L: 10, D: 8700
 starting: L: 10, D: 8800
-manual centre 400.005805367291
+manual centre 400.05718230257327
 finishing: L: 10, D: 8800
 starting: L: 10, D: 8900
-manual centre 400.005805367291
+manual centre 400.0595179313982
 finishing: L: 10, D: 8900
 starting: L: 10, D: 9000
-manual centre 400.0061389411876
+manual centre 400.06151992066884
 finishing: L: 10, D: 9000
-line? 400.0086389411876
-0.5269698639135599
-0.5883151271263748
+line? 400.0865199206688
+0.525688448570821
+0.5871691963081395
 starting: L: 10, D: 9100
-manual centre 400.0064725156407
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.06352192997633
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 9100
 starting: L: 10, D: 9200
-manual centre 400.0064725156407
+manual centre 400.0655239593211
 finishing: L: 10, D: 9200
 starting: L: 10, D: 9300
-manual centre 400.00680609065006
+manual centre 400.06752600870334
 finishing: L: 10, D: 9300
 starting: L: 10, D: 9400
-manual centre 400.00680609065006
+manual centre 400.06952807812337
 finishing: L: 10, D: 9400
 starting: L: 10, D: 9500
-manual centre 400.00713966621583
+manual centre 400.0711964846137
 finishing: L: 10, D: 9500
-line? 400.00963966621583
-0.5269698639135599
-0.5983150021295248
+line? 400.0961964846137
+0.525688448570821
+0.596837877848952
 starting: L: 10, D: 9600
-manual centre 400.0074732423379
-/lustre06/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
+manual centre 400.07319859077063
+/project/6067427/ncosta/CPI_Project/two_interfaces/interfaces_aug6_runa.py:581: RuntimeWarning: divide by zero encountered in divide
   waveList = 2 * np.pi * c / freqList * 1e-6
 finishing: L: 10, D: 9600
 starting: L: 10, D: 9700
-manual centre 400.0074732423379
+manual centre 400.0752007169662
 finishing: L: 10, D: 9700
 starting: L: 10, D: 9800
-manual centre 400.00780681901637
+manual centre 400.07686917077007
 finishing: L: 10, D: 9800
 starting: L: 10, D: 9900
-manual centre 400.00780681901637
+manual centre 400.078871333704
 finishing: L: 10, D: 9900
 starting: L: 10, D: 10000
-manual centre 400.0081403962512
+manual centre 400.0808735166774
 finishing: L: 10, D: 10000
-line? 400.0106403962512
-0.5269698639135599
-0.6083148771326748
+line? 400.1058735166774
+0.525688448570821
+0.606506559419026
