@@ -423,12 +423,14 @@ if __name__ == "__main__":
 
     ws[0] = 1e-6
 
-    
     match dispersion_type:
         case "freshwater":
             epsilon = water_epsilon(ws, w_0, S = 0)
         case "seawater":    
             epsilon = water_epsilon(ws, w_0, S = 35)
+        #lol from: https://pubmed.ncbi.nlm.nih.gov/9717279/
+        case "eyewater":
+            epsilon = water_epsilon(ws, w_0, S = 9.7)
         case "BK7":
             epsilon = glass_type_epsilon(ws, w_0)
         case "Fused Silica":

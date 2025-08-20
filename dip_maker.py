@@ -9,10 +9,12 @@ import argparse
 from tqdm import tqdm
 import shutil
 
+#reference pulse as a function of w; doesnt go through dispersive materials
 def Ereffer(Ec, Ea, w, tau):
     return (Ec + Ea) * np.exp(1j * w * tau)
 
-#this phi is the dispersion from going through optical elements
+# pulse that goes through sample; this phi is the dispersion from going through optical elements
+# is a function of w
 def Esampler(Ec, Ea, phi):
     return (Ec - Ea) * np.exp(1j * phi)
 
@@ -112,13 +114,33 @@ def water_epsilon(w, w0, T=20, S=0):
 
     return phi_water
 
-
+# Performs CPI for a given thickness of dispersive material and given array of time delays, 
+# integrates the resulting heatmap given the integration range, and saves the integrate result to a .txt
+#
+# Parameters:
+# chirp_type: type of chirpe used on the pulses (lin, erf, super-erf) - used for saving CPI result  
+# L: Thickness of dispersive material
+# Ec: 1D array representing chirped pulse; made using chirper()
+# Ea: 1D array representing antichirped pulse; made using chirper()
+# ws: 1D array of frequency components
+# taus: 1D array of time delays
+# epsilon: basically the material-dependent part of phi, dispersion induced by the material. Made using
+# glass_type_epsilon() or water_epsilon()
+# integration range: value (in nm) of what wavelengths to integrate over. Will integrate from 
+# 400 - (integration_range/2) to 400 + (integration_range/2) 
+# output_dir: path of what folder to write output file to
+#
+# Returns: none
 def run_cpi_for_L(chirp_type, L, Ec, Ea, ws, taus, epsilon, integration_range, output_dir):
-  
+    
+    #generating sample pulse (w), then inverse Fourier transforming it to sample pulse (t)
     Esamp_w = Esampler(Ec, Ea, epsilon*L)
+    #Need to use this form to match Mathematica's FFT convention
     Esamp_t = np.conj(ifft(np.conj(Esamp_w), norm="ortho"))
 
     SFG_data = []
+    #For each time delay, calculate SFG_t by multiplying Eref_t at that time delay by Esamp_t,
+    # FFT to a function of w, then take absolute value squared to get intensity as function of w
     for tau in taus:
         Eref_w = Ereffer(Ec, Ea, ws, tau)
         Esfg_t = np.conj(ifft(np.conj(Eref_w), norm="ortho")) * Esamp_t
@@ -128,19 +150,21 @@ def run_cpi_for_L(chirp_type, L, Ec, Ea, ws, taus, epsilon, integration_range, o
 
     SFG_data = np.array(SFG_data)
 
+    #generate wavelengths array
     wavelengths = 2 * np.pi * c * 1e9 / (ws * 1e15)
 
+    #Find band over which to integrate, and then do that
     SFG_band = SFG_data[:, (wavelengths >= 400 - (integration_range/2)) & (wavelengths <= 400 + (integration_range/2))]
     signal_vs_tau = np.sum(SFG_band, axis=1)
     
-   
     out_path = os.path.join(output_dir, f"{chirp_type}_L{L}.txt")
     np.savetxt(out_path, signal_vs_tau, fmt="%.15f")
-    #print(f"✅ {chirp_type} L={L} saved.")
 
+#used to unpack the arguments
 def run_cpi_unpack(args):
     return run_cpi_for_L(*args)
 
+#--------- Chirp Functions --------
 def lin_chirp(A, w, w_0):
     return A * ((w - w_0) ** 2)
 
@@ -152,13 +176,15 @@ def superf_chirp(C, w, w_0, sigma_s):
     x = (w - w_0) * 2 * sigma_s / np.sqrt(2 * np.log(256))
     return C * ((np.exp(-x**2) - 1) / np.sqrt(np.pi) + x * erf(x))
 
+#Function used to apply chirp to a pulse
 #this phi is the chirp you want to apply to the pulse
 def chirper(Ews, phi):
     return Ews * np.exp(1j * phi)
 
-# Constants
+# Parameters that would be more annoying to mess with
 fwhm = 10 #fs
-sigma_s = 1.12 * fwhm
+sigma_s_param = 1.12
+sigma_s = sigma_s_param * fwhm
 c = 299792458 #m/s
 w_0 = 2 * np.pi * c * 1e-15 / 800e-9 #fs^-1
 t_0 = 200000 #fs
@@ -249,6 +275,9 @@ if __name__ == "__main__":
             epsilon = water_epsilon(ws, w_0, S = 0)
         case "seawater":    
             epsilon = water_epsilon(ws, w_0, S = 35)
+        #lol from: https://pubmed.ncbi.nlm.nih.gov/9717279/
+        case "eyewater":
+            epsilon = water_epsilon(ws, w_0, S = 9.7)
         case "BK7":
             epsilon = glass_type_epsilon(ws, w_0)
         case "Fused Silica":
