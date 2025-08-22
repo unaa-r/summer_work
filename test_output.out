@@ -2,6 +2,6 @@
 /lustre06/project/6067427/urajnis/summer_work/realistic_maker.py:67: RuntimeWarning: invalid value encountered in sqrt
   k_w = w*(np.sqrt(1 + (b1*(2*np.pi*c/w)**2)/((2*np.pi*c/w)**2 - c1) +
 ⚙️ Launching parallel CPI...
-  0%|          | 0/7 [00:00<?, ?it/s] 14%|█▍        | 1/7 [00:21<02:07, 21.20s/it] 29%|██▊       | 2/7 [00:22<00:48,  9.64s/it] 57%|█████▋    | 4/7 [00:23<00:11,  3.69s/it] 71%|███████▏  | 5/7 [00:23<00:05,  2.68s/it] 86%|████████▌ | 6/7 [00:23<00:01,  1.92s/it]100%|██████████| 7/7 [00:27<00:00,  2.38s/it]100%|██████████| 7/7 [00:27<00:00,  3.87s/it]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:26<00:26, 26.23s/it]100%|██████████| 2/2 [00:26<00:00, 13.14s/it]
 
-✅ All CPI runs complete in 27.30 s
+✅ All CPI runs complete in 26.55 s
